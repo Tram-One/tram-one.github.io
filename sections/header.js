@@ -34,7 +34,7 @@ module.exports = (attrs, children) => {
         Tram-One is a view framework for developers who want
         to jump straight into building on the web. At its core,
         Tram-One is a collection of a few packages that gives you
-        the tools to start working right away, that is to say...
+        the tools to start working right away. That is to say...
         <b>Batteries Included!</b>
       </div>
     </row>

@@ -1,5 +1,5 @@
 const Tram = require('tram-one')
-const app = new Tram()
+const app = new Tram({defaultRoute: '/'})
 
 const contact = require('./sections/contact')
 const custom = require('./sections/custom')
@@ -35,15 +35,6 @@ const home = (state) => {
   `
 }
 
-const nopath = () => {
-  return html`
-    <div>
-      404!
-    </div>
-  `
-}
-
 app.addRoute('/', home)
-app.addRoute('/404', nopath)
 
 app.start('.main')
