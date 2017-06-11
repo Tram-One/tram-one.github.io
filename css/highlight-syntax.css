@@ -1,0 +1,26 @@
+/*
+  colors pulled from Tomorrow Night Eighties
+  https://github.com/chriskempson/tomorrow-theme#tomorrow-night-eighties
+*/
+
+.kw0, .operator {
+  color: #6699cc;
+}
+.identifier {
+  color: #cccccc;
+}
+.kw1, .regex, .command-substitution, .template-expr {
+  color: #ffcc66;
+}
+.kw2, .open-square, .close-square, .open-curly, .close-curly,
+.area-comment, .area-comment-continue, .line-comment,
+.open-paren, .close-paren {
+  color: #6699cc;
+}
+.number, .quote, .single-quote, .double-quote, .char,
+.template-string, .heredoc {
+  color: #99cc99;
+}
+.directive, .shebang, .variable {
+  color: #99cc99;
+}
