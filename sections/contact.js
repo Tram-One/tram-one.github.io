@@ -6,6 +6,10 @@ const html = Tram.html({
   tcr: twoColRow
 })
 
+const hStyle = `
+  margin: 0px;
+`
+
 const tramStyle = `
   padding: 1em;
   padding-left: 2em;
@@ -21,9 +25,9 @@ const jesseStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title='' color='#302d3c' bg='#0fb4d4'>
+    <tcr title='' color=${attrs.color} bg=${attrs.bg}>
       <div style=${tramStyle}>
-        <h3>Tram-One</h3>
+        <h3 style=${hStyle}>Tram-One</h3>
         <div>
           <a href="https://github.com/JRJurman/tram-one">
             Repository on Github
@@ -36,7 +40,7 @@ module.exports = (attrs, children) => {
         </div>
       </div>
       <div style=${jesseStyle}>
-        <h3>Jesse Jurman</h3>
+        <h3 style=${hStyle}>Jesse Jurman</h3>
         <div><a href="https://github.com/JRJurman">Github</a></div>
         <div><a href="http://jrjurman.com/">Website</a>,
         <a href="https://twitter.com/jrjurman">Twitter</a></div>

@@ -17,11 +17,13 @@ const example = `
   const html = Tram.html()
   const page = () => {
     return html\`
-      <h1> Fun Times on Tram-One! </h1>
-      <h2> With Custom Elements </h2>
-      <h2> Routing </h2>
-      <h2> and Redux State Management </h2>
-      <h1> Batteries Included! </h1>
+      <div>
+        <h1> Fun Times on Tram-One! </h1>
+        <h2> With Custom Elements </h2>
+        <h2> Routing </h2>
+        <h2> and Redux State Management </h2>
+        <h1> Batteries Included! </h1>
+      </div>
     \`
   }
 
@@ -37,9 +39,10 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="The Batteries" color='#e6ebef' bg='#322f3e'>
+    <tcr title="The Batteries" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One is a collection of excellent packages.
+        <br>
         Here are the different package that make Tram-One possible...
         <br><br>
         For Rendering:

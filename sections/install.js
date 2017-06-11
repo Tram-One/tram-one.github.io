@@ -13,7 +13,7 @@ const installStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <row color="#322f3e", bg="#fdca47">
+    <row color=${attrs.color} bg=${attrs.bg}>
       <div style=${installStyle}>
         npm install tram-one
       </div>

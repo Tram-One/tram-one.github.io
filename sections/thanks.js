@@ -8,12 +8,12 @@ const html = Tram.html({
 const summaryStyle = `
   padding: 1em;
   padding-left: 2em;
-  font-size: 1.25em;
+  font-size: 0.8em;
 `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title='' color="#322f3e", bg="#fdca47">
+    <tcr title='' color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Special attribution goes to
         <a href=https://github.com/yoshuawuyts>Yoshua Wuyts's</a>

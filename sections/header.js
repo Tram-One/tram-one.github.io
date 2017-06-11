@@ -22,7 +22,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <row color='#302d3c' bg='#0fb4d4'>
+    <row color=${attrs.color} bg=${attrs.bg}>
       <h1 style=${headerStyle}>
         Tram-One
         <img class="vhs-right vhs-delay-6 vhs-duration-6" src="./tram-car-128.png" style=${imageStyle} />
@@ -34,8 +34,9 @@ module.exports = (attrs, children) => {
         Tram-One is a view framework for developers who want
         to jump straight into building on the web. At its core,
         Tram-One is a collection of a few packages that gives you
-        the tools to start working right away. That is to say...
-        <b>Batteries Included!</b>
+        the tools to start working right away.
+        <br><br>
+        That is to say... <b>Batteries Included!</b>
       </div>
     </row>
   `

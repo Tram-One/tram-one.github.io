@@ -12,30 +12,24 @@ const example = `
   const cats = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      Here is the Page \${page} of cats!
-      /* render cats */
+      <div>Here is the Page \${page} of cats!</div>
     \`
   }
 
   const dogs = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      Here is the Page \${page} of dogs!
-      /* render dogs */
+      <div>Here is the Page \${page} of dogs!</div>
     \`
   }
 
   const unknown = (state) => {
     return html\`
-      I don't know what you're looking for here...
-      /* render sadness */
+      <div>I don't know what you're looking for here...</div>
     \`
   }
 
-  app.addRoute('/', cats)
-  app.addRoute('/cats', cats)
   app.addRoute('/cats/:page', cats)
-  app.addRoute('/dogs', dogs)
   app.addRoute('/dogs/:page', dogs)
   app.addRoute('/404', unknown)
 `
@@ -48,7 +42,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="Routing" color='#e6ebef' bg='#1f7389'>
+    <tcr title="Routing" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One supports routing, having different components
         render based on which route a user is on.

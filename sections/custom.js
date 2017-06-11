@@ -30,9 +30,13 @@ const example = `
   })
 
   const todoList = (state) => {
-    <todo> Add Docs </todo>
-    <todo> Write Tests </todo>
-    <todo checked> Read PRs </todo>
+    return html\`
+      <div>
+        <todo> Add Docs </todo>
+        <todo> Write Tests </todo>
+        <todo checked> Read PRs </todo>
+      </div>
+    \`
   }
 `
 
@@ -44,7 +48,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="Custom Elements" color='#e6ebef' bg='#322f3e'>
+    <tcr title="Custom Elements" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One supports custom elements, which are passed into
         the html function, as a mapping of the tag you will use it
