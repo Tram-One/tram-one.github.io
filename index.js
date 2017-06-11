@@ -8,12 +8,11 @@ const header = require('./sections/header')
 const install = require('./sections/install')
 const reducers = require('./sections/reducers')
 const routing = require('./sections/routing')
-const thanks = require('./sections/thanks')
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing, thanks,
+  routing
 })
 
 const bg = {
@@ -46,7 +45,6 @@ const home = (state) => {
         <routing  color=${color.row2} bg=${bg.row2}></routing>
         <custom   color=${color.row1} bg=${bg.row1}></custom>
         <reducers color=${color.row2} bg=${bg.row2}></reducers>
-        <thanks   color=${color.row1} bg=${bg.row1}></thanks>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
     </div>

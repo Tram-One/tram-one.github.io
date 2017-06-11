@@ -12,20 +12,24 @@ const example = `
   const cats = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      <div>Here is the Page \${page} of cats!</div>
+      <div>
+        Here is the Page \${page} of cats!
+      </div>
     \`
   }
 
   const dogs = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      <div>Here is the Page \${page} of dogs!</div>
+      <div>
+        Here is the Page \${page} of dogs!
+      </div>
     \`
   }
 
   const unknown = (state) => {
     return html\`
-      <div>I don't know what you're looking for here...</div>
+      <div>No Animals Here...</div>
     \`
   }
 

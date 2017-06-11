@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -84,7 +84,11 @@ const html = Tram.html({row})
 const twoColGrid = `
   display: flex;
   flex-flow: wrap-reverse;
-  align-items: baseline;
+`
+
+const colStyle = `
+  flex: 1;
+  min-width: 400px;
 `
 
 module.exports = (attrs, children) => {
@@ -92,10 +96,10 @@ module.exports = (attrs, children) => {
   return html`
     <row title=${attrs.title} color=${attrs.color} bg=${attrs.bg} style=${attrs.style}>
       <div style=${twoColGrid}>
-        <div style='flex: 1'>
+        <div style=${colStyle}>
           ${realChildren[0]}
         </div>
-        <div style='flex: 1'>
+        <div style=${colStyle}>
           ${realChildren[1]}
         </div>
       </div>
@@ -185,28 +189,44 @@ const header = __webpack_require__(14)
 const install = __webpack_require__(15)
 const reducers = __webpack_require__(16)
 const routing = __webpack_require__(17)
-const thanks = __webpack_require__(18)
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing, thanks,
+  routing
 })
+
+const bg = {
+  p: '#0fb4d4',
+  s: '#fdca47',
+  row1: '#0084a3',
+  row2: '#1f7389',
+  foot: '#b7c2c8'
+}
+
+const color = {
+  p: '#302f3e',
+  s: '#322f3e',
+  row1: '#e6ebef',
+  row2: '#e6ebef',
+  foot: '#302d3c',
+}
 
 const home = (state) => {
   return html`
     <div>
       <div class="vhs-top">
-        <header></header>
+        <header   color=${color.p} bg=${bg.p}></header>
       </div>
       <div class="vhs-bottom vhs-delay-5">
-        <install></install>
-        <example></example>
-        <routing></routing>
-        <custom></custom>
-        <reducers></reducers>
-        <thanks></thanks>
-        <contact></contact>
+        <install  color=${color.s} bg=${bg.s}></install>
+      </div>
+      <div class="vhs-bottom vhs-delay-6">
+        <example  color=${color.row1} bg=${bg.row1}></example>
+        <routing  color=${color.row2} bg=${bg.row2}></routing>
+        <custom   color=${color.row1} bg=${bg.row1}></custom>
+        <reducers color=${color.row2} bg=${bg.row2}></reducers>
+        <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
     </div>
   `
@@ -823,6 +843,10 @@ const html = Tram.html({
   tcr: twoColRow
 })
 
+const hStyle = `
+  margin: 0px;
+`
+
 const tramStyle = `
   padding: 1em;
   padding-left: 2em;
@@ -838,9 +862,9 @@ const jesseStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title='' color='#302d3c' bg='#0fb4d4'>
+    <tcr title='' color=${attrs.color} bg=${attrs.bg}>
       <div style=${tramStyle}>
-        <h3>Tram-One</h3>
+        <h3 style=${hStyle}>Tram-One</h3>
         <div>
           <a href="https://github.com/JRJurman/tram-one">
             Repository on Github
@@ -853,7 +877,7 @@ module.exports = (attrs, children) => {
         </div>
       </div>
       <div style=${jesseStyle}>
-        <h3>Jesse Jurman</h3>
+        <h3 style=${hStyle}>Jesse Jurman</h3>
         <div><a href="https://github.com/JRJurman">Github</a></div>
         <div><a href="http://jrjurman.com/">Website</a>,
         <a href="https://twitter.com/jrjurman">Twitter</a></div>
@@ -899,9 +923,13 @@ const example = `
   })
 
   const todoList = (state) => {
-    <todo> Add Docs </todo>
-    <todo> Write Tests </todo>
-    <todo checked> Read PRs </todo>
+    return html\`
+      <div>
+        <todo> Add Docs </todo>
+        <todo> Write Tests </todo>
+        <todo checked> Read PRs </todo>
+      </div>
+    \`
   }
 `
 
@@ -913,7 +941,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="Custom Elements" color='#e6ebef' bg='#322f3e'>
+    <tcr title="Custom Elements" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One supports custom elements, which are passed into
         the html function, as a mapping of the tag you will use it
@@ -955,11 +983,13 @@ const example = `
   const html = Tram.html()
   const page = () => {
     return html\`
-      <h1> Fun Times on Tram-One! </h1>
-      <h2> With Custom Elements </h2>
-      <h2> Routing </h2>
-      <h2> and Redux State Management </h2>
-      <h1> Batteries Included! </h1>
+      <div>
+        <h1> Fun Times on Tram-One! </h1>
+        <h2> With Custom Elements </h2>
+        <h2> Routing </h2>
+        <h2> and Redux State Management </h2>
+        <h1> Batteries Included! </h1>
+      </div>
     \`
   }
 
@@ -975,9 +1005,10 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="The Batteries" color='#e6ebef' bg='#322f3e'>
+    <tcr title="The Batteries" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One is a collection of excellent packages.
+        <br>
         Here are the different package that make Tram-One possible...
         <br><br>
         For Rendering:
@@ -1033,7 +1064,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <row color='#302d3c' bg='#0fb4d4'>
+    <row color=${attrs.color} bg=${attrs.bg}>
       <h1 style=${headerStyle}>
         Tram-One
         <img class="vhs-right vhs-delay-6 vhs-duration-6" src="./tram-car-128.png" style=${imageStyle} />
@@ -1045,8 +1076,9 @@ module.exports = (attrs, children) => {
         Tram-One is a view framework for developers who want
         to jump straight into building on the web. At its core,
         Tram-One is a collection of a few packages that gives you
-        the tools to start working right away. That is to say...
-        <b>Batteries Included!</b>
+        the tools to start working right away.
+        <br><br>
+        That is to say... <b>Batteries Included!</b>
       </div>
     </row>
   `
@@ -1072,7 +1104,7 @@ const installStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <row color="#322f3e", bg="#fdca47">
+    <row color=${attrs.color} bg=${attrs.bg}>
       <div style=${installStyle}>
         npm install tram-one
       </div>
@@ -1096,16 +1128,10 @@ const html = Tram.html({
 })
 
 const example = `
-  const Tram = require('tram-one')
-  const app = new Tram()
-  const html = Tram.html()
-
   const commentReducer = (state, action) => {
     switch(action.type) {
       case('LIKE'):
         return state.likes + 1
-      case('UNLIKE'):
-        return state.likes - 1
       default:
         return state
     }
@@ -1115,14 +1141,12 @@ const example = `
     onLike = () => {
       state.dispatch({type: 'LIKE'})
     }
-    onUnLike = () => {
-      state.dispatch({type: 'UNLIKE'})
-    }
     return html\`
-      <h2> My Neat Post </h2>
-      Likes: \${state.comment.likes}
-      <button onclick=\${onLike}>Like</button>
-      <button onclick=\${onUnLike}>UnLike</button>
+      <div>
+        <h2> My Neat Post </h2>
+        Likes: \${state.comment.likes}
+        <button onclick=\${onLike}>Like</button>
+      </div>
     \`
   }
 
@@ -1137,7 +1161,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="State Management" color='#e6ebef' bg='#1f7389'>
+    <tcr title="State Management" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One follows the Flux architecture model with minidux,
         an API compliant tiny version of redux. If you're familiar
@@ -1146,7 +1170,7 @@ module.exports = (attrs, children) => {
 
         Flux follows a single flow architecture model. Views dispatch
         actions, which in turn will update the store, which triggers
-        a re-render. 
+        a re-render.
       </div>
       <div>
         <style-code code=${example}></style-code>
@@ -1174,30 +1198,28 @@ const example = `
   const cats = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      Here is the Page \${page} of cats!
-      /* render cats */
+      <div>
+        Here is the Page \${page} of cats!
+      </div>
     \`
   }
 
   const dogs = (state) => {
     const page = state.page ? state.page : 1
     return html\`
-      Here is the Page \${page} of dogs!
-      /* render dogs */
+      <div>
+        Here is the Page \${page} of dogs!
+      </div>
     \`
   }
 
   const unknown = (state) => {
     return html\`
-      I don't know what you're looking for here...
-      /* render sadness */
+      <div>No Animals Here...</div>
     \`
   }
 
-  app.addRoute('/', cats)
-  app.addRoute('/cats', cats)
   app.addRoute('/cats/:page', cats)
-  app.addRoute('/dogs', dogs)
   app.addRoute('/dogs/:page', dogs)
   app.addRoute('/404', unknown)
 `
@@ -1210,7 +1232,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <tcr title="Routing" color='#e6ebef' bg='#1f7389'>
+    <tcr title="Routing" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
         Tram-One supports routing, having different components
         render based on which route a user is on.
@@ -1234,47 +1256,6 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Tram = __webpack_require__(0)
-
-const tcr = __webpack_require__(1)
-const html = Tram.html({
-  tcr
-})
-
-const summaryStyle = `
-  padding: 1em;
-  padding-left: 2em;
-  font-size: 1.25em;
-`
-
-module.exports = (attrs, children) => {
-  return html`
-    <tcr title='' color="#322f3e", bg="#fdca47">
-      <div style=${summaryStyle}>
-        Special attribution goes to
-        <a href=https://github.com/yoshuawuyts>Yoshua Wuyts's</a>
-        <a href=https://github.com/yoshuawuyts/choo>choo</a>,
-        an amazing project which taught me that web development
-        could be lightweight and fun. Yoshua Wuyts has an insane
-        number of contributions to the projects outside of choo,
-        many of which are included, directly or indirectly, in Tram-One.
-      </div>
-      <div style=${summaryStyle}>
-        Also, special shout out to
-        <a href="https://github.com/aaaristo">Andrea Gariboldi</a>
-        who developed rbel, right around the time I was struggling
-        with custom element rendering. This project would not have
-        gotten as far, or been started as early as it was, without this.
-      </div>
-    </tcr>
-  `
-}
-
-
-/***/ }),
-/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
