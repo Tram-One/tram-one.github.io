@@ -19,14 +19,18 @@ const html = Tram.html({
 const home = (state) => {
   return html`
     <div>
-      <header></header>
-      <install></install>
-      <example></example>
-      <routing></routing>
-      <custom></custom>
-      <reducers></reducers>
-      <thanks></thanks>
-      <contact></contact>
+      <div class="vhs-top">
+        <header></header>
+      </div>
+      <div class="vhs-bottom vhs-delay-5">
+        <install></install>
+        <example></example>
+        <routing></routing>
+        <custom></custom>
+        <reducers></reducers>
+        <thanks></thanks>
+        <contact></contact>
+      </div>
     </div>
   `
 }
