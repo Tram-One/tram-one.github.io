@@ -25,7 +25,7 @@ module.exports = (attrs, children) => {
     <row color='#302d3c' bg='#0fb4d4'>
       <h1 style=${headerStyle}>
         Tram-One
-        <img class="vhs-right vhs-delay-6 vhs-duration-6" src="/tram-car-128.png" style=${imageStyle} />
+        <img class="vhs-right vhs-delay-6 vhs-duration-6" src="./tram-car-128.png" style=${imageStyle} />
       </h1>
       <h1 style=${headerStyle}>
         Batteries Included View Framework
