@@ -78,7 +78,7 @@
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({row})
 
 const twoColGrid = `
@@ -106,6 +106,36 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+const Highlight = __webpack_require__(7)
+const highlightJS = __webpack_require__(8)
+const highlight = Highlight([highlightJS])
+
+const html = Tram.html()
+
+const codeStyle = `
+  margin: -1em 0px;
+  padding: 0 2em;
+  font-size: 1.25em;
+`
+
+module.exports = (attrs, children) => {
+  const formattedCode = highlight(attrs.code, {lang: 'js'})
+  const code = document.createElement('code')
+  code.innerHTML = formattedCode
+
+  return html`
+    <pre style=${codeStyle}>
+      ${code}
+    </pre>
+  `
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -142,41 +172,11 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Tram = __webpack_require__(0)
-const Highlight = __webpack_require__(7)
-const highlightJS = __webpack_require__(8)
-const highlight = Highlight([highlightJS])
-
-const html = Tram.html()
-
-const codeStyle = `
-  margin: -1em 0px;
-  padding: 0 2em;
-  font-size: 1.25em;
-`
-
-module.exports = (attrs, children) => {
-  const formattedCode = highlight(attrs.code, {lang: 'js'})
-  const code = document.createElement('code')
-  code.innerHTML = formattedCode
-
-  return html`
-    <pre style=${codeStyle}>
-      ${code}
-    </pre>
-  `
-}
-
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
-const app = new Tram()
+const app = new Tram({defaultRoute: '/'})
 
 const contact = __webpack_require__(11)
 const custom = __webpack_require__(12)
@@ -212,16 +212,7 @@ const home = (state) => {
   `
 }
 
-const nopath = () => {
-  return html`
-    <div>
-      404!
-    </div>
-  `
-}
-
 app.addRoute('/', home)
-app.addRoute('/404', nopath)
 
 app.start('.main')
 
@@ -832,16 +823,23 @@ const html = Tram.html({
   tcr: twoColRow
 })
 
-const summaryStyle = `
+const tramStyle = `
   padding: 1em;
   padding-left: 2em;
+  font-size: 1.25em;
+`
+
+const jesseStyle = `
+  text-align: right;
+  padding: 1em;
+  padding-right: 2em;
   font-size: 1.25em;
 `
 
 module.exports = (attrs, children) => {
   return html`
     <tcr title='' color='#302d3c' bg='#0fb4d4'>
-      <div style=${summaryStyle}>
+      <div style=${tramStyle}>
         <h3>Tram-One</h3>
         <div>
           <a href="https://github.com/JRJurman/tram-one">
@@ -854,7 +852,7 @@ module.exports = (attrs, children) => {
           </a>
         </div>
       </div>
-      <div style=${summaryStyle}>
+      <div style=${jesseStyle}>
         <h3>Jesse Jurman</h3>
         <div><a href="https://github.com/JRJurman">Github</a></div>
         <div><a href="http://jrjurman.com/">Website</a>,
@@ -871,7 +869,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -940,7 +938,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 const listItemProject = __webpack_require__(5)
 
@@ -1013,7 +1011,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({
   row
 })
@@ -1047,7 +1045,7 @@ module.exports = (attrs, children) => {
         Tram-One is a view framework for developers who want
         to jump straight into building on the web. At its core,
         Tram-One is a collection of a few packages that gives you
-        the tools to start working right away, that is to say...
+        the tools to start working right away. That is to say...
         <b>Batteries Included!</b>
       </div>
     </row>
@@ -1061,7 +1059,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({
   row
 })
@@ -1089,7 +1087,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1164,7 +1162,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1240,9 +1238,9 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const tcr = __webpack_require__(1)
 const html = Tram.html({
-  row
+  tcr
 })
 
 const summaryStyle = `
@@ -1253,7 +1251,7 @@ const summaryStyle = `
 
 module.exports = (attrs, children) => {
   return html`
-    <row color="#322f3e", bg="#fdca47">
+    <tcr title='' color="#322f3e", bg="#fdca47">
       <div style=${summaryStyle}>
         Special attribution goes to
         <a href=https://github.com/yoshuawuyts>Yoshua Wuyts's</a>
@@ -1262,15 +1260,15 @@ module.exports = (attrs, children) => {
         could be lightweight and fun. Yoshua Wuyts has an insane
         number of contributions to the projects outside of choo,
         many of which are included, directly or indirectly, in Tram-One.
-        <br><br>
-
+      </div>
+      <div style=${summaryStyle}>
         Also, special shout out to
         <a href="https://github.com/aaaristo">Andrea Gariboldi</a>
         who developed rbel, right around the time I was struggling
         with custom element rendering. This project would not have
         gotten as far, or been started as early as it was, without this.
       </div>
-    </row>
+    </tcr>
   `
 }
 
