@@ -1054,7 +1054,7 @@ const headerStyle = `
 `
 const imageStyle = `
   vertical-align: top;
-  height: 46px;
+  height: 64px;
 `
 
 const summaryStyle = `
