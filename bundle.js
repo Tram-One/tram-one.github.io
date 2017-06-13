@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,7 +78,7 @@
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(3)
+const row = __webpack_require__(2)
 const html = Tram.html({row})
 
 const twoColGrid = `
@@ -110,36 +110,6 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Tram = __webpack_require__(0)
-const Highlight = __webpack_require__(7)
-const highlightJS = __webpack_require__(8)
-const highlight = Highlight([highlightJS])
-
-const html = Tram.html()
-
-const codeStyle = `
-  margin: -1em 0px;
-  padding: 0 2em;
-  font-size: 1.25em;
-`
-
-module.exports = (attrs, children) => {
-  const formattedCode = highlight(attrs.code, {lang: 'js'})
-  const code = document.createElement('code')
-  code.innerHTML = formattedCode
-
-  return html`
-    <pre style=${codeStyle}>
-      ${code}
-    </pre>
-  `
-}
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -176,6 +146,36 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+const Highlight = __webpack_require__(7)
+const highlightJS = __webpack_require__(8)
+const highlight = Highlight([highlightJS])
+
+const html = Tram.html()
+
+const codeStyle = `
+  margin: -1em 0px;
+  padding: 0 2em;
+  font-size: 1.25em;
+`
+
+module.exports = (attrs, children) => {
+  const formattedCode = highlight(attrs.code, {lang: 'js'})
+  const code = document.createElement('code')
+  code.innerHTML = formattedCode
+
+  return html`
+    <pre style=${codeStyle}>
+      ${code}
+    </pre>
+  `
+}
+
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -185,15 +185,16 @@ const app = new Tram({defaultRoute: '/'})
 const contact = __webpack_require__(11)
 const custom = __webpack_require__(12)
 const example = __webpack_require__(13)
-const header = __webpack_require__(14)
-const install = __webpack_require__(15)
-const reducers = __webpack_require__(16)
-const routing = __webpack_require__(17)
+const header = __webpack_require__(15)
+const install = __webpack_require__(16)
+const reducers = __webpack_require__(17)
+const routing = __webpack_require__(18)
+const github = __webpack_require__(14)
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing
+  routing, github
 })
 
 const bg = {
@@ -201,7 +202,7 @@ const bg = {
   s: '#fdca47',
   row1: '#0084a3',
   row2: '#1f7389',
-  foot: '#b7c2c8'
+  foot: '#52bace'
 }
 
 const color = {
@@ -216,16 +217,17 @@ const home = (state) => {
   return html`
     <div>
       <div class="vhs-top">
-        <header   color=${color.p} bg=${bg.p}></header>
+        <header   color=${color.p}    bg=${bg.p}></header>
       </div>
       <div class="vhs-bottom vhs-delay-5">
-        <install  color=${color.s} bg=${bg.s}></install>
+        <install  color=${color.s}    bg=${bg.s}></install>
       </div>
       <div class="vhs-bottom vhs-delay-6">
         <example  color=${color.row1} bg=${bg.row1}></example>
         <routing  color=${color.row2} bg=${bg.row2}></routing>
         <custom   color=${color.row1} bg=${bg.row1}></custom>
         <reducers color=${color.row2} bg=${bg.row2}></reducers>
+        <github   color=${color.s}    bg=${bg.s}></install>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
     </div>
@@ -245,15 +247,11 @@ const Tram = __webpack_require__(0)
 
 const html = Tram.html()
 
-const linkStyle = `
-  color: #e6ebef;
-`
-
 module.exports = (attrs, children) => {
   const project = attrs.href.split('/').slice(-1)
-  return Tram.html()`
+  return html`
     <li>
-      <a style=${linkStyle} href=${attrs.href}>
+      <a href=${attrs.href}>
         ${project}
       </a>
     </li>
@@ -866,13 +864,12 @@ module.exports = (attrs, children) => {
       <div style=${tramStyle}>
         <h3 style=${hStyle}>Tram-One</h3>
         <div>
-          <a href="https://github.com/JRJurman/tram-one">
-            Repository on Github
-          </a>
+          <a href="https://github.com/JRJurman/tram-one">Github</a>,
+          <a href="https://www.npmjs.com/package/tram-one">npm</a>
         </div>
         <div>
           <a href="https://github.com/JRJurman/tram-one-website">
-            Repository for the Website
+            Repo for the Website
           </a>
         </div>
       </div>
@@ -893,7 +890,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(2)
+const stylizedCode = __webpack_require__(3)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -939,18 +936,33 @@ const summaryStyle = `
   font-size: 1.25em;
 `
 
+const monospaceStyle = `
+  font-family: monospace;
+  font-size: larger;
+`
+
+const tags = [
+  '<Todo>',
+  '<my-todo>',
+  '<todo>'
+]
+
 module.exports = (attrs, children) => {
   return html`
     <tcr title="Custom Elements" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
-        Tram-One supports custom elements, which are passed into
-        the html function, as a mapping of the tag you will use it
-        as, and the component it should render.
+        Tram-One supports custom elements, which are passed into the
+        <span style=${monospaceStyle}>html</span>
+        function, as a mapping of the tag you will use,
+        and the component it should render.
         <br><br>
 
         It's always obvious where your custom elements
         have been registered from, and can be any syntax
-        that makes sense for you (capitalized, kebab, whatever!)
+        that makes sense for you, e.g.
+        <span style=${monospaceStyle}>${tags[0]}</span>,
+        <span style=${monospaceStyle}>${tags[1]}</span>, or
+        <span style=${monospaceStyle}>${tags[2]}</span>
       </div>
       <div>
         <style-code code=${example}></style-code>
@@ -966,7 +978,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(2)
+const stylizedCode = __webpack_require__(3)
 const twoColRow = __webpack_require__(1)
 const listItemProject = __webpack_require__(5)
 
@@ -1007,9 +1019,9 @@ module.exports = (attrs, children) => {
   return html`
     <tcr title="The Batteries" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
-        Tram-One is a collection of excellent packages.
+        Tram-One uses a collection of most excellent packages.
         <br>
-        Here are the different package that make Tram-One possible...
+        Here are the different packages that make Tram-One possible...
         <br><br>
         For Rendering:
         <ul style='margin-top: 0px'>
@@ -1042,7 +1054,42 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(3)
+const row = __webpack_require__(2)
+const html = Tram.html({
+  row
+})
+
+const installStyle = `
+  font-size: 1.5em;
+  text-align: center;
+  font-family: monospace;
+`
+
+const linkStyle = `
+  text-decoration-line: none;
+`
+
+module.exports = (attrs, children) => {
+  return html`
+    <row color=${attrs.color} bg=${attrs.bg}>
+      <div style=${installStyle}>
+        <a  style=${linkStyle}
+            href="https://github.com/jrjurman/tram-one">
+          github.com/jrjurman/tram-one
+        </a>
+      </div>
+    </row>
+  `
+}
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+
+const row = __webpack_require__(2)
 const html = Tram.html({
   row
 })
@@ -1086,12 +1133,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(3)
+const row = __webpack_require__(2)
 const html = Tram.html({
   row
 })
@@ -1114,12 +1161,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(2)
+const stylizedCode = __webpack_require__(3)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1181,12 +1228,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(2)
+const stylizedCode = __webpack_require__(3)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1230,6 +1277,11 @@ const summaryStyle = `
   font-size: 1.25em;
 `
 
+const monospaceStyle = `
+  font-family: monospace;
+  font-size: larger;
+`
+
 module.exports = (attrs, children) => {
   return html`
     <tcr title="Routing" color=${attrs.color} bg=${attrs.bg}>
@@ -1239,7 +1291,9 @@ module.exports = (attrs, children) => {
         <br><br>
 
         By default, a route that doesn't match is sent to whatever
-        components lives on /404. You can handle the route from there.
+        component lives on
+        <span style=${monospaceStyle}>/404</span>
+        . You can handle the route from there.
         <br><br>
 
         You can handle dynamic routes as well, as path parameters.
@@ -1255,7 +1309,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
