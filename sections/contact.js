@@ -29,13 +29,12 @@ module.exports = (attrs, children) => {
       <div style=${tramStyle}>
         <h3 style=${hStyle}>Tram-One</h3>
         <div>
-          <a href="https://github.com/JRJurman/tram-one">
-            Repository on Github
-          </a>
+          <a href="https://github.com/JRJurman/tram-one">Github</a>,
+          <a href="https://www.npmjs.com/package/tram-one">npm</a>
         </div>
         <div>
           <a href="https://github.com/JRJurman/tram-one-website">
-            Repository for the Website
+            Repo for the Website
           </a>
         </div>
       </div>

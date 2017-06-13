@@ -46,18 +46,33 @@ const summaryStyle = `
   font-size: 1.25em;
 `
 
+const monospaceStyle = `
+  font-family: monospace;
+  font-size: larger;
+`
+
+const tags = [
+  '<Todo>',
+  '<my-todo>',
+  '<todo>'
+]
+
 module.exports = (attrs, children) => {
   return html`
     <tcr title="Custom Elements" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
-        Tram-One supports custom elements, which are passed into
-        the html function, as a mapping of the tag you will use it
-        as, and the component it should render.
+        Tram-One supports custom elements, which are passed into the
+        <span style=${monospaceStyle}>html</span>
+        function, as a mapping of the tag you will use,
+        and the component it should render.
         <br><br>
 
         It's always obvious where your custom elements
         have been registered from, and can be any syntax
-        that makes sense for you (capitalized, kebab, whatever!)
+        that makes sense for you, e.g.
+        <span style=${monospaceStyle}>${tags[0]}</span>,
+        <span style=${monospaceStyle}>${tags[1]}</span>, or
+        <span style=${monospaceStyle}>${tags[2]}</span>
       </div>
       <div>
         <style-code code=${example}></style-code>

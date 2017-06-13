@@ -41,9 +41,9 @@ module.exports = (attrs, children) => {
   return html`
     <tcr title="The Batteries" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
-        Tram-One is a collection of excellent packages.
+        Tram-One uses a collection of most excellent packages.
         <br>
-        Here are the different package that make Tram-One possible...
+        Here are the different packages that make Tram-One possible...
         <br><br>
         For Rendering:
         <ul style='margin-top: 0px'>

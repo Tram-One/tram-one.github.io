@@ -2,15 +2,11 @@ const Tram = require('tram-one')
 
 const html = Tram.html()
 
-const linkStyle = `
-  color: #e6ebef;
-`
-
 module.exports = (attrs, children) => {
   const project = attrs.href.split('/').slice(-1)
-  return Tram.html()`
+  return html`
     <li>
-      <a style=${linkStyle} href=${attrs.href}>
+      <a href=${attrs.href}>
         ${project}
       </a>
     </li>

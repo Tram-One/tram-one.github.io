@@ -44,6 +44,11 @@ const summaryStyle = `
   font-size: 1.25em;
 `
 
+const monospaceStyle = `
+  font-family: monospace;
+  font-size: larger;
+`
+
 module.exports = (attrs, children) => {
   return html`
     <tcr title="Routing" color=${attrs.color} bg=${attrs.bg}>
@@ -53,7 +58,9 @@ module.exports = (attrs, children) => {
         <br><br>
 
         By default, a route that doesn't match is sent to whatever
-        components lives on /404. You can handle the route from there.
+        component lives on
+        <span style=${monospaceStyle}>/404</span>
+        . You can handle the route from there.
         <br><br>
 
         You can handle dynamic routes as well, as path parameters.
