@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -150,8 +150,8 @@ module.exports = (attrs, children) => {
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
-const Highlight = __webpack_require__(7)
-const highlightJS = __webpack_require__(8)
+const Highlight = __webpack_require__(8)
+const highlightJS = __webpack_require__(9)
 const highlight = Highlight([highlightJS])
 
 const html = Tram.html()
@@ -182,19 +182,21 @@ module.exports = (attrs, children) => {
 const Tram = __webpack_require__(0)
 const app = new Tram({defaultRoute: '/'})
 
-const contact = __webpack_require__(11)
-const custom = __webpack_require__(12)
-const example = __webpack_require__(13)
-const header = __webpack_require__(15)
-const install = __webpack_require__(16)
-const reducers = __webpack_require__(17)
-const routing = __webpack_require__(18)
-const github = __webpack_require__(14)
+const contact = __webpack_require__(12)
+const custom = __webpack_require__(13)
+const example = __webpack_require__(14)
+const header = __webpack_require__(16)
+const install = __webpack_require__(17)
+const reducers = __webpack_require__(18)
+const routing = __webpack_require__(19)
+const github = __webpack_require__(15)
+
+const tracking = __webpack_require__(6)
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing, github
+  routing, github, tracking
 })
 
 const bg = {
@@ -230,6 +232,7 @@ const home = (state) => {
         <github   color=${color.s}    bg=${bg.s}></install>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
+      <tracking></tracking>
     </div>
   `
 }
@@ -261,6 +264,30 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+
+const html = Tram.html()
+
+
+module.exports = (attrs, children) => {
+  return html`
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-100954177-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  `
+}
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {function disect_sync (min, max, fn) {
@@ -365,13 +392,13 @@ module.exports = function disect(min, max, fn, callback) {
 
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var tokenize = __webpack_require__(10)
+var tokenize = __webpack_require__(11)
 
 module.exports = function (rules) {
   var rrules = {}, rmatches = {}
@@ -426,7 +453,7 @@ function esc (s) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -601,7 +628,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -791,10 +818,10 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disect = __webpack_require__(6)
+var disect = __webpack_require__(7)
 
 module.exports = function tokenize (src, rules) {
   var len = src.length
@@ -830,7 +857,7 @@ module.exports = function tokenize (src, rules) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -885,7 +912,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -973,7 +1000,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1049,7 +1076,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1084,7 +1111,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1133,7 +1160,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1161,7 +1188,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1228,7 +1255,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1309,7 +1336,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
