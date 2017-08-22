@@ -9,13 +9,15 @@ const install = require('./sections/install')
 const reducers = require('./sections/reducers')
 const routing = require('./sections/routing')
 const github = require('./sections/github')
+const youtube = require('./sections/youtube')
 
 const tracking = require('./elements/tracking')
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing, github, tracking
+  routing, github, tracking,
+  youtube
 })
 
 const bg = {
@@ -49,6 +51,7 @@ const home = (state) => {
         <custom   color=${color.row1} bg=${bg.row1}></custom>
         <reducers color=${color.row2} bg=${bg.row2}></reducers>
         <github   color=${color.s}    bg=${bg.s}></install>
+        <youtube  color=${color.row1} bg=${bg.row1}></install>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
       <tracking></tracking>
