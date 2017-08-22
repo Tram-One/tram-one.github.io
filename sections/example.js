@@ -53,11 +53,12 @@ module.exports = (attrs, children) => {
         </ul>
         For Routing
         <ul style='margin-top: 0px'>
-          <lip href="https://github.com/yoshuawuyts/nanorouter"></lip>
+          <lip href="https://github.com/choojs/nanorouter"></lip>
+          <lip href="https://github.com/jrjurman/url-listener"></lip>
         </ul>
         For State Management
         <ul style='margin-top: 0px'>
-          <lip href="https://github.com/maxogden/yo-yo"></lip>
+          <lip href="https://github.com/choojs/nanomorph"></lip>
           <lip href="https://github.com/freeman-lab/minidux">minidux</lip>
           <lip href="https://github.com/Raynos/xtend"></lip>
         </ul>
