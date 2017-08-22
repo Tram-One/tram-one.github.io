@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 20);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -190,13 +190,15 @@ const install = __webpack_require__(17)
 const reducers = __webpack_require__(18)
 const routing = __webpack_require__(19)
 const github = __webpack_require__(15)
+const youtube = __webpack_require__(20)
 
 const tracking = __webpack_require__(6)
 
 const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
-  routing, github, tracking
+  routing, github, tracking,
+  youtube
 })
 
 const bg = {
@@ -230,6 +232,7 @@ const home = (state) => {
         <custom   color=${color.row1} bg=${bg.row1}></custom>
         <reducers color=${color.row2} bg=${bg.row2}></reducers>
         <github   color=${color.s}    bg=${bg.s}></install>
+        <youtube  color=${color.row1} bg=${bg.row1}></install>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
       <tracking></tracking>
@@ -1337,6 +1340,44 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+
+const twoColRow = __webpack_require__(1)
+
+const html = Tram.html({
+  tcr: twoColRow
+})
+
+const summaryStyle = `
+  padding: 1em;
+  padding-left: 2em;
+  font-size: 1.25em;
+`
+
+module.exports = (attrs, children) => {
+  return html`
+    <tcr title="Video Tutorial" color=${attrs.color} bg=${attrs.bg}>
+      <div style=${summaryStyle}>
+        <a href="https://youtu.be/mgHJbqls-wk">
+          <img src="/youtube-video-thumbnail.png" width="100%">
+        </a>
+      </div>
+      <div style=${summaryStyle}>
+        You can now watch a video tutorial that goes though the process
+        of building a Tram-One app, from start to finish.
+        <br><br>
+        You can watch it on youtube here:
+        <a href="https://youtu.be/mgHJbqls-wk">https://youtu.be/mgHJbqls-wk</a>
+      </div>
+    </tcr>
+  `
+}
+
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
