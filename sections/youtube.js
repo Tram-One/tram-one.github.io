@@ -22,7 +22,7 @@ module.exports = (attrs, children) => {
       </div>
       <div style=${summaryStyle}>
         You can now watch a video tutorial that goes though the process
-        of building a Tram-One app, from start to finish.
+        of building a Tram-One app, from start to finish (does not use tram-one-express).
         <br><br>
         You can watch it on youtube here:
         <a href="https://youtu.be/mgHJbqls-wk">https://youtu.be/mgHJbqls-wk</a>

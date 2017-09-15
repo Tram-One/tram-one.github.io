@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,7 +78,7 @@
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({row})
 
 const twoColGrid = `
@@ -110,6 +110,36 @@ module.exports = (attrs, children) => {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+const Highlight = __webpack_require__(8)
+const highlightJS = __webpack_require__(9)
+const highlight = Highlight([highlightJS])
+
+const html = Tram.html()
+
+const codeStyle = `
+  margin: -1em 0px;
+  padding: 0 2em;
+  font-size: 1.25em;
+`
+
+module.exports = (attrs, children) => {
+  const formattedCode = highlight(attrs.code, {lang: 'js'})
+  const code = document.createElement('code')
+  code.innerHTML = formattedCode
+
+  return html`
+    <pre style=${codeStyle}>
+      ${code}
+    </pre>
+  `
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -146,36 +176,6 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Tram = __webpack_require__(0)
-const Highlight = __webpack_require__(8)
-const highlightJS = __webpack_require__(9)
-const highlight = Highlight([highlightJS])
-
-const html = Tram.html()
-
-const codeStyle = `
-  margin: -1em 0px;
-  padding: 0 2em;
-  font-size: 1.25em;
-`
-
-module.exports = (attrs, children) => {
-  const formattedCode = highlight(attrs.code, {lang: 'js'})
-  const code = document.createElement('code')
-  code.innerHTML = formattedCode
-
-  return html`
-    <pre style=${codeStyle}>
-      ${code}
-    </pre>
-  `
-}
-
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -185,12 +185,13 @@ const app = new Tram({defaultRoute: '/'})
 const contact = __webpack_require__(12)
 const custom = __webpack_require__(13)
 const example = __webpack_require__(14)
-const header = __webpack_require__(16)
-const install = __webpack_require__(17)
-const reducers = __webpack_require__(18)
-const routing = __webpack_require__(19)
-const github = __webpack_require__(15)
-const youtube = __webpack_require__(20)
+const header = __webpack_require__(17)
+const install = __webpack_require__(18)
+const reducers = __webpack_require__(19)
+const routing = __webpack_require__(20)
+const github = __webpack_require__(16)
+const youtube = __webpack_require__(21)
+const generator = __webpack_require__(15)
 
 const tracking = __webpack_require__(6)
 
@@ -198,7 +199,7 @@ const html = Tram.html({
   contact, custom, example,
   header, install, reducers,
   routing, github, tracking,
-  youtube
+  youtube, generator
 })
 
 const bg = {
@@ -231,8 +232,9 @@ const home = (state) => {
         <routing  color=${color.row2} bg=${bg.row2}></routing>
         <custom   color=${color.row1} bg=${bg.row1}></custom>
         <reducers color=${color.row2} bg=${bg.row2}></reducers>
-        <github   color=${color.s}    bg=${bg.s}></install>
-        <youtube  color=${color.row1} bg=${bg.row1}></install>
+        <generator  color=${color.row1} bg=${bg.row1}></generator>
+        <youtube  color=${color.row2} bg=${bg.row2}></youtube>
+        <github   color=${color.s}    bg=${bg.s}></github>
         <contact  color=${color.foot} bg=${bg.foot}></contact>
       </div>
       <tracking></tracking>
@@ -920,7 +922,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1008,7 +1010,7 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 const listItemProject = __webpack_require__(5)
 
@@ -1085,7 +1087,56 @@ module.exports = (attrs, children) => {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const twoColRow = __webpack_require__(1)
+const stylizedCode = __webpack_require__(2)
+
+const html = Tram.html({
+  tcr: twoColRow,
+  'style-code': stylizedCode
+})
+
+const summaryStyle = `
+  padding: 1em;
+  padding-left: 2em;
+  font-size: 1.25em;
+`
+
+const npmInstall = html`
+<pre style='font-size: 1.2em;'>
+$ npm install -g tram-one-express
+$ tram-one-express my-tram-app
+</pre>
+`
+
+module.exports = (attrs, children) => {
+  return html`
+    <tcr title="Tram-One Express" color=${attrs.color} bg=${attrs.bg}>
+      <div style=${summaryStyle}>
+        <a href="https://youtu.be/VhOYgQONUGY">
+          <img src="/express-video-thumbnail.png" width="100%">
+        </a>
+      </div>
+      <div style=${summaryStyle}>
+        If you want a quick and fast way to start using Tram-One, you can use Tram-One Express,
+        a generator for building Tram-One apps!
+        <br><br>
+        You can watch a short description of what the project does here:
+        <a href="https://youtu.be/mgHJbqls-wk">https://youtu.be/mgHJbqls-wk</a>
+
+        ${npmInstall}
+      </div>
+    </tcr>
+  `
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+
+const row = __webpack_require__(3)
 const html = Tram.html({
   row
 })
@@ -1115,12 +1166,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({
   row
 })
@@ -1164,12 +1215,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const row = __webpack_require__(2)
+const row = __webpack_require__(3)
 const html = Tram.html({
   row
 })
@@ -1192,12 +1243,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1259,12 +1310,12 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
 
-const stylizedCode = __webpack_require__(3)
+const stylizedCode = __webpack_require__(2)
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -1340,7 +1391,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1367,7 +1418,7 @@ module.exports = (attrs, children) => {
       </div>
       <div style=${summaryStyle}>
         You can now watch a video tutorial that goes though the process
-        of building a Tram-One app, from start to finish.
+        of building a Tram-One app, from start to finish (does not use tram-one-express).
         <br><br>
         You can watch it on youtube here:
         <a href="https://youtu.be/mgHJbqls-wk">https://youtu.be/mgHJbqls-wk</a>
@@ -1378,7 +1429,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
