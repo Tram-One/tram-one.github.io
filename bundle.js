@@ -182,22 +182,22 @@ module.exports = (attrs, children) => {
 const Tram = __webpack_require__(0)
 const app = new Tram({defaultRoute: '/'})
 
-const contact = __webpack_require__(12)
-const custom = __webpack_require__(13)
-const example = __webpack_require__(14)
-const header = __webpack_require__(17)
-const install = __webpack_require__(18)
-const reducers = __webpack_require__(19)
+const contact = __webpack_require__(13)
+const custom = __webpack_require__(14)
+const example = __webpack_require__(15)
+const header = __webpack_require__(18)
+const install = __webpack_require__(19)
+const actions = __webpack_require__(12)
 const routing = __webpack_require__(20)
-const github = __webpack_require__(16)
+const github = __webpack_require__(17)
 const youtube = __webpack_require__(21)
-const generator = __webpack_require__(15)
+const generator = __webpack_require__(16)
 
 const tracking = __webpack_require__(6)
 
 const html = Tram.html({
   contact, custom, example,
-  header, install, reducers,
+  header, install, actions,
   routing, github, tracking,
   youtube, generator
 })
@@ -231,7 +231,7 @@ const home = (state) => {
         <example  color=${color.row1} bg=${bg.row1}></example>
         <routing  color=${color.row2} bg=${bg.row2}></routing>
         <custom   color=${color.row1} bg=${bg.row1}></custom>
-        <reducers color=${color.row2} bg=${bg.row2}></reducers>
+        <actions color=${color.row2} bg=${bg.row2}></actions>
         <generator  color=${color.row1} bg=${bg.row1}></generator>
         <youtube  color=${color.row2} bg=${bg.row2}></youtube>
         <github   color=${color.s}    bg=${bg.s}></github>
@@ -867,6 +867,68 @@ module.exports = function tokenize (src, rules) {
 
 const Tram = __webpack_require__(0)
 
+const stylizedCode = __webpack_require__(2)
+const twoColRow = __webpack_require__(1)
+
+const html = Tram.html({
+  tcr: twoColRow,
+  'style-code': stylizedCode
+})
+
+const example = `
+  const commentActions = (store, actions) => {
+    init: () => 0,
+    like: (likes) => likes + 1
+  }
+
+  const comment = (store, actions) => {
+    onLike = () => {
+      actions.like()
+    }
+    return html\`
+      <div>
+        <h2> My Neat Post </h2>
+        Likes: \${store.likes}
+        <button onclick=\${onLike}>Like</button>
+      </div>
+    \`
+  }
+
+  app.addActions({comments: commentActions})
+`
+
+const summaryStyle = `
+  padding: 1em;
+  padding-left: 2em;
+  font-size: 1.25em;
+`
+
+module.exports = (attrs, children) => {
+  return html`
+    <tcr title="State Management" color=${attrs.color} bg=${attrs.bg}>
+      <div style=${summaryStyle}>
+        Tram-One follows a Flux-like architecture model with Hover-Engine.
+        If you're familiar with redux, it's very similar.
+        <br><br>
+
+        Flux follows a single flow architecture model. Views dispatch
+        actions, which in turn will update the store, which triggers
+        a re-render.
+      </div>
+      <div>
+        <style-code code=${example}></style-code>
+      </div>
+    </tcr>
+  `
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tram = __webpack_require__(0)
+
 const twoColRow = __webpack_require__(1)
 
 const html = Tram.html({
@@ -917,7 +979,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -951,7 +1013,7 @@ const example = `
     'todo': todo,
   })
 
-  const todoList = (state) => {
+  const todoList = (store) => {
     return html\`
       <div>
         <todo> Add Docs </todo>
@@ -1005,7 +1067,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1058,19 +1120,18 @@ module.exports = (attrs, children) => {
         For Rendering:
         <ul style='margin-top: 0px'>
           <lip href="https://github.com/substack/hyperx"></lip>
-          <lip href="https://github.com/shama/bel"></lip>
+          <lip href="https://github.com/jrjurman/bel-create-element"></lip>
           <lip href="https://github.com/aaaristo/rbel"></lip>
+          <lip href="https://github.com/choojs/nanomorph"></lip>
         </ul>
         For Routing
         <ul style='margin-top: 0px'>
-          <lip href="https://github.com/choojs/nanorouter"></lip>
+          <lip href="https://github.com/chrisdavies/rlite"></lip>
           <lip href="https://github.com/jrjurman/url-listener"></lip>
         </ul>
         For State Management
         <ul style='margin-top: 0px'>
-          <lip href="https://github.com/choojs/nanomorph"></lip>
-          <lip href="https://github.com/freeman-lab/minidux">minidux</lip>
-          <lip href="https://github.com/Raynos/xtend"></lip>
+          <lip href="https://github.com/JRJurman/hover-engine"></lip>
         </ul>
       </div>
       <div>
@@ -1082,7 +1143,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1131,7 +1192,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1166,7 +1227,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1215,7 +1276,7 @@ module.exports = (attrs, children) => {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tram = __webpack_require__(0)
@@ -1238,73 +1299,6 @@ module.exports = (attrs, children) => {
         npm install tram-one
       </div>
     </row>
-  `
-}
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Tram = __webpack_require__(0)
-
-const stylizedCode = __webpack_require__(2)
-const twoColRow = __webpack_require__(1)
-
-const html = Tram.html({
-  tcr: twoColRow,
-  'style-code': stylizedCode
-})
-
-const example = `
-  const commentReducer = (state, action) => {
-    switch(action.type) {
-      case('LIKE'):
-        return state.likes + 1
-      default:
-        return state
-    }
-  }
-
-  const comment = (state) => {
-    onLike = () => {
-      state.dispatch({type: 'LIKE'})
-    }
-    return html\`
-      <div>
-        <h2> My Neat Post </h2>
-        Likes: \${state.comment.likes}
-        <button onclick=\${onLike}>Like</button>
-      </div>
-    \`
-  }
-
-  app.addReducer('comment', commentReducer, 0)
-`
-
-const summaryStyle = `
-  padding: 1em;
-  padding-left: 2em;
-  font-size: 1.25em;
-`
-
-module.exports = (attrs, children) => {
-  return html`
-    <tcr title="State Management" color=${attrs.color} bg=${attrs.bg}>
-      <div style=${summaryStyle}>
-        Tram-One follows the Flux architecture model with minidux,
-        an API compliant tiny version of redux. If you're familiar
-        with redux, you'll feel right at home.
-        <br><br>
-
-        Flux follows a single flow architecture model. Views dispatch
-        actions, which in turn will update the store, which triggers
-        a re-render.
-      </div>
-      <div>
-        <style-code code=${example}></style-code>
-      </div>
-    </tcr>
   `
 }
 

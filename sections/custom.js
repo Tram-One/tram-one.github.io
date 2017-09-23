@@ -29,7 +29,7 @@ const example = `
     'todo': todo,
   })
 
-  const todoList = (state) => {
+  const todoList = (store) => {
     return html\`
       <div>
         <todo> Add Docs </todo>

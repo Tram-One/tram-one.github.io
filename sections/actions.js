@@ -9,29 +9,25 @@ const html = Tram.html({
 })
 
 const example = `
-  const commentReducer = (state, action) => {
-    switch(action.type) {
-      case('LIKE'):
-        return state.likes + 1
-      default:
-        return state
-    }
+  const commentActions = (store, actions) => {
+    init: () => 0,
+    like: (likes) => likes + 1
   }
 
-  const comment = (state) => {
-    onLike = () => {
-      state.dispatch({type: 'LIKE'})
+  const comment = (store, actions) => {
+    const onLike = () => {
+      actions.like()
     }
     return html\`
       <div>
         <h2> My Neat Post </h2>
-        Likes: \${state.comment.likes}
+        Likes: \${store.likes}
         <button onclick=\${onLike}>Like</button>
       </div>
     \`
   }
 
-  app.addReducer('comment', commentReducer, 0)
+  app.addActions({comments: commentActions})
 `
 
 const summaryStyle = `
@@ -44,9 +40,8 @@ module.exports = (attrs, children) => {
   return html`
     <tcr title="State Management" color=${attrs.color} bg=${attrs.bg}>
       <div style=${summaryStyle}>
-        Tram-One follows the Flux architecture model with minidux,
-        an API compliant tiny version of redux. If you're familiar
-        with redux, you'll feel right at home.
+        Tram-One follows a Flux-like architecture model with Hover-Engine.
+        If you're familiar with redux, it's very similar.
         <br><br>
 
         Flux follows a single flow architecture model. Views dispatch
