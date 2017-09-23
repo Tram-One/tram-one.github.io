@@ -882,7 +882,7 @@ const example = `
   }
 
   const comment = (store, actions) => {
-    onLike = () => {
+    const onLike = () => {
       actions.like()
     }
     return html\`
@@ -1318,25 +1318,23 @@ const html = Tram.html({
 })
 
 const example = `
-  const cats = (state) => {
-    const page = state.page ? state.page : 1
+  const cats = (store, actions, params) => {
     return html\`
       <div>
-        Here is the Page \${page} of cats!
+        Here is Page \${params.page} of cats!
       </div>
     \`
   }
 
-  const dogs = (state) => {
-    const page = state.page ? state.page : 1
+  const dogs = (store, actions, params) => {
     return html\`
       <div>
-        Here is the Page \${page} of dogs!
+        Here is Page \${params.page} of dogs!
       </div>
     \`
   }
 
-  const unknown = (state) => {
+  const unknown = () => {
     return html\`
       <div>No Animals Here...</div>
     \`
