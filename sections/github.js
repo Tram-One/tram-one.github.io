@@ -20,7 +20,7 @@ module.exports = (attrs, children) => {
     <row color=${attrs.color} bg=${attrs.bg}>
       <div style=${installStyle}>
         <a  style=${linkStyle}
-            href="https://github.com/jrjurman/tram-one">
+            href="https://github.com/Tram-One/tram-one">
           github.com/jrjurman/tram-one
         </a>
       </div>

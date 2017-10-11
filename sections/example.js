@@ -48,18 +48,18 @@ module.exports = (attrs, children) => {
         For Rendering:
         <ul style='margin-top: 0px'>
           <lip href="https://github.com/substack/hyperx"></lip>
-          <lip href="https://github.com/jrjurman/bel-create-element"></lip>
+          <lip href="https://github.com/Tram-One/bel-create-element"></lip>
           <lip href="https://github.com/aaaristo/rbel"></lip>
           <lip href="https://github.com/choojs/nanomorph"></lip>
         </ul>
         For Routing
         <ul style='margin-top: 0px'>
           <lip href="https://github.com/chrisdavies/rlite"></lip>
-          <lip href="https://github.com/jrjurman/url-listener"></lip>
+          <lip href="https://github.com/Tram-One/url-listener"></lip>
         </ul>
         For State Management
         <ul style='margin-top: 0px'>
-          <lip href="https://github.com/JRJurman/hover-engine"></lip>
+          <lip href="https://github.com/Tram-One/hover-engine"></lip>
         </ul>
       </div>
       <div>
