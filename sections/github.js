@@ -19,9 +19,9 @@ module.exports = (attrs, children) => {
   return html`
     <row color=${attrs.color} bg=${attrs.bg}>
       <div style=${installStyle}>
-        <a  style=${linkStyle}
+        <a style=${linkStyle}
             href="https://github.com/Tram-One/tram-one">
-          github.com/jrjurman/tram-one
+          github.com/Tram-One/tram-one
         </a>
       </div>
     </row>
