@@ -12,7 +12,6 @@ const codeStyle = `
 `
 
 module.exports = (attrs, children) => {
-
   const backgroundColor = attrs.background ? attrs.background : '#FFF8DD'
   const filenameStyle = `
     color: ${backgroundColor};

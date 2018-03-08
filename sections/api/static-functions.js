@@ -3,7 +3,10 @@ const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'code-block': require('../../elements/code-block'),
   'anchor-clip': require('../../elements/anchor-clip'),
-  'tram-html': require('./tram-html')
+  'tram-html': require('./tram-html'),
+  'tram-svg': require('./tram-svg'),
+  'tram-dom': require('./tram-dom'),
+  'tram-route': require('./tram-route')
 })
 
 const element = `
@@ -41,6 +44,9 @@ module.exports = (attrs) => {
       </section-block>
 
       <tram-html background=${attrs.background}/>
+      <tram-svg background=${attrs.background}/>
+      <tram-dom background=${attrs.background}/>
+      <tram-route background=${attrs.background}/>
     </div>
   `
 }

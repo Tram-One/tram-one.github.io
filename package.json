@@ -19,7 +19,7 @@
     "eslint-config-tram-one": "^2.0.0",
     "highlight-syntax": "^3.0.2",
     "jasmine": "^2.8.0",
-    "tram-one": "^5.0.0",
+    "tram-one": "^5.1.0",
     "xo": "^0.20.3"
   },
   "xo": {
