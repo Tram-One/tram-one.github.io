@@ -1,8 +1,8 @@
 const Tram = require('tram-one')
 const html = Tram.html({
-  'section-block': require('../elements/section-block'),
-  'code-block': require('../elements/code-block'),
-  'anchor-clip': require('../elements/anchor-clip')
+  'section-block': require('../../elements/section-block'),
+  'code-block': require('../../elements/code-block'),
+  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const code = `
@@ -56,7 +56,7 @@ app.addRoute('/animals', animals, [
 ])
 `
 
-module.exports = () => {
+module.exports = (attrs) => {
   return html`
     <div>
       <section-block>
@@ -71,7 +71,7 @@ module.exports = () => {
           lives on /404 . You can handle the route from there.
         </div>
         <div>
-          <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
             ${code}
           </code-block>
         </div>
@@ -83,7 +83,7 @@ module.exports = () => {
           passed into the page in the params object.
         </div>
         <div>
-          <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
             ${params}
           </code-block>
         </div>
@@ -95,7 +95,7 @@ module.exports = () => {
           for all of your pages (like a consistent navigation bar, or header).
         </div>
         <div>
-          <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
             ${nested}
           </code-block>
         </div>

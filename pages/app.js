@@ -1,11 +1,9 @@
 const Tram = require('tram-one')
 const html = Tram.html({
   'app-header': require('../components/app-header'),
-  'introduction': require('../sections/introduction'),
-  'features': require('../sections/features'),
-  'state-management': require('../sections/state-management'),
-  'custom-elements': require('../sections/custom-elements'),
-  'routing': require('../sections/routing')
+  'introduction': require('../sections/introduction/introduction'),
+  'features': require('../sections/features/features'),
+  'api': require('../sections/api/api')
 })
 
 module.exports = () => {
@@ -17,6 +15,7 @@ module.exports = () => {
       <custom-elements />
       <state-management />
       <routing />
+      <api />
     </div>
   `
 }

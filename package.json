@@ -2,6 +2,7 @@
   "name": "tram-one.github.io-v2",
   "version": "1.0.0",
   "scripts": {
+    "lint": "xo",
     "start": "budo main.js:bundle.js --pushstate --dir public --live",
     "prebuild": "cp -r public/ dist",
     "build": "browserify ./main.js -o ./dist/bundle.js -t [ babelify --presets [ env ] ]",

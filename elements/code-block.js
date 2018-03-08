@@ -11,14 +11,16 @@ const codeStyle = `
   font-family: 'Source Code Pro', monospace;
 `
 
-const filenameStyle = `
-  color: #FFF8DD;
-  font-size: 0.8em;
-  border-bottom: solid 0.1em #FFF8DD;
-  margin: 0.4em 0em;
-`
-
 module.exports = (attrs, children) => {
+
+  const backgroundColor = attrs.background ? attrs.background : '#FFF8DD'
+  const filenameStyle = `
+    color: ${backgroundColor};
+    font-size: 0.8em;
+    border-bottom: solid 0.1em ${backgroundColor};
+    margin: 0.4em 0em;
+  `
+
   const unformattedCode = children.map(child => child).join('').trim()
   const formattedCode = highlight(unformattedCode, {lang: 'js'})
   const codeDOM = html`<pre style=${codeStyle} />`

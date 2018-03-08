@@ -1,8 +1,8 @@
 const Tram = require('tram-one')
 const html = Tram.html({
-  'section-block': require('../elements/section-block'),
-  'code-block': require('../elements/code-block'),
-  'anchor-clip': require('../elements/anchor-clip')
+  'section-block': require('../../elements/section-block'),
+  'code-block': require('../../elements/code-block'),
+  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const myHeader = `
@@ -43,7 +43,7 @@ const Page = () => html\`
 \`
 `
 
-module.exports = () => {
+module.exports = (attrs) => {
   return html`
     <div>
       <section-block>
@@ -63,7 +63,7 @@ module.exports = () => {
           - the same interface as real HTML elements.
         </div>
         <div>
-          <code-block filename="my-header.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="my-header.js" style="margin: -1.6em 0 1.5em 0">
             ${myHeader}
           </code-block>
         </div>
@@ -76,7 +76,7 @@ module.exports = () => {
           use them in our html.
         </div>
         <div>
-          <code-block filename="page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="page.js" style="margin: -1.6em 0 1.5em 0">
             ${myApp}
           </code-block>
         </div>
@@ -90,7 +90,7 @@ module.exports = () => {
           hyphenated tags similar to web components.
         </div>
         <div>
-          <code-block filename="Page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="Page.js" style="margin: -1.6em 0 1.5em 0">
             ${reactApp}
           </code-block>
         </div>

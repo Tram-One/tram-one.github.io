@@ -1,8 +1,8 @@
 const Tram = require('tram-one')
 const html = Tram.html({
-  'section-block': require('../elements/section-block'),
-  'code-block': require('../elements/code-block'),
-  'anchor-clip': require('../elements/anchor-clip')
+  'section-block': require('../../elements/section-block'),
+  'code-block': require('../../elements/code-block'),
+  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const code = `
@@ -40,6 +40,10 @@ module.exports = () => {
           Tram-One is an orchestration of common features, and relies only on
           plain javascript, so you don't have to bother learning / parsing /
           transpiling special templating languages.
+          <br/><br/>
+          This site is a one-stop-shop with everything you need to know about
+          Tram-One. If you have any questions from this page or about Tram-One,
+          or just want to say hi, join our our Slack!
         </div>
         <div>
           <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">

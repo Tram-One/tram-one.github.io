@@ -1,8 +1,8 @@
 const Tram = require('tram-one')
 const html = Tram.html({
-  'section-block': require('../elements/section-block'),
-  'code-block': require('../elements/code-block'),
-  'anchor-clip': require('../elements/anchor-clip')
+  'section-block': require('../../elements/section-block'),
+  'code-block': require('../../elements/code-block'),
+  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const counter = `
@@ -35,7 +35,7 @@ module.exports = (store, actions) => html\`
 \`
 `
 
-module.exports = () => {
+module.exports = (attrs) => {
   return html`
     <div>
       <section-block>
@@ -55,7 +55,7 @@ module.exports = () => {
           takes the previous state, and returns an updated state.
         </div>
         <div>
-          <code-block filename="vote-actions.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="vote-actions.js" style="margin: -1.6em 0 1.5em 0">
             ${counter}
           </code-block>
         </div>
@@ -66,7 +66,7 @@ module.exports = () => {
           To use these actions, we'll need to add them to our app.
         </div>
         <div>
-          <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
             ${app}
           </code-block>
         </div>
@@ -79,7 +79,7 @@ module.exports = () => {
           object with all the methods we defined before.
         </div>
         <div>
-          <code-block filename="page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="page.js" style="margin: -1.6em 0 1.5em 0">
             ${page}
           </code-block>
         </div>
