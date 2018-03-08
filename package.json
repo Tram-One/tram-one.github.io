@@ -15,9 +15,15 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "budo": "^10.0.4",
-    "eslint-config-tram-one": "^1.2.0",
+    "eslint-config-tram-one": "^2.0.0",
     "highlight-syntax": "^3.0.2",
     "jasmine": "^2.8.0",
-    "tram-one": "^5.0.0"
+    "tram-one": "^5.0.0",
+    "xo": "^0.20.3"
+  },
+  "xo": {
+    "extends": [
+      "tram-one"
+    ]
   }
 }

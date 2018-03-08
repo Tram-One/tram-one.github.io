@@ -30,16 +30,16 @@ module.exports = (attrs) => {
   `
   const header = (() => {
     switch (attrs.tag) {
-      case 'h1':
+    case 'h1':
       return html`<h1 style=${headerStyle}>${content}</h1>`
-      case 'h2':
-      default:
+    case 'h2':
+    default:
       return html`<h2 style=${headerStyle}>${content}</h2>`
-      case 'h3':
+    case 'h3':
       return html`<h3 style=${headerStyle}>${content}</h3>`
-      case 'h4':
+    case 'h4':
       return html`<h4 style=${headerStyle}>${content}</h4>`
-      case 'h5':
+    case 'h5':
       return html`<h5 style=${headerStyle}>${content}</h5>`
     }
   })()

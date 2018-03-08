@@ -8,7 +8,7 @@ module.exports = (attrs, children) => {
     }
     event.preventDefault()
     const target = document.querySelector(attrs.href)
-    target.scrollIntoView({behavior: 'smooth',  block: "start"})
+    target.scrollIntoView({behavior: 'smooth', block: 'start'})
     window.history.pushState({}, '', attrs.href)
     setTimeout(() => target.focus(), 500)
   }

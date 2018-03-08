@@ -1,9 +1,9 @@
 const Tram = require('tram-one')
 const html = Tram.html()
 
-const Highlight = require('highlight-syntax')
+const highlightSyntax = require('highlight-syntax')
 const highlightJS = require('highlight-syntax/js')
-const highlight = Highlight([highlightJS])
+const highlight = highlightSyntax([highlightJS])
 
 const codeStyle = `
   margin: 0;

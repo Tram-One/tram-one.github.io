@@ -1,10 +1,10 @@
 const Tram = require('tram-one')
 const html = Tram.html({
   'tram-logo': require('./tram-logo'),
-  'nav-bar': require('./nav-bar'),
+  'nav-bar': require('./nav-bar')
 })
 
-const logoSize = "3.8em"
+const logoSize = '3.8em'
 
 const containerGrid = `
   font-size: 1.8em;

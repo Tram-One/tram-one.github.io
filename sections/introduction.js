@@ -1,6 +1,6 @@
 const Tram = require('tram-one')
 const html = Tram.html({
-  'section': require('../elements/section'),
+  'section-block': require('../elements/section-block'),
   'code-block': require('../elements/code-block'),
   'anchor-clip': require('../elements/anchor-clip')
 })
@@ -29,7 +29,7 @@ app.start('.main')
 module.exports = () => {
   return html`
     <div>
-      <section>
+      <section-block>
         <div>
           <anchor-clip tag="h2" id="introduction" header="Introduction"/>
         </div>
@@ -37,15 +37,16 @@ module.exports = () => {
           Tram-One is a light View Framework that comes with all the
           dependencies you need to start developing on the web.
           <br/><br/>
-          With tools like Custom Element definitons, Redux-like
-          State-Management, and Routing, you can start developing right away!
+          Tram-One is an orchestration of common features, and relies only on
+          plain javascript, so you don't have to bother learning / parsing /
+          transpiling special templating languages.
         </div>
         <div>
           <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
             ${code}
           </code-block>
         </div>
-      </section>
+      </section-block>
     </div>
   `
 }

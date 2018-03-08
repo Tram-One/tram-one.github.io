@@ -6,8 +6,8 @@ const html = Tram.html({
 const isNode = (element) => typeof element === 'object'
 
 const indexMap = {0: 'header', 1: 'text', 2: 'code'}
-const indexToField = (object, child, index, children) =>
- Object.assign({}, object, {[indexMap[index]]: child})
+const indexToField = (object, child, index) =>
+  Object.assign({}, object, {[indexMap[index]]: child})
 
 const containerGrid = `
   display: grid;
