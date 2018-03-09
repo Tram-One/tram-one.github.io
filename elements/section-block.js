@@ -12,7 +12,7 @@ const indexToField = (object, child, index) =>
 const containerGrid = `
   display: grid;
   font-size: 1.3em;
-  grid-template-columns: 25em auto;
+  grid-template-columns: 27em minmax(35em, calc(100% - 27em));
   grid-column-gap: 1.5em;
   grid-template-areas:
     "header code-spacer "

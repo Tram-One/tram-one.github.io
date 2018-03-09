@@ -55,7 +55,7 @@ module.exports = (attrs) => {
           takes the previous state, and returns an updated state.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="vote-actions.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="vote-actions.js">
             ${counter}
           </code-block>
         </div>
@@ -66,7 +66,7 @@ module.exports = (attrs) => {
           To use these actions, we'll need to add them to our app.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js">
             ${app}
           </code-block>
         </div>
@@ -79,7 +79,7 @@ module.exports = (attrs) => {
           object with all the methods we defined before.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="page.js">
             ${page}
           </code-block>
         </div>

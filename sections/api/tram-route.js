@@ -41,7 +41,7 @@ module.exports = (attrs) => {
           in <code-style>app.addRoute</code-style>.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="router.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="router.js">
             ${routes}
           </code-block>
         </div>

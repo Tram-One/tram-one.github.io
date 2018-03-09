@@ -37,7 +37,7 @@ module.exports = (attrs) => {
           Tram-One app to use these functions.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="element.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="element.js">
             ${element}
           </code-block>
         </div>

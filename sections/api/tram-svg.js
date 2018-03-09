@@ -33,7 +33,7 @@ module.exports = (attrs) => {
           components that are SVG.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="logo.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="logo.js">
             ${dom}
           </code-block>
         </div>

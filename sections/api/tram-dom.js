@@ -37,7 +37,7 @@ module.exports = (attrs) => {
           and SVG.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="toolbar.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="toolbar.js">
             ${dom}
           </code-block>
         </div>

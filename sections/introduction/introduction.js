@@ -46,7 +46,7 @@ module.exports = () => {
           or just want to say hi, join our our Slack!
         </div>
         <div>
-          <code-block filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block filename="app.js">
             ${code}
           </code-block>
         </div>

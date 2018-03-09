@@ -5,6 +5,10 @@ const highlightSyntax = require('highlight-syntax')
 const highlightJS = require('highlight-syntax/js')
 const highlight = highlightSyntax([highlightJS])
 
+const containerStyle = `
+  margin: -1.8em 0 2.5em 0;
+`
+
 const codeStyle = `
   margin: 0;
   font-size: 0.8em;
@@ -26,7 +30,7 @@ module.exports = (attrs, children) => {
   codeDOM.innerHTML = formattedCode
 
   return html`
-    <div style=${attrs.style}>
+    <div style=${containerStyle}>
       <div style=${filenameStyle}>
         ${attrs.filename}
       </div>

@@ -71,7 +71,7 @@ module.exports = (attrs) => {
           lives on /404 . You can handle the route from there.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js">
             ${code}
           </code-block>
         </div>
@@ -83,7 +83,7 @@ module.exports = (attrs) => {
           passed into the page in the params object.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js">
             ${params}
           </code-block>
         </div>
@@ -95,7 +95,7 @@ module.exports = (attrs) => {
           for all of your pages (like a consistent navigation bar, or header).
         </div>
         <div>
-          <code-block background=${attrs.background} filename="app.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="app.js">
             ${nested}
           </code-block>
         </div>

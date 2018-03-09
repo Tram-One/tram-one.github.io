@@ -2,6 +2,7 @@ const Tram = require('tram-one')
 const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'code-block': require('../../elements/code-block'),
+  'code-style': require('../../elements/code-style'),
   'anchor-clip': require('../../elements/anchor-clip')
 })
 
@@ -63,7 +64,7 @@ module.exports = (attrs) => {
           - the same interface as real HTML elements.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="my-header.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="my-header.js">
             ${myHeader}
           </code-block>
         </div>
@@ -71,12 +72,13 @@ module.exports = (attrs) => {
       <section-block>
         <div empty />
         <div>
-          We can pull in our new element by using the Tram.html function.
+          We can pull in our new element by using the
+          <code-style>Tram.html</code-style> function.
           We define all the custom elements here, and then can
           use them in our html.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="page.js">
             ${myApp}
           </code-block>
         </div>
@@ -90,7 +92,7 @@ module.exports = (attrs) => {
           hyphenated tags similar to web components.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="Page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="Page.js">
             ${reactApp}
           </code-block>
         </div>

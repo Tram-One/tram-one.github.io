@@ -54,7 +54,7 @@ module.exports = (attrs) => {
           that render your custom tags.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="page.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="page.js">
             ${code}
           </code-block>
         </div>
@@ -69,7 +69,7 @@ module.exports = (attrs) => {
           interact with it just like any other DOM.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="dom.js" style="margin: -1.6em 0 1.5em 0">
+          <code-block background=${attrs.background} filename="dom.js">
             ${dom}
           </code-block>
         </div>
