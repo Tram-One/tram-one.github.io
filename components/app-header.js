@@ -29,7 +29,7 @@ const headerStyle = `
 
 const linksStyle = `
   grid-area: links;
-  align-self: start;
+  align-items: baseline;
   padding-left: 0.25em;
 `
 

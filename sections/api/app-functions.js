@@ -3,7 +3,13 @@ const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'code-block': require('../../elements/code-block'),
   'anchor-clip': require('../../elements/anchor-clip'),
-  'add-actions': require('./add-actions')
+  'add-actions': require('./app-add-actions'),
+  'add-listener': require('./app-add-listener'),
+  'add-route': require('./app-add-route'),
+  'start': require('./app-start'),
+  'mount': require('./app-mount'),
+  'to-node': require('./app-to-node'),
+  'to-string': require('./app-to-string')
 })
 
 const app = `
@@ -40,6 +46,12 @@ module.exports = (attrs) => {
       </section-block>
 
       <add-actions background=${attrs.background} />
+      <add-listener background=${attrs.background} />
+      <add-route background=${attrs.background} />
+      <start background=${attrs.background} />
+      <mount background=${attrs.background} />
+      <to-node background=${attrs.background} />
+      <to-string background=${attrs.background} />
     </div>
   `
 }

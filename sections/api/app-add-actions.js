@@ -49,7 +49,7 @@ module.exports = (attrs) => {
       <section-block>
         <div>
           <code-style>
-            <anchor-clip tag="h4" id="add-actions" header="app.addActions(actionGroups)"/>
+            <anchor-clip tag="h4" id="app-add-actions" header="app.addActions(actionGroups)"/>
           </code-style>
         </div>
         <div>

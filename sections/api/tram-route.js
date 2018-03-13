@@ -16,12 +16,13 @@ app.addRoute('/', homePage, [
   route('/about', aboutPage)
 ])
 
+
 // navigating to /images/10/download will resolve as
-// homePage(store, actions, params,
-//   imagePage(store, actions, params,
-//     downloadImagePage(store, actions, params)
-//   )
-// )
+homePage(store, actions, params,
+  imagePage(store, actions, params,
+    downloadImagePage(store, actions, params)
+  )
+)
 `
 
 module.exports = (attrs) => {

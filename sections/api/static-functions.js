@@ -23,7 +23,7 @@ module.exports = (attrs) => {
           <anchor-clip tag="h3" id="static-functions" header="Static Functions"/>
         </div>
         <div>
-          Many of the building blocks for Tram-One apps are vanilla functions.
+          Many of the building blocks for Tram-One apps are basic functions.
           Tram-One provides helper functions to make these easier to build and
           connect.
         </div>
