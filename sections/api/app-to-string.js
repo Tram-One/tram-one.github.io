@@ -6,7 +6,20 @@ const html = Tram.html({
   'anchor-clip': require('../../elements/anchor-clip')
 })
 
-module.exports = () => {
+const code = `
+const homePage = (store) => html\`
+<div>
+  <h1> My New Blog Post </h1>
+  <span> Total Likes: \${store.votes} </span>
+</div>
+\`
+
+app.addRoute('/', homePage)
+const homeDOM = app.toString('/', {votes: 10})
+console.log(homeDOM) // --> <div><h1> ... Likes: 10</span></div>
+`
+
+module.exports = (attrs) => {
   return html`
     <div>
       <section-block>
@@ -22,7 +35,11 @@ module.exports = () => {
           <br/><br/>
           This can be useful if you want to do server-sider rendering or testing.
         </div>
-        <div empty />
+        <div>
+          <code-block background=${attrs.background} filename="app.js">
+            ${code}
+          </code-block>
+        </div>
       </section-block>
     </div>
   `

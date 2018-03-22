@@ -2,12 +2,12 @@ const Tram = require('tram-one')
 const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'anchor-clip': require('../../elements/anchor-clip'),
-  'static-functions': require('./static-functions'),
-  'constructor': require('./constructor'),
-  'app-functions': require('./app-functions')
+  'npm': require('./npm'),
+  'script-tag': require('./script-tag'),
+  'tram-one-express': require('./tram-one-express')
 })
 
-const background = '#DDEAFF'
+const background = '#FFDFDD'
 
 const apiStyle = `
   background: ${background};
@@ -18,16 +18,16 @@ module.exports = () => {
     <div style=${apiStyle}>
       <section-block>
         <div>
-          <anchor-clip tag="h2" id="api" header="API"/>
+          <anchor-clip tag="h2" id="install" header="Install"/>
         </div>
         <div>
-          Tram-One has a simple interface to help you build your web app.
+          There are multiple ways to get started with Tram-One!
         </div>
         <div empty />
       </section-block>
-      <static-functions background='#DDEAFF'/>
-      <constructor background='#DDEAFF'/>
-      <app-functions background='#DDEAFF'/>
+      <tram-one-express background=${background} />
+      <npm background=${background} />
+      <script-tag background=${background} />
     </div>
   `
 }

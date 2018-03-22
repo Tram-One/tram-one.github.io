@@ -10,7 +10,7 @@ const html = Tram.html({
 const background = '#DDFFDD'
 
 const featuresStyle = `
-  background: ${background}
+  background: ${background};
 `
 
 module.exports = () => {

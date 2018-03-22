@@ -6,7 +6,20 @@ const html = Tram.html({
   'anchor-clip': require('../../elements/anchor-clip')
 })
 
-module.exports = () => {
+const code = `
+const homePage = (store) => html\`
+<div>
+  <h1> My New Blog Post </h1>
+  <span> Total Likes: \${store.votes} </span>
+</div>
+\`
+
+app.addRoute('/', homePage)
+const homeDOM = app.toNode('/', {votes: 10})
+console.log(homeDOM) // --> HTMLDivElement
+`
+
+module.exports = (attrs) => {
   return html`
     <div>
       <section-block>
@@ -25,7 +38,11 @@ module.exports = () => {
           be useful if you want to manually attach the HTMLNode that Tram-One
           builds to whatever.
         </div>
-        <div empty />
+        <div>
+          <code-block background=${attrs.background} filename="app.js">
+            ${code}
+          </code-block>
+        </div>
       </section-block>
     </div>
   `
