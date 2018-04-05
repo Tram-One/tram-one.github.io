@@ -72,9 +72,9 @@ module.exports = (attrs) => {
       <section-block>
         <div empty />
         <div>
-          We can pull in our new element by using the
+          We can pull in our new element by passing a registry into the
           <code-style>Tram.html</code-style> function.
-          We define all the custom elements here, and then can
+          We define all the custom elements in the registry, and then can
           use them in our html.
         </div>
         <div>

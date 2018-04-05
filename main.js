@@ -22,4 +22,5 @@ const page = () => {
 
 
 app.addRoute('/', page)
+app.addRoute('/preview', require('./preview/page.js'))
 app.start('.main')
