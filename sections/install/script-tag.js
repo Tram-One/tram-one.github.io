@@ -9,7 +9,8 @@ const html = Tram.html({
 const code = `
 <html>
   <head>
-    <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js"></script>
+    <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js">
+    </script>
   </head>
   <body>
     <div class="main"></div>
@@ -47,7 +48,7 @@ module.exports = (attrs) => {
           <br/><br/>
           This is nice because it does not require a build system, and allows
           you to quickly see Tram-One running in your browser. However to build
-          larger applications, it's recommended that you use another solution.
+          larger applications, it's recommended that you use one of the above solutions.
         </div>
         <div>
           <code-block background=${attrs.background} filename="index.html">

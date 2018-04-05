@@ -7,13 +7,9 @@ const html = Tram.html({
   'install': require('../sections/install/install')
 })
 
-const pageStyle = `
-  padding-bottom: 5em;
-`
-
 module.exports = () => {
   return html`
-    <div style=${pageStyle}>
+    <div>
       <app-header />
       <introduction />
       <features />

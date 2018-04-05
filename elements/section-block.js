@@ -12,7 +12,7 @@ const indexToField = (object, child, index) =>
 const containerGrid = `
   display: grid;
   font-size: 1.3em;
-  grid-template-columns: 27em minmax(35em, calc(100% - 27em));
+  grid-template-columns: 24em minmax(35em, calc(100% - 24em));
   grid-column-gap: 1.5em;
   grid-template-areas:
     "header code-spacer "
@@ -27,6 +27,7 @@ const headerStyle = `
 const textStyle = `
   padding-left: 1rem;
   grid-area: text;
+  font-size: 0.9em;
 `
 
 const codeSpacer = `
@@ -48,18 +49,16 @@ module.exports = (attrs, children) => {
     .reduce(indexToField, {})
 
   return html`
-    <div>
-      <div style=${containerGrid}>
-        <div style=${headerStyle}>
-          ${header}
-        </div>
-        <div style=${textStyle}>
-          ${text}
-        </div>
-        <div style=${codeSpacer} />
-        <div style=${codeContainerStyle}>
-          ${code}
-        </div>
+    <div style=${containerGrid}>
+      <div style=${headerStyle}>
+        ${header}
+      </div>
+      <div style=${textStyle}>
+        ${text}
+      </div>
+      <div style=${codeSpacer} />
+      <div style=${codeContainerStyle}>
+        ${code}
       </div>
     </div>
   `
