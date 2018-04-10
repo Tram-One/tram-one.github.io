@@ -6,8 +6,8 @@
     "start": "budo main.js:bundle.js --pushstate --dir public --live",
     "prebuild": "rm -rf dist && cp -r public/ dist",
     "build": "browserify ./main.js -o ./dist/bundle.js -t [ babelify --presets [ env ] ]",
-    "pre-deploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b master",
     "test": "jasmine ./specs/specs.js"
   },
   "keywords": [
