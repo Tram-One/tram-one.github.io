@@ -8,7 +8,12 @@ const html = Tram.html({
 
 const code = `
 const Tram = require('tram-one')
-const app = new Tram({defaultRoute: '/'})
+
+const app = new Tram({
+  defaultRoute: '/',
+  webStorage: localStorage
+})
+
 const html = Tram.html()
 
 const home = (state) => {
@@ -33,8 +38,21 @@ module.exports = (attrs) => {
           object, for different configurations.
           <br/><br/>
           <code-style>defaultRoute</code-style> is the path that Tram-One will
-          go to when no others match. <br/>
-          By default, this is <code-style>'/404'</code-style>
+          go to when no others match. This can be useful as an error page, or
+          to force all routes to go to a home page.
+          <br/>
+          By default, this is <code-style>'/404'</code-style>, so adding an
+          error page to <code-style>'/404'</code-style> will cause all invalid
+          routes to navigate to that page.
+          <br/><br/>
+          <code-style>webStorage</code-style> is the object that state will
+          persist in.
+          <br/>
+          By default, this is <code-style>sessionStorage</code-style>, so app
+          state will persist between page reloads, but not when the page is
+          closed and re-opened. You can also set it to
+          <code-style>localStorage</code-style>, or your own plain javascript
+          object.
         </div>
         <div>
           <code-block background=${attrs.background} filename="app.js">

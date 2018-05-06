@@ -1,6 +1,7 @@
 const Tram = require('tram-one')
 const html = Tram.html({
   'section-block': require('../../elements/section-block'),
+  'code-style': require('../../elements/code-style'),
   'code-block': require('../../elements/code-block'),
   'anchor-clip': require('../../elements/anchor-clip')
 })
@@ -43,7 +44,8 @@ module.exports = (attrs) => {
           <anchor-clip tag="h3" id="state-management" header="State Management"/>
         </div>
         <div>
-          Tram-One follows a Flux-like architecture model with Hover-Engine.
+          Tram-One follows a Flux-like architecture model with
+          <a href="https://github.com/Tram-One/hover-engine">Hover-Engine</a>.
           If you're familiar with redux, it's very similar.
         </div>
         <div empty />
@@ -75,7 +77,8 @@ module.exports = (attrs) => {
         <div empty />
         <div>
           Now we can reference the store values, and call these actions on our
-          page. Pages have access to the different stores, and an actions
+          page. Pages have access to the different stores, and an
+          <code-style>actions</code-style>
           object with all the methods we defined before.
         </div>
         <div>

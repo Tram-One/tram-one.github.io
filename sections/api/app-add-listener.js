@@ -27,10 +27,9 @@ module.exports = (attrs) => {
         </div>
         <div>
           <code-style>app.addListener</code-style> adds a function that
-          triggers on every action call. This can be used to save state in
-          localstorage, or to debug the state of the store as actions are
-          called. This should not be used to update the DOM, only trigger
-          side-effects.
+          triggers on every action call. This can be used to debug the
+          state of the store as actions are called. This should not be used to
+          update the DOM, only trigger side-effects.
           <br/><br/>
           It takes in one argument, a function, which will have the new
           <code-style>store</code-style> value,
