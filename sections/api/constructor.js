@@ -48,11 +48,11 @@ module.exports = (attrs) => {
           <code-style>webStorage</code-style> is the object that state will
           persist in.
           <br/>
-          By default, this is <code-style>sessionStorage</code-style>, so app
-          state will persist between page reloads, but not when the page is
-          closed and re-opened. You can also set it to
-          <code-style>localStorage</code-style>, or your own plain javascript
-          object.
+          By default, this is <code-style>undefined</code-style>, so app
+          state will not persist between page reloads. You can set it to
+          <code-style>localStorage</code-style>,
+          <code-style>sessionStorage</code-style>,
+          or your own plain javascript object.
         </div>
         <div>
           <code-block background=${attrs.background} filename="app.js">
