@@ -28,7 +28,7 @@ module.exports = function () {
 },{"./nav-bar":2,"./tram-logo":3,"tram-one":78}],2:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n    <div style="', '', '">\n      <scroll-anchor style=', ' href="#introduction">Introduction</scroll-anchor>\n      <scroll-anchor style=', ' href="#features">Features</scroll-anchor>\n      <scroll-anchor style=', ' href="#install">Install</scroll-anchor>\n      <scroll-anchor style=', ' href="#api">API</scroll-anchor>\n      <nav-link style=', ' href="https://join.slack.com/t/tram-one/shared_invite/enQtMjY0NDA3OTg2MzQyLWUyMGIyZTYwNzZkNDJiNWNmNzdiOTMzYjg0YzMzZTkzZDE4MTlmN2Q2YjE0NDIwMGI3ODEzYzQ4ODdlMzQ2ODM">Slack</nav-link>\n      <nav-link style=', ' href="https://github.com/Tram-One">Github</nav-link>\n      <nav-link style=', ' href="https://www.npmjs.com/package/tram-one">NPM</nav-link>\n    </div>\n  '], ['\n    <div style="', '', '">\n      <scroll-anchor style=', ' href="#introduction">Introduction</scroll-anchor>\n      <scroll-anchor style=', ' href="#features">Features</scroll-anchor>\n      <scroll-anchor style=', ' href="#install">Install</scroll-anchor>\n      <scroll-anchor style=', ' href="#api">API</scroll-anchor>\n      <nav-link style=', ' href="https://join.slack.com/t/tram-one/shared_invite/enQtMjY0NDA3OTg2MzQyLWUyMGIyZTYwNzZkNDJiNWNmNzdiOTMzYjg0YzMzZTkzZDE4MTlmN2Q2YjE0NDIwMGI3ODEzYzQ4ODdlMzQ2ODM">Slack</nav-link>\n      <nav-link style=', ' href="https://github.com/Tram-One">Github</nav-link>\n      <nav-link style=', ' href="https://www.npmjs.com/package/tram-one">NPM</nav-link>\n    </div>\n  ']);
+var _templateObject = _taggedTemplateLiteral(['\n    <div style="', '', '">\n      <scroll-anchor style=', ' href="#introduction">Introduction</scroll-anchor>\n      <scroll-anchor style=', ' href="#features">Features</scroll-anchor>\n      <scroll-anchor style=', ' href="#install">Install</scroll-anchor>\n      <scroll-anchor style=', ' href="#api">API</scroll-anchor>\n      <nav-link style=', ' href="https://join.slack.com/t/tram-one/shared_invite/enQtMjY0NDA3OTg2MzQyLWUyMGIyZTYwNzZkNDJiNWNmNzdiOTMzYjg0YzMzZTkzZDE4MTlmN2Q2YjE0NDIwMGI3ODEzYzQ4ODdlMzQ2ODM">Slack</nav-link>\n      <nav-link style=', ' href="https://github.com/Tram-One">Github</nav-link>\n      <nav-link style=', ' href="https://www.npmjs.com/package/tram-one">NPM</nav-link>\n      <nav-link style=', ' href="https://stackblitz.com/edit/tram-one">StackBlitz</nav-link>\n    </div>\n  '], ['\n    <div style="', '', '">\n      <scroll-anchor style=', ' href="#introduction">Introduction</scroll-anchor>\n      <scroll-anchor style=', ' href="#features">Features</scroll-anchor>\n      <scroll-anchor style=', ' href="#install">Install</scroll-anchor>\n      <scroll-anchor style=', ' href="#api">API</scroll-anchor>\n      <nav-link style=', ' href="https://join.slack.com/t/tram-one/shared_invite/enQtMjY0NDA3OTg2MzQyLWUyMGIyZTYwNzZkNDJiNWNmNzdiOTMzYjg0YzMzZTkzZDE4MTlmN2Q2YjE0NDIwMGI3ODEzYzQ4ODdlMzQ2ODM">Slack</nav-link>\n      <nav-link style=', ' href="https://github.com/Tram-One">Github</nav-link>\n      <nav-link style=', ' href="https://www.npmjs.com/package/tram-one">NPM</nav-link>\n      <nav-link style=', ' href="https://stackblitz.com/edit/tram-one">StackBlitz</nav-link>\n    </div>\n  ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -42,8 +42,10 @@ var navGrid = '\n  display: flex;\n  flex-wrap: no wrap;\n  margin-bottom: 0.8em
 
 var linkStyle = '\n  padding: 0.4em 0.8em 0em 0.0em;\n';
 
+var externalStyle = '\n  padding: 0.4em 0.8em 0em 0.0em;\n  color: #3939ab;\n';
+
 module.exports = function (attrs) {
-  return html(_templateObject, navGrid, attrs.style, linkStyle, linkStyle, linkStyle, linkStyle, linkStyle, linkStyle, linkStyle);
+  return html(_templateObject, navGrid, attrs.style, linkStyle, linkStyle, linkStyle, linkStyle, externalStyle, externalStyle, externalStyle, externalStyle);
 };
 
 },{"../elements/nav-link":7,"../elements/scroll-anchor":8,"tram-one":78}],3:[function(require,module,exports){
