@@ -33,7 +33,7 @@ module.exports = (attrs) => {
           </a>
         </div>
         <div>
-          <code-block background=${attrs.background} filename="index.html">
+          <code-block background=${attrs.background} filename="install.sh">
             ${install}
           </code-block>
         </div>
