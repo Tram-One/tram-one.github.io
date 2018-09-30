@@ -56,17 +56,12 @@ module.exports = (attrs) => {
           <br/>
           <code-style>subroutes</code-style> should be a list of route objects.
           <br/>
-          The <code-style>subroute</code-style> parameter for the top level
-          component function is filled in when a subroute is resolved.
           <br/><br/>
-          It takes in one argument, a function, which will have the new
-          <code-style>store</code-style> value,
-          <code-style>actions</code-style>,
-          the <code-style>actionName</code-style> that was called,
-          and <code-style>actionArguements</code-style> (if any).
+          Pages (or top level components) are functions, which will have the
+          <code-style>store</code-style>, <code-style>actions</code-style>,
+          <code-style>params</code-style> from the url, and a subroute component (if one is resolved).
           <br/><br/>
-          The <code-style>params</code-style> object passed into the top level
-          component will have any path parameters and query params.
+          The <code-style>params</code-style> object will have any path parameters and query params.
         </div>
         <div>
           <code-block background=${attrs.background} filename="home.js">
