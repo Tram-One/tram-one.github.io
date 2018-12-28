@@ -6,11 +6,6 @@ const html = Tram.html({
   'anchor-clip': require('../../elements/anchor-clip')
 })
 
-const install = `
-npm install -g tram-one-express
-tram-one-express my-tram-app
-`
-
 module.exports = (attrs) => {
   return html`
     <div>
@@ -34,7 +29,7 @@ module.exports = (attrs) => {
         </div>
         <div>
           <code-block background=${attrs.background} filename="install.sh">
-            ${install}
+            npx tram-one-express my-tram-app
           </code-block>
         </div>
       </section-block>
