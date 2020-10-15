@@ -43,7 +43,7 @@ module.exports = () => {
           <br/><br/>
           This site is a one-stop-shop with everything you need to know about
           Tram-One. If you have any questions from this page or about Tram-One,
-          or just want to say hi, join our Slack!
+          or just want to say hi, <a href='https://discord.gg/dpBXAQC' >join our Discord</a>!
         </div>
         <div>
           <code-block filename="app.js">
