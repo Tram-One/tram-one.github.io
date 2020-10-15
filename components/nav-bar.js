@@ -1,22 +1,22 @@
 const Tram = require('tram-one')
 const html = Tram.html({
   'scroll-anchor': require('../elements/scroll-anchor'),
-  'nav-link': require('../elements/nav-link'),
+  'nav-link': require('../elements/nav-link')
 })
 
 const navGrid = `
-  display: flex
-  flex-wrap: no wrap
-  margin-bottom: 0.8em
+  display: flex;
+  flex-wrap: no wrap;
+  margin-bottom: 0.8em;
 `
 
 const linkStyle = `
-  padding: 0.4em 0.8em 0em 0.0em
+  padding: 0.4em 0.8em 0em 0.0em;
 `
 
 const externalStyle = `
-  padding: 0.4em 0.8em 0em 0.0em
-  color: #3939ab
+  padding: 0.4em 0.8em 0em 0.0em;
+  color: #3939ab;
 `
 
 module.exports = (attrs) => {
