@@ -6,24 +6,19 @@ const html = Tram.html({
 })
 
 const code = `
-const Tram = require('tram-one')
-const app = new Tram()
+const {registerHtml, start} = require('tram-one')
 
-const html = Tram.html()
-const page = () => {
+const html = registerHtml()
+const home = () => {
   return html\`
     <div>
-      <h1> Fun Times on Tram-One! </h1>
-      <h2> With Custom Elements </h2>
-      <h2> Routing </h2>
-      <h2> and Redux State Management </h2>
-      <h1> Batteries Included! </h1>
+      <h1> Tram-One </h1>
+      <h2> A Modern View Framework For Pure Javascript </h2>
     </div>
   \`
 }
 
-app.addRoute('/', page)
-app.start('.main')
+start('#app', home)
 `
 
 module.exports = () => {
