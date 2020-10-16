@@ -4,7 +4,9 @@ const html = Tram.html({
   'anchor-clip': require('../../elements/anchor-clip'),
   'code-block': require('../../elements/code-block'),
   'register-html': require('./register-html'),
-  'register-svg': require('./register-svg')
+  'register-svg': require('./register-svg'),
+  'use-observable': require('./use-observable'),
+  'use-global-observable': require('./use-global-observable')
 })
 
 const background = '#DDEAFF'
@@ -25,9 +27,10 @@ module.exports = () => {
         </div>
         <div empty />
       </section-block>
-      <constructor background='#DDEAFF'/>
       <register-html background='#DDEAFF'/>
       <register-svg background='#DDEAFF'/>
+      <use-observable background='#DDEAFF'/>
+      <use-global-observable background='#DDEAFF'/>
     </div>
   `
 }
