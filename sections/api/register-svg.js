@@ -7,11 +7,14 @@ const html = Tram.html({
 })
 
 const dom = `
-const svg = Tram.svg()
-const logo = () => svg\`
-  <svg viewBox="0 0 864 864">
+import { registerSvg } from 'tram-one'
+
+const svg = registerSvg()
+
+const home = () => svg\`
+  <svg>
     <g>
-      <circle fill="#FDF491" cx="100" cy="100" r="20"/>
+      <circle fill="#ce1271" cx="100" cy="100" r="20"/>
     </g>
   </svg>
 \`
@@ -23,17 +26,14 @@ module.exports = (attrs) => {
       <section-block>
         <div>
           <code-style>
-            <anchor-clip tag="h4" id="tram-svg" header="Tram.svg([registry])"/>
+            <anchor-clip tag="h4" id="register-svg" header="regsiterSvg"/>
           </code-style>
         </div>
         <div>
-          <code-style>Tram.svg</code-style> is the same as
-          <code-style>Tram.html</code-style>, but will create elements in the
-          appropriate SVG namespace. Use this method if you're building
-          components that are SVG.
+          Function to generate a tagged template function for SVG.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="logo.js">
+          <code-block background=${attrs.background} filename="registerSvg.js">
             ${dom}
           </code-block>
         </div>
