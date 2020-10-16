@@ -2,9 +2,9 @@ const Tram = require('tram-one')
 const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'anchor-clip': require('../../elements/anchor-clip'),
-  'static-functions': require('./static-functions'),
-  'constructor': require('./constructor'),
-  'app-functions': require('./app-functions')
+  'code-block': require('../../elements/code-block'),
+  'register-html': require('./register-html'),
+  'register-svg': require('./register-svg')
 })
 
 const background = '#DDEAFF'
@@ -25,9 +25,9 @@ module.exports = () => {
         </div>
         <div empty />
       </section-block>
-      <static-functions background='#DDEAFF'/>
       <constructor background='#DDEAFF'/>
-      <app-functions background='#DDEAFF'/>
+      <register-html background='#DDEAFF'/>
+      <register-svg background='#DDEAFF'/>
     </div>
   `
 }
