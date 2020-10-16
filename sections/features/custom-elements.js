@@ -49,11 +49,8 @@ module.exports = (attrs) => {
     <div>
       <section-block>
         <div>
-          <anchor-clip tag="h3" id="custom-elements" header="Custom Element Definitions"/>
-        </div>
-        <div>
-          Tram-One supports creating custom tags, which can be used in your html
-          just like any other html tag.
+          Tram-One relies only on ES6 Template Strings, which are
+          <a href="https://caniuse.com/template-literals">supported in most major browsers</a>.
         </div>
         <div empty />
       </section-block>
