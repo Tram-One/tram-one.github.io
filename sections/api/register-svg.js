@@ -33,7 +33,7 @@ module.exports = (attrs) => {
           Function to generate a tagged template function for SVG.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="registerSvg.js">
+          <code-block background=${attrs.background} filename="svg-custom-components.js">
             ${dom}
           </code-block>
         </div>

@@ -7,23 +7,27 @@ const html = Tram.html({
 })
 
 const code = `
-  import { start, registerHtml } from 'tram-one'
+import { start, registerHtml } from 'tram-one'
 
-  const html = registerHtml()
+const html = registerHtml()
 
-  const home = () => {
-      return html\`<h1>Tram-One</h1>\`
-    }
+const home = () => {
+    return html\`<h1>Tram-One</h1>\`
   }
+}
 `
 
 const registry = `
-  import { registerHtml } from 'tram-one'
-  import customHeader from './custom-header'
+import { registerHtml } from 'tram-one'
+import customHeader from './custom-header'
 
-  const html = registerHtml({
-    'custom-header': customHeader
-  })
+const html = registerHtml({
+  'custom-header': customHeader
+})
+
+const home = () => html\`
+  <custom-header />
+\`
 `
 
 module.exports = (attrs) => {
@@ -37,11 +41,12 @@ module.exports = (attrs) => {
         </div>
         <div>
           Function to generate a tagged template function for XHTML / HTML. 
-          Takes in a registry that allows you to import other tag functions and 
-          use them in your template string.
+          Takes in a mapping of the tag name (a string) to the function 
+          (another tram one component) that allows you to import other tag functions 
+          and use them in your template string.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="noHtmlRegistry.js">
+          <code-block background=${attrs.background} filename="html-function.js">
             ${code}
           </code-block>
         </div>
@@ -54,7 +59,7 @@ module.exports = (attrs) => {
           <div empty />
         </div>
         <div>
-          <code-block background=${attrs.background} filename="htmlRegistry.js">
+          <code-block background=${attrs.background} filename="custom-components.js">
             ${registry}
           </code-block>
         </div>
