@@ -29,6 +29,15 @@ const home = () => html\`
   <custom-header />
 \`
 `
+const header = `
+import { registerHtml } from 'tram-one'
+
+const html = registerHtml()
+
+export default () => html\`
+  <h1>Tram-One</h1>
+\`
+`
 
 module.exports = (attrs) => {
   return html`
@@ -48,6 +57,19 @@ module.exports = (attrs) => {
         <div>
           <code-block background=${attrs.background} filename="html-function.js">
             ${code}
+          </code-block>
+        </div>
+      </section-block>
+      <section-block>
+        <div>
+          <div empty />
+        </div>
+        <div>
+          <div empty />
+        </div>
+        <div>
+          <code-block background=${attrs.background} filename="custom-header.js">
+            ${header}
           </code-block>
         </div>
       </section-block>
