@@ -31,6 +31,8 @@ module.exports = (attrs) => {
         </div>
         <div>
           Function to generate a tagged template function for SVG.
+          This acts identical to <code-style>registerHtml</code-style>, but 
+          uses DOM methods for building svg graphics.
         </div>
         <div>
           <code-block background=${attrs.background} filename="svg-custom-components.js">
