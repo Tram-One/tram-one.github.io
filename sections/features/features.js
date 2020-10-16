@@ -2,10 +2,7 @@ const Tram = require('tram-one')
 const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'code-block': require('../../elements/code-block'),
-  'anchor-clip': require('../../elements/anchor-clip'),
-  'state-management': require('./state-management'),
-  'custom-elements': require('./custom-elements'),
-  'routing': require('./routing')
+  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const background = '#DDFFDD'
