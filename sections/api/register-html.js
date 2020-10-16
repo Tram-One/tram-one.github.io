@@ -6,7 +6,7 @@ const html = Tram.html({
   'anchor-clip': require('../../elements/anchor-clip')
 })
 
-const code = `
+const htmlFunction = `
 import { start, registerHtml } from 'tram-one'
 
 const html = registerHtml()
@@ -54,7 +54,7 @@ module.exports = (attrs) => {
         </div>
         <div>
           <code-block background=${attrs.background} filename="html-function.js">
-            ${code}
+            ${htmlFunction}
           </code-block>
         </div>
       </section-block>
