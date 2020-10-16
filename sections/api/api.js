@@ -13,7 +13,7 @@ const apiStyle = `
   background: ${background};
 `
 
-module.exports = (attrs) => {
+module.exports = () => {
   return html`
     <div style=${apiStyle}>
       <section-block>
