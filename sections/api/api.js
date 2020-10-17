@@ -8,7 +8,8 @@ const html = Tram.html({
   'register-svg': require('./register-svg'),
   'use-observable': require('./use-observable'),
   'use-global-observable': require('./use-global-observable'),
-  'use-effect': require('./use-effect')
+  'use-effect': require('./use-effect'),
+  'use-url-params': require('./use-url-params')
 })
 
 const background = '#DDEAFF'
@@ -35,6 +36,7 @@ module.exports = () => {
       <use-observable background=${background}/>
       <use-global-observable background=${background}/>
       <use-effect background=${background}/>
+      <use-url-params background=${background}/>
     </div>
   `
 }
