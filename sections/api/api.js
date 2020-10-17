@@ -3,10 +3,12 @@ const html = Tram.html({
   'section-block': require('../../elements/section-block'),
   'anchor-clip': require('../../elements/anchor-clip'),
   'code-block': require('../../elements/code-block'),
+  'start': require('./start'),
   'register-html': require('./register-html'),
   'register-svg': require('./register-svg'),
   'use-observable': require('./use-observable'),
-  'use-global-observable': require('./use-global-observable')
+  'use-global-observable': require('./use-global-observable'),
+  'use-effect': require('./use-effect')
 })
 
 const background = '#DDEAFF'
@@ -27,10 +29,12 @@ module.exports = () => {
         </div>
         <div empty />
       </section-block>
-      <register-html background='#DDEAFF'/>
-      <register-svg background='#DDEAFF'/>
-      <use-observable background='#DDEAFF'/>
-      <use-global-observable background='#DDEAFF'/>
+      <start background=${background}/>
+      <register-html background=${background}/>
+      <register-svg background=${background}/>
+      <use-observable background=${background}/>
+      <use-global-observable background=${background}/>
+      <use-effect background=${background}/>
     </div>
   `
 }

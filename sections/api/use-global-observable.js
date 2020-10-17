@@ -43,6 +43,7 @@ module.exports = (attrs) => {
         </div>
         <div>
           Hook that stores global state and makes it accessible in the component and across the app.
+          <br/><br/>
           This in part fills the role of React's Context API, but mimics the interface
           of React's useState or Tram-One's useObservable hook.
         </div>
