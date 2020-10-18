@@ -53,7 +53,7 @@ module.exports = (attrs) => {
           does not match.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="query-path.js">
+          <code-block background=${attrs.background}>
             ${checkUrlPath}
           </code-block>
         </div>
@@ -69,7 +69,7 @@ module.exports = (attrs) => {
           <a href="https://www.npmjs.com/package/rlite-router">rlite</a>.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="query-params.js">
+          <code-block background=${attrs.background}>
             ${checkUrlParams}
           </code-block>
         </div>

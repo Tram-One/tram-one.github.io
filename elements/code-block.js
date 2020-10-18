@@ -22,7 +22,11 @@ module.exports = (attrs, children) => {
     font-size: 0.8em;
     border-bottom: solid 0.1em ${backgroundColor};
     margin: 0.4em 0em;
-  ` : ''
+  ` : `
+    color: ${backgroundColor};
+    border-bottom: solid 0.1em ${backgroundColor};
+    margin: 1.2em 0em 0.4em 0em;
+  `
 
   const unformattedCode = children.map(child => child).join('').trim()
   const formattedCode = highlight(unformattedCode, {lang: 'js'})
