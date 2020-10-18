@@ -47,7 +47,7 @@ module.exports = (attrs) => {
 					This should only be called for the initial render / building of the app.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="start-element.js">
+          <code-block background=${attrs.background}>
             ${startElement}
           </code-block>
         </div>
@@ -58,10 +58,11 @@ module.exports = (attrs) => {
 				</div>
         <div>
 					You can call this with a CSS selector, or directly on a DOM element.
-					Calling directly on a DOM element can be useful for server-side rendering.
+          Calling directly on a DOM element can be useful for server-side rendering
+          and testing!
         </div>
         <div>
-          <code-block background=${attrs.background} filename="start-dom.js">
+          <code-block background=${attrs.background}>
             ${startDom}
           </code-block>
         </div>

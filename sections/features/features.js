@@ -68,7 +68,7 @@ module.exports = () => {
           It also means that when debugging you can look at the raw javascript, source-maps not required!
         </div>
         <div>
-          <code-block filename="template.js">
+          <code-block background=${background}>
             ${templateStringCode}
           </code-block>
         </div>
@@ -85,7 +85,7 @@ module.exports = () => {
           which allow for routing, effects, component state, and global state management.
         </div>
         <div>
-          <code-block filename="hooks.js">
+          <code-block background=${background}>
             ${stateCode}
           </code-block>
         </div>
@@ -99,7 +99,7 @@ module.exports = () => {
           should be familiar and confortable to React developers.
         </div>
         <div>
-          <code-block filename="components.js">
+          <code-block background=${background}>
             ${componentCode}
           </code-block>
         </div>

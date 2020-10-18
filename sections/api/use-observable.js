@@ -52,7 +52,7 @@ module.exports = (attrs) => {
           then only the components that are dependent on that value will update.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="hooks-primitive.js">
+          <code-block background=${attrs.background}>
             ${primitiveObservable}
           </code-block>
         </div>
@@ -66,7 +66,7 @@ module.exports = (attrs) => {
           and cause only components that are reactive to the sub-fields to update.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="hooks-object.js">
+          <code-block background=${attrs.background}>
             ${objectObservable}
           </code-block>
         </div>

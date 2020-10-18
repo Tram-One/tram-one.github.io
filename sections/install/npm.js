@@ -22,7 +22,7 @@ module.exports = (attrs) => {
           </a>
         </div>
         <div>
-          <code-block background=${attrs.background} filename="install.sh">
+          <code-block background=${attrs.background}>
             npm install --save tram-one
           </code-block>
         </div>

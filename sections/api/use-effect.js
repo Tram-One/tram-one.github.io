@@ -40,7 +40,7 @@ module.exports = (attrs) => {
           which means async functions are okay!
         </div>
         <div>
-          <code-block background=${attrs.background} filename="use-effect.js">
+          <code-block background=${attrs.background}>
             ${useEffect}
           </code-block>
         </div>

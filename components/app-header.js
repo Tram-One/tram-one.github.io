@@ -7,7 +7,7 @@ const html = Tram.html({
 const logoSize = '3.8em'
 
 const containerGrid = `
-  font-size: 1.8em;
+  font-size: 1.2em;
   padding-left: 1rem;
   display: grid;
   grid-template-columns: ${logoSize} auto;

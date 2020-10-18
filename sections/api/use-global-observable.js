@@ -48,7 +48,7 @@ module.exports = (attrs) => {
           of React's useState or Tram-One's useObservable hook.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="hooks-primitive.js">
+          <code-block background=${attrs.background}>
             ${globalObservable}
           </code-block>
         </div>
@@ -60,7 +60,7 @@ module.exports = (attrs) => {
           The key can be used to access the value anywhere in the app.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="value-display.js">
+          <code-block background=${attrs.background}>
             ${valueDisplay}
           </code-block>
         </div>

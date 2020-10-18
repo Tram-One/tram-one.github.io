@@ -7,27 +7,25 @@ const html = Tram.html({
 })
 
 const code = `
-<html>
-  <head>
-    <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js">
-    </script>
-  </head>
-  <body>
-    <div class="main"></div>
-    <script>
-      const Tram = window['tram-one']
-      const html = Tram.html()
-      const app = new Tram()
+<body>
+  <div class="main"></div>
+  <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js"></script>
+  <script>
+    const { registerHtml, start } = window['tram-one']
+    const html = registerHtml()
 
-      const page = () => {
-        return html\`<div><h2>UMD Page Example</h2></div>\`
-      }
+    const page = () => {
+      return html\`
+        <div>
+          <h1>Tram-One</h1>
+          Learn more at <a href="tram-one.io">tram-one.io</a>
+        </div>
+      \`
+    }
 
-      app.addRoute('/page', page)
-      app.start('.main', '/page')
-    </script>
-  </body>
-</html>
+    start('.main', page)
+  </script>
+</body>
 `
 
 module.exports = (attrs) => {
@@ -51,7 +49,7 @@ module.exports = (attrs) => {
           larger applications, it's recommended that you use one of the above solutions.
         </div>
         <div>
-          <code-block background=${attrs.background} filename="index.html">
+          <code-block background=${attrs.background}>
             ${code}
           </code-block>
         </div>

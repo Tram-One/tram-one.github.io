@@ -41,7 +41,7 @@ module.exports = () => {
           or just want to say hi, <a href='https://discord.gg/dpBXAQC' >join our Discord</a>!
         </div>
         <div>
-          <code-block filename="app.js">
+          <code-block>
             ${code}
           </code-block>
         </div>

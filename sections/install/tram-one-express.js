@@ -28,8 +28,8 @@ module.exports = (attrs) => {
           </a>
         </div>
         <div>
-          <code-block background=${attrs.background} filename="install.sh">
-            npx tram-one-express my-tram-app
+          <code-block background=${attrs.background}>
+            npx tram-one-express <app-name>
           </code-block>
         </div>
       </section-block>

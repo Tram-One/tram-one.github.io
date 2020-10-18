@@ -11,7 +11,8 @@ const indexToField = (object, child, index) =>
 
 const containerGrid = `
   display: grid;
-  font-size: 1.3em;
+  font-size: 1em;
+  padding-left: 1.5em;
   grid-template-columns: 24em minmax(35em, calc(100% - 24em));
   grid-column-gap: 1.5em;
   grid-template-areas:
@@ -26,6 +27,7 @@ const headerStyle = `
 
 const textStyle = `
   padding-left: 1rem;
+  padding-bottom: 1rem;
   grid-area: text;
   font-size: 0.9em;
 `
