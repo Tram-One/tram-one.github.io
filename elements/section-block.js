@@ -51,7 +51,7 @@ module.exports = (attrs, children) => {
     .reduce(indexToField, {})
 
   return html`
-    <div style=${containerGrid}>
+    <div class="section-block" style=${containerGrid}>
       <div style=${headerStyle}>
         ${header}
       </div>

@@ -9,7 +9,7 @@ const codeStyle = `
 `
 
 module.exports = (attrs, children) => html`
-  <span style=${codeStyle}>
+  <span class="code-style" style=${codeStyle}>
     ${children}
   </span>
 `
