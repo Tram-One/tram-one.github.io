@@ -1,7 +1,8 @@
 const Tram = require('tram-one')
 const html = Tram.html({
   'tram-logo': require('./tram-logo'),
-  'nav-bar': require('./nav-bar')
+  'nav-bar': require('./nav-bar'),
+  'sticky-nav-bar': require('./sticky-nav-bar')
 })
 
 const logoSize = '3.8em'
