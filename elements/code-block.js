@@ -34,7 +34,7 @@ module.exports = (attrs, children) => {
   codeDOM.innerHTML = formattedCode
 
   return html`
-    <div style=${containerStyle}>
+    <div class="code-block" style=${containerStyle}>
       <div style=${filenameStyle}>
         ${attrs.filename}
       </div>

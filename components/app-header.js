@@ -35,7 +35,7 @@ const linksStyle = `
 
 module.exports = () => {
   return html`
-    <div style=${containerGrid}>
+    <div class="app-header" style=${containerGrid}>
       <tram-logo style=${logoStyle} size=${logoSize} />
       <h1 style=${headerStyle}>
         Tram-One

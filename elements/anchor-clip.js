@@ -44,8 +44,9 @@ module.exports = (attrs) => {
     }
   })()
 
+  const id = attrs.id || attrs.header
   return html`
-    <scroll-anchor class="section-header" id=${attrs.id} href="#${attrs.id}" style=${linkStyle}>
+    <scroll-anchor class="anchor-clip" id=${id} href="#${id}" style=${linkStyle}>
       ${header}
     </scroll-anchor>
   `

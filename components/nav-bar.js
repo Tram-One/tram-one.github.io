@@ -21,7 +21,7 @@ const externalStyle = `
 
 module.exports = (attrs) => {
   return html`
-    <div style="${navGrid}${attrs.style}">
+    <div class="nav-bar" style="${navGrid}${attrs.style}">
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#features">Features</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#install">Install</scroll-anchor>
