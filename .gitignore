@@ -1,8 +1,6 @@
 # Distributable
 dist
-
-# Files built when testing
-specs/spec-bundle.js
+.cache
 
 # Logs
 logs

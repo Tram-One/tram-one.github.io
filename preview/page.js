@@ -1,6 +1,6 @@
-const Tram = require('tram-one')
-const html = Tram.html({
-  'tram-logo': require('../components/tram-logo'),
+import { registerHtml } from 'tram-one'
+const html = registerHtml({
+  'tram-logo': require('../tram-one/tram-logo'),
   'code-block': require('../elements/code-block')
 })
 

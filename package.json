@@ -1,35 +1,43 @@
 {
-  "name": "tram-one.github.io-v2",
+  "name": "tram-one.github.io",
   "version": "1.0.0",
   "scripts": {
-    "lint": "xo",
-    "start": "budo main.js:bundle.js --pushstate --dir public --live",
-    "prebuild": "rm -rf dist && cp -r public/ dist",
-    "build": "browserify ./main.js -o ./dist/bundle.js -t [ babelify --presets [ env ] ]",
-    "postbuild": "tram-build-page -a ./main.js -r / -i ./public/index.html -o ./dist/index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b master",
-    "test": "jasmine ./specs/specs.js"
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
+    "test": "jest --watch",
+    "lint": "xo"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^6.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "core-js": "^3.3.1",
+    "eslint-config-tram-one": "^4.0.0",
+    "highlight-syntax": "^3.0.2",
+    "jest": "^24.8.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
+    "jest-transform-css": "^2.0.0",
+    "parcel-bundler": "^1.6.1",
+    "parcel-plugin-nuke-dist": "^1.0.0",
+    "regenerator-runtime": "^0.13.3",
+    "sass": "^1.20.1",
+    "tram-blueprints": "^1.0.0",
+    "tram-one": "^9.0.0",
+    "xo": "^0.23.0"
   },
   "keywords": [
     "tram-one"
   ],
-  "dependencies": {
-    "babel-preset-env": "^1.6.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.5.0",
-    "budo": "^10.0.4",
-    "eslint-config-tram-one": "^2.0.0",
-    "gh-pages": "^1.1.0",
-    "highlight-syntax": "^3.0.2",
-    "jasmine": "^2.8.0",
-    "tram-build-page": "^1.0.1",
-    "tram-one": "^5.1.0",
-    "xo": "^0.20.3"
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "xo": {
     "extends": [
       "tram-one"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3"
   }
 }
