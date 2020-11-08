@@ -1,10 +1,12 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'code-block': require('../../elements/code-block'),
   'code-style': require('../../elements/code-style'),
-  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const checkUrlPath = `
@@ -39,42 +41,36 @@ const home = () => {
 module.exports = (attrs) => {
   return html`
     <div>
-      <section-block>
-        <div>
-          <code-style>
-            <anchor-clip tag="h4" header="useUrlParams"/>
-          </code-style>
-        </div>
-        <div>
+      <section-container level="3" id="use-url-params" header="useUrlParams">
+        <section-text>
           Hook that returns path variables based on the route.
           Can return path parameters, query params, and more!
           <br/><br/>
           You can test for a path by calling <code-style>useUrlParams</code-style>
           with the paths you expect to see. The hook will return false if the path
           does not match.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${checkUrlPath}
           </code-block>
-        </div>
-      </section-block>
+        </section-code>
+      </section-container>
 
-      <section-block>
-        <div empty />
-        <div>
+      <section-container>
+        <section-text>
           If you want to pull variables from the path, then use the <code-style>/:var/</code-style>
           pattern in the path you pass in. You can also pull query parameters from the path as well.
           <br/><br/>
           It's internal functionality is powered by the package
           <a href="https://www.npmjs.com/package/rlite-router">rlite</a>.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${checkUrlParams}
           </code-block>
-        </div>
-      </section-block>
+        </section-code>
+      </section-container>
     </div>
   `
 }

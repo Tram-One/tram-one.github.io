@@ -50,11 +50,11 @@ module.exports = (attrs) => {
     ${stickyNavVisibility ? '' : 'display: none;'}
     background: ${stickyNavBarColor}
   `
-  
+
   return html`
     <div style="${navGrid}${attrs.style}${backgroundStyle}${stickyNavStyle}">
       <tram-logo style=${linkStyle} size=${logoSize} />
-      <nav-link style=${linkStyle}${tramOneStyle}>Tram-One</nav-link>
+      <nav-link style=${linkStyle}${tramOneStyle} href="/">Tram-One</nav-link>
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#features">Features</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#install">Install</scroll-anchor>

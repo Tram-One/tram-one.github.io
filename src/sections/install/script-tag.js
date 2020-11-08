@@ -1,10 +1,11 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'code-block': require('../../elements/code-block'),
-  'code-style': require('../../elements/code-style'),
-  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const code = `
@@ -31,30 +32,25 @@ const code = `
 
 module.exports = (attrs) => {
   return html`
-    <div>
-      <section-block>
-        <div>
-          <anchor-clip tag="h3" id="script-tag" header="Script Tag"/>
-        </div>
-        <div>
-          You can include Tram-One in an html page by adding a script tag
-          pointing to the umd module on the npm content delivery network
-          <a href="https://unpkg.com">unpkg</a>.
-          <br/>
-          <a href="https://unpkg.com/tram-one/dist/tram-one.umd.js">
-            https://unpkg.com/tram-one/dist/tram-one.umd.js
-          </a>
-          <br/><br/>
-          This is nice because it does not require a build system, and allows
-          you to quickly see Tram-One running in your browser. However to build
-          larger applications, it's recommended that you use one of the above solutions.
-        </div>
-        <div>
-          <code-block background=${attrs.background}>
-            ${code}
-          </code-block>
-        </div>
-      </section-block>
-    </div>
+    <section-container level="3" id="script-tag" header="Script Tag">
+      <section-text>
+        You can include Tram-One in an html page by adding a script tag
+        pointing to the umd module on the npm content delivery network
+        <a href="https://unpkg.com">unpkg</a>.
+        <br/>
+        <a href="https://unpkg.com/tram-one/dist/tram-one.umd.js">
+          https://unpkg.com/tram-one/dist/tram-one.umd.js
+        </a>
+        <br/><br/>
+        This is nice because it does not require a build system, and allows
+        you to quickly see Tram-One running in your browser. However to build
+        larger applications, it's recommended that you use one of the above solutions.
+      </section-text>
+      <section-code>
+        <code-block background=${attrs.background}>
+          ${code}
+        </code-block>
+      </section-code>
+    </section-container>
   `
 }

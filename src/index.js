@@ -1,8 +1,7 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import { registerHtml, start, useEffect, useGlobalObservable, useObservable } from 'tram-one'
-
-// import './styles.css'
+import './styles.css'
 
 const html = registerHtml({
   'app-header': require('./components/app-header'),
@@ -31,7 +30,6 @@ const createScrollObserver = () => {
   const apiSection = document.querySelector('#api-section')
 
   const handleIntersect = (entries, observer) => {
-    console.log(entries)
     const isAppHeaderEntry = (entry) => entry.target.id === 'app-header'
     const appHeaderEntry = entries.find(isAppHeaderEntry)
     if (appHeaderEntry) {
@@ -50,7 +48,7 @@ const createScrollObserver = () => {
 
     const isApiSectionEntry = (entry) => entry.target.id === 'api-section'
     const apiSectionEntry = entries.find(isApiSectionEntry); // needed semi-colon
-    
+
     // update our entryMap with the latest values from the observer
     [introductionSectionEntry, featureSectionEntry, installSectionEntry, apiSectionEntry]
       .forEach((entry, index) => {

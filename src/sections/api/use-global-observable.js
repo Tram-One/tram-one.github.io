@@ -1,10 +1,11 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'code-block': require('../../elements/code-block'),
-  'code-style': require('../../elements/code-style'),
-  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const globalObservable = `
@@ -36,36 +37,30 @@ export default () => {
 module.exports = (attrs) => {
   return html`
     <div>
-      <section-block>
-        <div>
-          <code-style>
-            <anchor-clip tag="h4" header="useGlobalObservable"/>
-          </code-style>
-        </div>
-        <div>
+      <section-container level="3" id="use-global-observable" header="useGlobalObservable">
+        <section-text>
           Hook that stores global state and makes it accessible in the component and across the app.
           <br/><br/>
           This in part fills the role of React's Context API, but mimics the interface
           of React's useState or Tram-One's useObservable hook.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${globalObservable}
           </code-block>
-        </div>
-      </section-block>
-      <section-block>
-        <div empty />
-        <div>
+        </section-code>
+      </section-container>
+      <section-container>
+        <section-text>
           The function takes in a key and a default value.
           The key can be used to access the value anywhere in the app.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${valueDisplay}
           </code-block>
-        </div>
-      </section-block>
+        </section-code>
+      </section-container>
     </div>
   `
 }

@@ -1,10 +1,12 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'code-block': require('../../elements/code-block'),
   'code-style': require('../../elements/code-style'),
-  'anchor-clip': require('../../elements/anchor-clip')
 })
 
 const primitiveObservable = `
@@ -36,13 +38,8 @@ const page = () => {
 module.exports = (attrs) => {
   return html`
     <div>
-      <section-block>
-        <div>
-          <code-style>
-            <anchor-clip tag="h4" header="useObservable"/>
-          </code-style>
-        </div>
-        <div>
+      <section-container level="3" id="use-observable" header="useObservable">
+        <section-text>
           Hook that stores local component state.
           The function takes in a default value and returns the current value and a setter function.
           <br/><br/>
@@ -51,27 +48,25 @@ module.exports = (attrs) => {
           <br/><br/>
           If the value (or a subfield, if observing an object or array) is updated,
           then only the components that are dependent on that value will update.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${primitiveObservable}
           </code-block>
-        </div>
-      </section-block>
-
-      <section-block>
-        <div empty/>
-        <div>
+        </section-code>
+      </section-container>
+      <section-container>
+        <section-text>
           If storing an object or array, you should mutate the subfields directly,
           and avoid using the setter that is returned. This will be more performant,
           and cause only components that are reactive to the sub-fields to update.
-        </div>
-        <div>
+        </section-text>
+        <section-code>
           <code-block background=${attrs.background}>
             ${objectObservable}
           </code-block>
-        </div>
-      </section-block>
+        </section-code>
+      </section-container>
     </div>
   `
 }

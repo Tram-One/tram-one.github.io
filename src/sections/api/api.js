@@ -1,9 +1,10 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
-  'anchor-clip': require('../../elements/anchor-clip'),
-  'code-block': require('../../elements/code-block'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'start': require('./start'),
   'register-html': require('./register-html'),
   'register-svg': require('./register-svg'),
@@ -22,15 +23,12 @@ const apiStyle = `
 module.exports = () => {
   return html`
     <div id="api-section" style=${apiStyle}>
-      <section-block>
-        <div>
-          <anchor-clip tag="h2" id="api" header="API"/>
-        </div>
-        <div>
+      <section-container level="2" id="api" header="API">
+        <section-text>
           Tram-One has a simple interface to help you build your web app.
-        </div>
-        <div empty />
-      </section-block>
+        </section-text>
+        <section-code />
+      </section-container>
       <start background=${background}/>
       <register-html background=${background}/>
       <register-svg background=${background}/>

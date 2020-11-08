@@ -1,8 +1,10 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-block': require('../../elements/section-block'),
-  'anchor-clip': require('../../elements/anchor-clip'),
+  'section-container': require('../../elements/section-container'),
+  'section-code': require('../../elements/section-code'),
+  'section-header': require('../../elements/section-header'),
+  'section-text': require('../../elements/section-text'),
   'npm': require('./npm'),
   'script-tag': require('./script-tag'),
   'tram-one-express': require('./tram-one-express')
@@ -17,15 +19,12 @@ const apiStyle = `
 module.exports = () => {
   return html`
     <div id="install-section" style=${apiStyle}>
-      <section-block>
-        <div>
-          <anchor-clip tag="h2" id="install" header="Install"/>
-        </div>
-        <div>
+      <section-container level="2" id="install" header="Install">
+        <section-text>
           There are multiple ways to get started with Tram-One!
-        </div>
-        <div empty />
-      </section-block>
+        </section-text>
+        <section-code />
+      </section-container>
       <tram-one-express background=${background} />
       <npm background=${background} />
       <script-tag background=${background} />
