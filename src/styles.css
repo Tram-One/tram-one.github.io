@@ -14,6 +14,7 @@ body {
 }
 
 .section-header {
+	padding-top: 2em;
 	padding-left: 1rem;
   grid-area: header;
 }
@@ -35,4 +36,14 @@ body {
 .section-code {
 	padding-top: 0;
   grid-area: code;
+}
+
+/* element before scroll anchors so that we don't cover the header with the nav */
+.scroll-anchor:before {
+	content: "";
+	display: block;
+	position: relative;
+	width: 1em; /* needs to be non-zero width */
+	height: 1em;
+	margin-top: -1em;
 }
