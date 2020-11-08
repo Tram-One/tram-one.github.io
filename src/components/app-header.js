@@ -3,7 +3,6 @@ import { registerHtml } from 'tram-one'
 const html = registerHtml({
   'tram-logo': require('./tram-logo'),
   'nav-bar': require('./nav-bar'),
-  'sticky-nav-bar': require('./sticky-nav-bar')
 })
 
 const logoSize = '3.8em'
@@ -29,20 +28,14 @@ const headerStyle = `
   margin: 0;
 `
 
-const linksStyle = `
-  grid-area: links;
-  align-items: baseline;
-  padding-left: 0.25em;
-`
-
-module.exports = () => {
+module.exports = (attrs) => {
   return html`
-    <div class="app-header" style=${containerGrid}>
+    <div id=${attrs.id} class="app-header" style=${containerGrid}>
       <tram-logo style=${logoStyle} size=${logoSize} />
       <h1 style=${headerStyle}>
         Tram-One
       </h1>
-      <nav-bar style=${linksStyle} />
-    </h1>
+      <nav-bar class="nav-bar" style=${attrs.style} />
+    </div>
   `
 }

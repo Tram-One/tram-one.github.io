@@ -24,7 +24,7 @@ start('#app', home)
 
 module.exports = () => {
   return html`
-    <div>
+    <div id="intro-section" style="background: #FFF8DD;">
       <section-block>
         <div>
           <anchor-clip tag="h2" id="introduction" header="Introduction"/>

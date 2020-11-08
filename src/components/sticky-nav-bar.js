@@ -1,4 +1,4 @@
-import { registerHtml } from 'tram-one'
+import { registerHtml, useGlobalObservable } from 'tram-one'
 
 const html = registerHtml({
   'scroll-anchor': require('../elements/scroll-anchor'),
@@ -35,10 +35,24 @@ const externalStyle = `
   padding: 0.4em 0.8em 0em 0.0em;
   color: #3939ab;
 `
+
+const backgroundStyle = `
+  background-color: #FFF8DD;
+  z-index: 1;
+`
+
 //TODO: should probably not be scroll anchors
 module.exports = (attrs) => {
+  const [stickyNavVisibility] = useGlobalObservable('stickyNavVisibility', false)
+  const [stickyNavBarColor] = useGlobalObservable('stickyNavColor')
+
+  const stickyNavStyle = `
+    ${stickyNavVisibility ? '' : 'display: none;'}
+    background: ${stickyNavBarColor}
+  `
+  
   return html`
-    <div style="${navGrid}${attrs.style}">
+    <div style="${navGrid}${attrs.style}${backgroundStyle}${stickyNavStyle}">
       <tram-logo style=${linkStyle} size=${logoSize} />
       <nav-link style=${linkStyle}${tramOneStyle}>Tram-One</nav-link>
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>

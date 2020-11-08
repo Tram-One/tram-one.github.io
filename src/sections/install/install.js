@@ -16,7 +16,7 @@ const apiStyle = `
 
 module.exports = () => {
   return html`
-    <div style=${apiStyle}>
+    <div id="install-section" style=${apiStyle}>
       <section-block>
         <div>
           <anchor-clip tag="h2" id="install" header="Install"/>

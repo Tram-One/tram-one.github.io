@@ -56,7 +56,7 @@ const page = () => {
 
 module.exports = () => {
   return html`
-    <div style=${featuresStyle}>
+    <div id="features-section" style=${featuresStyle}>
       <section-block>
         <div>
           <anchor-clip tag="h2" id="features" header="Features"/>

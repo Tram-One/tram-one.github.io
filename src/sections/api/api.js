@@ -21,7 +21,7 @@ const apiStyle = `
 
 module.exports = () => {
   return html`
-    <div style=${apiStyle}>
+    <div id="api-section" style=${apiStyle}>
       <section-block>
         <div>
           <anchor-clip tag="h2" id="api" header="API"/>
