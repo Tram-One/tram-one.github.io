@@ -1,26 +1,49 @@
 body {
 	font-family: sans-serif;
+	margin: 0;
+}
+
+.sticky-nav-bar {
+	display: flex;
+  flex-wrap: no wrap;
+  margin-bottom: 0.8em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+	width: 100%;
+	justify-content: center;
+}
+
+.app-header {
+	background: #FFF8DD;
+	font-size: 1.2em;
+	padding-left: 1.5em;
+	padding-top: 1em;
+	display: grid;
+	/* 3.8em -> logoSize */
+  grid-template-columns: minmax(1em, calc(25% - 1em)) 3.8em auto minmax(1em, calc(75% - 1em)) ;
+  grid-template-rows: 2em auto;
+  grid-column-gap: 0.75em;
+  grid-template-areas:
+    ". logo header ."
+    ". logo links  .";
 }
 
 .section-container {
 	display: grid;
   font-size: 1em;
-  padding-left: 1.5em;
-  grid-template-columns: 24em minmax(35em, calc(100% - 24em));
+  grid-template-columns: minmax(1em, calc(50% - 1em)) 26em 37em minmax(2em, calc(50% - 2em));
   grid-column-gap: 1.5em;
   grid-template-areas:
-    "header code-spacer "
-    "text   code        ";
+    ". header code-spacer ."
+    ". text   code        .";
 }
 
 .section-header {
 	padding-top: 2em;
-	padding-left: 1rem;
   grid-area: header;
 }
 
 .section-text {
-	padding-left: 1rem;
   padding-bottom: 1rem;
   grid-area: text;
   font-size: 0.9em;

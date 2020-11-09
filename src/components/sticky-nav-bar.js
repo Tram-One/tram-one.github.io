@@ -6,15 +6,6 @@ const html = registerHtml({
   'tram-logo': require('./tram-logo')
 })
 
-const navGrid = `
-  display: flex;
-  flex-wrap: no wrap;
-  margin-bottom: 0.8em;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%;
-`
-
 const logoSize = '1.2em'
 
 const logoStyle = `
@@ -52,7 +43,7 @@ module.exports = (attrs) => {
   `
 
   return html`
-    <div style="${navGrid}${attrs.style}${backgroundStyle}${stickyNavStyle}">
+    <div class="sticky-nav-bar" style="${attrs.style}${backgroundStyle}${stickyNavStyle}">
       <tram-logo style=${linkStyle} size=${logoSize} />
       <nav-link style=${linkStyle}${tramOneStyle} href="/">Tram-One</nav-link>
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>

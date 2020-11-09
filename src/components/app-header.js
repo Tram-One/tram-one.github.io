@@ -7,18 +7,6 @@ const html = registerHtml({
 
 const logoSize = '3.8em'
 
-const containerGrid = `
-  font-size: 1.2em;
-  padding-left: 1rem;
-  display: grid;
-  grid-template-columns: ${logoSize} auto;
-  grid-template-rows: 2em auto;
-  grid-column-gap: 0.75em;
-  grid-template-areas:
-    "logo header"
-    "logo links";
-`
-
 const logoStyle = `
   grid-area: logo;
 `
@@ -30,7 +18,7 @@ const headerStyle = `
 
 module.exports = (attrs) => {
   return html`
-    <div id=${attrs.id} class="app-header" style=${containerGrid}>
+    <div id=${attrs.id} class="app-header">
       <tram-logo style=${logoStyle} size=${logoSize} />
       <h1 style=${headerStyle}>
         Tram-One
