@@ -1,11 +1,11 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-container': require('../../elements/section-container'),
-  'section-code': require('../../elements/section-code'),
-  'section-header': require('../../elements/section-header'),
-  'section-text': require('../../elements/section-text'),
-  'code-block': require('../../elements/code-block'),
+  'section-container': require('../../components/section-container'),
+  'section-code': require('../../components/section-code'),
+  'section-header': require('../../components/section-header'),
+  'section-text': require('../../components/section-text'),
+  'code-block': require('../../components/code-block'),
 })
 
 const background = '#DDFFDD'

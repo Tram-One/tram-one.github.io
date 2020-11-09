@@ -1,7 +1,7 @@
 import { registerHtml } from 'tram-one'
 const html = registerHtml({
   'tram-logo': require('../tram-one/tram-logo'),
-  'code-block': require('../elements/code-block')
+  'code-block': require('../component/code-block')
 })
 
 const logoSize = '12em'

@@ -1,7 +1,7 @@
 import { registerHtml } from 'tram-one'
 const html = registerHtml({
-  'scroll-anchor': require('../elements/scroll-anchor'),
-  'nav-link': require('../elements/nav-link')
+  'scroll-anchor': require('./scroll-anchor'),
+  'nav-link': require('./nav-link')
 })
 
 const navGrid = `
