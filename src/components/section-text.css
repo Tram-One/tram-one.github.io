@@ -1,0 +1,5 @@
+.section-text {
+  padding-bottom: 1rem;
+  grid-area: text;
+  font-size: 0.9em;
+}

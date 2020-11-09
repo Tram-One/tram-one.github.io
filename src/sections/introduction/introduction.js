@@ -26,7 +26,7 @@ start('#app', home)
 
 module.exports = () => {
   return html`
-    <div id="intro-section" style="background: #FFF8DD;">
+    <div id="intro-section" class="section-page" style="background: #FFF8DD;">
       <section-container level="2" id="introduction" header="Introduction">
         <section-text>
           Tram-One is a light View Framework that comes with all the

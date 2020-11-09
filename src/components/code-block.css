@@ -1,0 +1,13 @@
+.code-block {
+  margin: -1.8em 0 2.5em 0;
+}
+
+.code-block-code {
+	margin: 0;
+  font-size: 0.8em;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.code-block-line {
+	margin: 1.2em 0em 0.4em 0em;
+}

@@ -1,4 +1,5 @@
 import { registerHtml } from 'tram-one'
+import './section-container.css'
 
 const html = registerHtml({
   'section-header': require('./section-header'),

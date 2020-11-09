@@ -1,0 +1,15 @@
+.anchor-clip {
+	color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+.header-paperclip {
+	width: 0.7em;
+  padding-right: 0.3em;
+}
+
+.anchor-header {
+	opacity: inherit;
+  margin-bottom: 0.3em;
+}

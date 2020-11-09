@@ -1,14 +1,10 @@
 import { registerHtml } from 'tram-one'
+import './nav-bar.css'
+
 const html = registerHtml({
   'scroll-anchor': require('./scroll-anchor'),
   'nav-link': require('./nav-link')
 })
-
-const navGrid = `
-  display: flex;
-  flex-wrap: no wrap;
-  margin-bottom: 0.8em;
-`
 
 const linkStyle = `
   padding: 0.4em 0.8em 0em 0.0em;
@@ -21,7 +17,7 @@ const externalStyle = `
 
 module.exports = (attrs) => {
   return html`
-    <div class="nav-bar" style="${navGrid}${attrs.style}">
+    <div class="nav-bar ${attrs.className}" style="${attrs.style}">
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#features">Features</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#install">Install</scroll-anchor>

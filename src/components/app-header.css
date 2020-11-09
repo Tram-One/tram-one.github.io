@@ -1,0 +1,23 @@
+.app-header {
+	background: #FFF8DD;
+	font-size: 1.2em;
+	padding-left: 1.5em;
+	padding-top: 1em;
+	display: grid;
+	/* 3.8em -> logoSize */
+  grid-template-columns: minmax(1em, calc(25% - 1em)) 3.8em auto minmax(1em, calc(75% - 1em)) ;
+  grid-template-rows: 2em auto;
+  grid-column-gap: 0.75em;
+  grid-template-areas:
+    ". logo header ."
+    ". logo links  .";
+}
+
+.app-header-logo {
+  grid-area: logo;
+}
+
+.app-header-title {
+	grid-area: header;
+  margin: 0;
+}

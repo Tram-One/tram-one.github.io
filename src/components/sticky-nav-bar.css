@@ -1,0 +1,25 @@
+.sticky-nav-bar {
+	display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 0.8em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+	width: 100%;
+	justify-content: center;
+}
+
+.sticky-nav-bar {
+	align-items: center;
+  z-index: 1;
+}
+
+.sticky-nav-logo {
+	padding-top: 0.1em;
+	padding-right: 0.3em;
+}
+
+.tram-one-link {
+  font-weight: bold;
+  color: #000;
+	opacity: 1;
+}

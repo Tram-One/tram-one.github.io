@@ -58,7 +58,7 @@ const page = () => {
 
 module.exports = () => {
   return html`
-    <div id="features-section" style=${featuresStyle}>
+    <div class="section-page" id="features-section" style=${featuresStyle}>
 
       <section-container level="2" id="features" header="Features">
         <section-text>

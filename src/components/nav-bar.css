@@ -1,0 +1,8 @@
+.nav-bar {
+	display: flex;
+  flex-wrap: nowrap;
+	margin-bottom: 0.8em;
+	grid-area: links;
+  align-items: baseline;
+  padding-left: 0.5em;
+}

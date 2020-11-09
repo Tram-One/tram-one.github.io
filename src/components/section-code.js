@@ -1,4 +1,5 @@
 import { registerHtml } from 'tram-one'
+import './section-code.css'
 
 const html = registerHtml()
 

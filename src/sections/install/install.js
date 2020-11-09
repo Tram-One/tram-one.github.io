@@ -18,7 +18,7 @@ const apiStyle = `
 
 module.exports = () => {
   return html`
-    <div id="install-section" style=${apiStyle}>
+    <div id="install-section" class="section-page" style=${apiStyle}>
       <section-container level="2" id="install" header="Install">
         <section-text>
           There are multiple ways to get started with Tram-One!

@@ -1,4 +1,5 @@
 import { registerHtml } from 'tram-one'
+import './app-header.css'
 
 const html = registerHtml({
   'tram-logo': require('./tram-logo'),
@@ -7,23 +8,14 @@ const html = registerHtml({
 
 const logoSize = '3.8em'
 
-const logoStyle = `
-  grid-area: logo;
-`
-
-const headerStyle = `
-  grid-area: header;
-  margin: 0;
-`
-
 module.exports = (attrs) => {
   return html`
     <div id=${attrs.id} class="app-header">
-      <tram-logo style=${logoStyle} size=${logoSize} />
-      <h1 style=${headerStyle}>
+      <tram-logo class="app-header-logo" size=${logoSize} />
+      <h1 class="app-header-title">
         Tram-One
       </h1>
-      <nav-bar class="nav-bar" style=${attrs.style} />
+      <nav-bar class="app-header-nav-bar" />
     </div>
   `
 }

@@ -12,12 +12,6 @@ const html = registerHtml({
   'install': require('./sections/install/install')
 })
 
-const linksStyle = `
-  grid-area: links;
-  align-items: baseline;
-  padding-left: 0.5em;
-`
-
 const createScrollObserver = () => {
   const [stickyNavVisibility, setStickyNavVisibility] = useGlobalObservable('stickyNavVisibility', false)
   const [stickyNavBarColor, setStickyNavBarColor] = useGlobalObservable('stickyNavColor')
@@ -83,8 +77,8 @@ const page = () => {
 
   return html`
     <div>
-      <app-header id='app-header' style=${linksStyle}/>
-      <sticky-nav-bar style="${linksStyle}" />
+      <app-header id='app-header' />
+      <sticky-nav-bar />
       <introduction />
       <features />
       <install />

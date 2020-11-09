@@ -1,4 +1,5 @@
 import { registerHtml } from 'tram-one'
+import './scroll-anchor.css'
 
 const html = registerHtml()
 
@@ -17,7 +18,7 @@ module.exports = (attrs, children) => {
     }, 600)
   }
   return html`
-    <a id=${attrs.id} class="scroll-anchor ${attrs.className}" onclick=${clickAction} style=${attrs.style} href=${attrs.href}>
+    <a id=${attrs.id} class="scroll-anchor ${attrs.className}" onclick=${clickAction} href=${attrs.href}>
       ${children}
     </a>
   `

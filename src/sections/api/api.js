@@ -22,7 +22,7 @@ const apiStyle = `
 
 module.exports = () => {
   return html`
-    <div id="api-section" style=${apiStyle}>
+    <div id="api-section" class="section-page" style=${apiStyle}>
       <section-container level="2" id="api" header="API">
         <section-text>
           Tram-One has a simple interface to help you build your web app.

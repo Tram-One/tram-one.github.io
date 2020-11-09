@@ -1,9 +1,10 @@
 import { registerSvg } from 'tram-one'
+import './tram-logo.css'
 
 const svg = registerSvg()
 
 module.exports = (attrs) => svg`
-  <svg version="1.1" x="0px" y="0px" style=${attrs.style} width="${attrs.size}" height="${attrs.size}" viewBox="0 0 864 864" enable-background="new 0 0 864 864">
+  <svg class="tram-logo ${attrs.className}" version="1.1" x="0px" y="0px" width="${attrs.size}" height="${attrs.size}" viewBox="0 0 864 864" enable-background="new 0 0 864 864">
 
     <!-- Gradient Definitions -->
     <linearGradient id="tram_body_gradient">

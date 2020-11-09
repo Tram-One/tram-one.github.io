@@ -1,0 +1,13 @@
+.scroll-anchor {
+  padding: 0.4em 0.8em 0em 0.0em;
+}
+
+/* element before scroll anchors so that we don't cover the header with the nav */
+.scroll-anchor:before {
+	content: "";
+	display: block;
+	position: relative;
+	width: 1em; /* needs to be non-zero width */
+	height: 1em;
+	margin-top: -1em;
+}
