@@ -1,13 +1,15 @@
 .code-block {
-  margin: -1.8em 0 2.5em 0;
+  margin: -1.2em 0 0 0;
+
+  grid-area: code;
+	background: #2E2E2E;
+  color: white;
+	padding: 1em 1.5em 3em 1.5em;
+
 }
 
 .code-block-code {
 	margin: 0;
   font-size: 0.8em;
   font-family: 'Source Code Pro', monospace;
-}
-
-.code-block-line {
-	margin: 1.2em 0em 0.4em 0em;
 }

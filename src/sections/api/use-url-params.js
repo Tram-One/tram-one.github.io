@@ -2,7 +2,6 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-code': require('../../components/section-code'),
   'section-header': require('../../components/section-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
@@ -32,16 +31,17 @@ const home = () => {
   const { size } = useUrlParams('/:size')
   const pageStyle = \`font-size: \${size}em;\`
   return html\`
-  <div style=\${pageStyle}>
-    <div>Tram-One hooks are neat!</div>
-  </div>
+  <main style=\${pageStyle}>
+    <h1>Tram-One hooks are neat!</h1>
+  </main>
 }
 `
 
 module.exports = (attrs) => {
   return html`
-    <div>
-      <section-container level="3" id="use-url-params" header="useUrlParams">
+    <section>
+      <section-header level="3" anchor="use-url-params" header="useUrlParams"/>
+      <section-container>
         <section-text>
           Hook that returns path variables based on the route.
           Can return path parameters, query params, and more!
@@ -50,11 +50,9 @@ module.exports = (attrs) => {
           with the paths you expect to see. The hook will return false if the path
           does not match.
         </section-text>
-        <section-code>
-          <code-block background=${attrs.background}>
-            ${checkUrlPath}
-          </code-block>
-        </section-code>
+        <code-block background=${attrs.background}>
+          ${checkUrlPath}
+        </code-block>
       </section-container>
 
       <section-container>
@@ -65,12 +63,10 @@ module.exports = (attrs) => {
           It's internal functionality is powered by the package
           <a href="https://www.npmjs.com/package/rlite-router">rlite</a>.
         </section-text>
-        <section-code>
-          <code-block background=${attrs.background}>
-            ${checkUrlParams}
-          </code-block>
-        </section-code>
+        <code-block background=${attrs.background}>
+          ${checkUrlParams}
+        </code-block>
       </section-container>
-    </div>
+    </section>
   `
 }

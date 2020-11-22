@@ -2,6 +2,7 @@
 	color: inherit;
   outline: none;
   text-decoration: none;
+  padding-top: 0.5em;
 }
 
 .header-paperclip {
@@ -10,6 +11,5 @@
 }
 
 .anchor-header {
-	opacity: inherit;
-  margin-bottom: 0.3em;
+  opacity: inherit;
 }

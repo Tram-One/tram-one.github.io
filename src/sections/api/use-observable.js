@@ -2,11 +2,9 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-code': require('../../components/section-code'),
   'section-header': require('../../components/section-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
-  'code-style': require('../../components/code-style'),
 })
 
 const primitiveObservable = `
@@ -37,8 +35,9 @@ const page = () => {
 
 module.exports = (attrs) => {
   return html`
-    <div>
-      <section-container level="3" id="use-observable" header="useObservable">
+    <section>
+      <section-header level="3" anchor="use-observable" header="useObservable" />
+      <section-container>
         <section-text>
           Hook that stores local component state.
           The function takes in a default value and returns the current value and a setter function.
@@ -49,11 +48,9 @@ module.exports = (attrs) => {
           If the value (or a subfield, if observing an object or array) is updated,
           then only the components that are dependent on that value will update.
         </section-text>
-        <section-code>
-          <code-block background=${attrs.background}>
-            ${primitiveObservable}
-          </code-block>
-        </section-code>
+        <code-block background=${attrs.background}>
+          ${primitiveObservable}
+        </code-block>
       </section-container>
       <section-container>
         <section-text>
@@ -61,12 +58,10 @@ module.exports = (attrs) => {
           and avoid using the setter that is returned. This will be more performant,
           and cause only components that are reactive to the sub-fields to update.
         </section-text>
-        <section-code>
-          <code-block background=${attrs.background}>
-            ${objectObservable}
-          </code-block>
-        </section-code>
+        <code-block background=${attrs.background}>
+          ${objectObservable}
+        </code-block>
       </section-container>
-    </div>
+    </section>
   `
 }

@@ -5,8 +5,8 @@ const html = registerHtml()
 
 module.exports = (attrs, children) => {
   return html`
-    <div class="section-text">
+    <p class="section-text">
       ${children}
-    </div>
+    </p>
   `
 }

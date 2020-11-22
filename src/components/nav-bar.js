@@ -17,7 +17,7 @@ const externalStyle = `
 
 module.exports = (attrs) => {
   return html`
-    <div class="nav-bar ${attrs.className}" style="${attrs.style}">
+    <nav class="nav-bar ${attrs.className}" style="${attrs.style}">
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#features">Features</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#install">Install</scroll-anchor>
@@ -25,6 +25,6 @@ module.exports = (attrs) => {
       <nav-link style=${externalStyle} href="https://discord.gg/dpBXAQC">Discord</nav-link>
       <nav-link style=${externalStyle} href="https://github.com/Tram-One">Github</nav-link>
       <nav-link style=${externalStyle} href="https://www.npmjs.com/package/tram-one">NPM</nav-link>
-    </div>
+    </nav>
   `
 }

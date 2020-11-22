@@ -1,10 +1,7 @@
 import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
-  'section-container': require('../../components/section-container'),
-  'section-code': require('../../components/section-code'),
   'section-header': require('../../components/section-header'),
-  'section-text': require('../../components/section-text'),
   'start': require('./start'),
   'register-html': require('./register-html'),
   'register-svg': require('./register-svg'),
@@ -22,13 +19,10 @@ const apiStyle = `
 
 module.exports = () => {
   return html`
-    <div id="api-section" class="section-page" style=${apiStyle}>
-      <section-container level="2" id="api" header="API">
-        <section-text>
-          Tram-One has a simple interface to help you build your web app.
-        </section-text>
-        <section-code />
-      </section-container>
+    <section id="api-section" class="section-page" style=${apiStyle}>
+      <section-header level="2" anchor="api" header="API">
+        Tram-One has a simple interface to help you build your web app.
+      </section-header>
       <start background=${background}/>
       <register-html background=${background}/>
       <register-svg background=${background}/>
@@ -36,6 +30,6 @@ module.exports = () => {
       <use-global-observable background=${background}/>
       <use-effect background=${background}/>
       <use-url-params background=${background}/>
-    </div>
+    </section>
   `
 }

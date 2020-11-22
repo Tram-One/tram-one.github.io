@@ -8,3 +8,7 @@ body {
 .section-page {
 	padding: 2em 0;
 }
+
+p {
+  margin-block: 0;
+}

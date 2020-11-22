@@ -2,7 +2,6 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-code': require('../../components/section-code'),
   'section-header': require('../../components/section-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
@@ -14,10 +13,10 @@ const {registerHtml, start} = require('tram-one')
 const html = registerHtml()
 const home = () => {
   return html\`
-    <div>
+    <main>
       <h1> Tram-One </h1>
       <h2> A Modern View Framework For Pure Javascript </h2>
-    </div>
+    </main>
   \`
 }
 
@@ -26,8 +25,9 @@ start('#app', home)
 
 module.exports = () => {
   return html`
-    <div id="intro-section" class="section-page" style="background: #FFF8DD;">
-      <section-container level="2" id="introduction" header="Introduction">
+    <section id="intro-section" class="section-page" style="background: #FFF8DD;">
+      <section-header level="2" anchor="introduction" header="Introduction" />
+      <section-container>
         <section-text>
           Tram-One is a light View Framework that comes with all the
           dependencies you need to start developing on the web.
@@ -40,12 +40,10 @@ module.exports = () => {
           Tram-One. If you have any questions from this page or about Tram-One,
           or just want to say hi, <a href='https://discord.gg/dpBXAQC' >join our Discord</a>!
         </section-text>
-        <section-code>
-          <code-block>
-            ${code}
-          </code-block>
-        </section-code>
+        <code-block>
+          ${code}
+        </code-block>
       </section-container>
-    </div>
+    </section>
   `
 }

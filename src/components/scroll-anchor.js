@@ -4,6 +4,8 @@ import './scroll-anchor.css'
 const html = registerHtml()
 
 module.exports = (attrs, children) => {
+
+  // force a smooth scroll to the content
   const clickAction = (event) => {
     if (document.body.scrollIntoView === undefined) {
       return
@@ -17,6 +19,7 @@ module.exports = (attrs, children) => {
       target.focus()
     }, 600)
   }
+
   return html`
     <a id=${attrs.id} class="scroll-anchor ${attrs.className}" onclick=${clickAction} href=${attrs.href}>
       ${children}

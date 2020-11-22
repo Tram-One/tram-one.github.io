@@ -9,21 +9,8 @@ const html = registerHtml({
 
 const logoSize = '1.2em'
 
-const logoStyle = `
-  grid-area: logo;
-`
-
 const linkStyle = `
   padding: 0.4em 0.8em 0em 0.0em;
-`
-
-const tramOneStyle = `
-
-`
-
-const externalStyle = `
-  padding: 0.4em 0.8em 0em 0.0em;
-  color: #3939ab;
 `
 
 module.exports = () => {
@@ -36,7 +23,7 @@ module.exports = () => {
   `
 
   return html`
-    <div class="sticky-nav-bar" style="${dynamicStyleProperties}">
+    <nav class="sticky-nav-bar" style="${dynamicStyleProperties}">
       <tram-logo class="sticky-nav-logo" size=${logoSize} />
       <nav-link class="tram-one-link" href="/">Tram-One</nav-link>
       <scroll-anchor href="#introduction">Introduction</scroll-anchor>
@@ -46,6 +33,6 @@ module.exports = () => {
       <nav-link href="https://discord.gg/dpBXAQC">Discord</nav-link>
       <nav-link href="https://github.com/Tram-One">Github</nav-link>
       <nav-link href="https://www.npmjs.com/package/tram-one">NPM</nav-link>
-    </div>
+    </nav>
   `
 }

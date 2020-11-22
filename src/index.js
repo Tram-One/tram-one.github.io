@@ -12,6 +12,10 @@ const html = registerHtml({
   'install': require('./sections/install/install')
 })
 
+/**
+ * scroll observer is used to create and configure the sticky nav.
+ * the observer controls when the nav should appear, and what color it should be.
+ */
 const createScrollObserver = () => {
   const [stickyNavVisibility, setStickyNavVisibility] = useGlobalObservable('stickyNavVisibility', false)
   const [stickyNavBarColor, setStickyNavBarColor] = useGlobalObservable('stickyNavColor')
@@ -76,13 +80,15 @@ const page = () => {
   useEffect(createScrollObserver)
 
   return html`
-    <div>
+    <div class="app-container">
       <app-header id='app-header' />
       <sticky-nav-bar />
-      <introduction />
-      <features />
-      <install />
-      <api />
+      <main id="main-content">
+        <introduction />
+        <features />
+        <install />
+        <api />
+      </main>
     </div>
   `
 }

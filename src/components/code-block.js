@@ -11,7 +11,7 @@ module.exports = (attrs, children) => {
   const backgroundColor = attrs.background ? attrs.background : '#FFF8DD'
   const lineStyle = `
     color: ${backgroundColor};
-    border-bottom: solid 0.1em ${backgroundColor};
+    border-top: solid 0.1em ${backgroundColor};
   `
 
   const unformattedCode = children.map(child => child).join('').trim()
@@ -20,11 +20,8 @@ module.exports = (attrs, children) => {
   codeDOM.innerHTML = formattedCode
 
   return html`
-    <div class="code-block">
-      <div class="code-block-line" style=${lineStyle}>
-        ${attrs.filename}
-      </div>
+    <figure class="code-block" style=${lineStyle}>
       ${codeDOM}
-    </div>
+    </figure>
   `
 }

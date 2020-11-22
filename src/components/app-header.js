@@ -10,12 +10,12 @@ const logoSize = '3.8em'
 
 module.exports = (attrs) => {
   return html`
-    <div id=${attrs.id} class="app-header">
+    <header id=${attrs.id} class="app-header">
       <tram-logo class="app-header-logo" size=${logoSize} />
       <h1 class="app-header-title">
         Tram-One
       </h1>
       <nav-bar class="app-header-nav-bar" />
-    </div>
+    </header>
   `
 }
