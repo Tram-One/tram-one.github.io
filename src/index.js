@@ -6,6 +6,7 @@ import './styles.css'
 const html = registerHtml({
   'app-header': require('./components/app-header'),
   'sticky-nav-bar': require('./components/sticky-nav-bar'),
+  'tram-logo-gradients': require('./components/tram-logo-gradients'),
   'introduction': require('./sections/introduction/introduction'),
   'features': require('./sections/features/features'),
   'api': require('./sections/api/api'),
@@ -81,6 +82,7 @@ const page = () => {
 
   return html`
     <div class="app-container">
+      <tram-logo-gradients />
       <app-header id='app-header' />
       <sticky-nav-bar />
       <main id="main-content">

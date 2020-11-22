@@ -3,7 +3,7 @@ import './scroll-anchor.css'
 
 const html = registerHtml()
 
-module.exports = (attrs, children) => {
+module.exports = ({id="", href, className = ""}, children) => {
 
   // force a smooth scroll to the content
   const clickAction = (event) => {
@@ -11,9 +11,9 @@ module.exports = (attrs, children) => {
       return
     }
     event.preventDefault()
-    const target = document.querySelector(attrs.href)
+    const target = document.querySelector(href)
     target.scrollIntoView({behavior: 'smooth', block: 'start'})
-    window.history.pushState({}, '', attrs.href)
+    window.history.pushState({}, '', href)
     setTimeout(() => {
       target.scrollIntoView({block: 'start'})
       target.focus()
@@ -21,7 +21,7 @@ module.exports = (attrs, children) => {
   }
 
   return html`
-    <a id=${attrs.id} class="scroll-anchor ${attrs.className}" onclick=${clickAction} href=${attrs.href}>
+    <a id=${id} class="scroll-anchor ${className}" onclick=${clickAction} href=${href}>
       ${children}
     </a>
   `

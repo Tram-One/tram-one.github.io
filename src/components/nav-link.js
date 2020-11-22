@@ -2,9 +2,9 @@ import { registerHtml } from 'tram-one'
 import './nav-link.css'
 const html = registerHtml()
 
-module.exports = (attrs, children) => {
+module.exports = ({href, className=""}, children) => {
   return html`
-    <a class="nav-link ${attrs.className}" href=${attrs.href}>
+    <a class="nav-link ${className}" href=${href}>
       ${children}
     </a>
   `
