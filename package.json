@@ -4,7 +4,8 @@
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
-    "publish": "surge dist --domain https://tram-one.io",
+    "prepublish:site": "npm run build",
+    "publish:site": "surge dist --domain https://tram-one.io",
     "dist-test": "http-server dist",
     "test": "jest --watch",
     "lint": "xo"
