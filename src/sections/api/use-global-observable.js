@@ -9,7 +9,8 @@ const html = registerHtml({
 
 const globalObservable = `
 import { registerHtml, useGlobalObservable } from 'tram-one'
-const html = registerHtml()
+import ValueDisplay from './ValueDisplay'
+const html = registerHtml({ ValueDisplay })
 
 const page = () => {
   const [count, setCount] = useGlobalObservable('global-count', 0)
@@ -17,7 +18,7 @@ const page = () => {
   return html\`
     <section>
       <button onclick=\${increment}>Increment</button>
-      <value-display />
+      <ValueDisplay />
     </section>
   \`
 }
