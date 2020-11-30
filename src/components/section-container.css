@@ -3,14 +3,14 @@
 .section-container {
 	display: grid;
   font-size: 1em;
-  grid-template-columns: minmax(1em, calc(50% - 1em)) 26em 37em minmax(2em, calc(50% - 2em));
+  grid-template-columns: auto 1fr 1fr auto;
   column-gap: 1.5em;
   grid-template-areas:
-    ". text   code        .";
+    ". text code code";
 }
 
 /* mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .section-container {
     grid-template-columns: 1fr;
     row-gap: 1em;

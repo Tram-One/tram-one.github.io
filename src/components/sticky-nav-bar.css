@@ -19,7 +19,7 @@
 }
 
 /* mobile */
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 700px) {
   .sticky-nav-logo {
 		/* hide tram-one logo */
 		display: none;
@@ -33,7 +33,7 @@
 }
 
 /* mobile */
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 700px) {
 	.sticky-nav-bar .nav-link {
 		/* hide external links */
 		display: none;

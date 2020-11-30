@@ -5,8 +5,14 @@
 	background: #2E2E2E;
   color: white;
 	padding: 1em 1.5em 3em 1.5em;
+}
 
-  overflow-x: scroll;
+.code-block {
+  overflow: auto;
+  scrollbar-width: 5px;  /* Firefox */
+}
+.code-block::-webkit-scrollbar {
+  display: none;
 }
 
 .code-block-code {
