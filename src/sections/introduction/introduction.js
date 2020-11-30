@@ -8,14 +8,17 @@ const html = registerHtml({
 })
 
 const code = `
-const {registerHtml, start} = require('tram-one')
+import {registerHtml, start} from 'tram-one'
 
 const html = registerHtml()
 const home = () => {
   return html\`
     <main>
       <h1> Tram-One </h1>
-      <h2> A Modern View Framework For Pure Javascript </h2>
+      <h2>
+        A Modern View Framework
+        For Vanilla Javascript
+      </h2>
     </main>
   \`
 }
@@ -33,7 +36,7 @@ module.exports = () => {
           dependencies you need to start developing on the web.
           <br/><br/>
           Tram-One is an orchestration of common features, and relies only on
-          plain javascript, so you don't have to bother learning / parsing /
+          plain vanilla javascript, so you don't have to bother learning / parsing /
           transpiling special templating languages.
           <br/><br/>
           This site is a one-stop-shop with everything you need to know about

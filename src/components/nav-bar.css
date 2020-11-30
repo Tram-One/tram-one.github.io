@@ -6,3 +6,10 @@
   align-items: baseline;
   padding-left: 0.5em;
 }
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+		flex-wrap: wrap;
+  }
+}

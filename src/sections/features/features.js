@@ -14,6 +14,7 @@ const featuresStyle = `
 `
 
 const templateStringCode = `
+import { registerHtml } from 'tram-one'
 const html = registerHtml()
 
 const page = () => {

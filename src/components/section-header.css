@@ -4,15 +4,25 @@
 	display: grid;
   font-size: 1em;
   grid-template-columns: minmax(1em, calc(50% - 1em)) 26em 37em minmax(2em, calc(50% - 2em));
-  grid-column-gap: 1.5em;
+  column-gap: 1.5em;
   grid-template-areas:
     ". header        code-spacer ."
     ". introduction  code-spacer .";
 }
 
+/* mobile */
+@media only screen and (max-width: 600px) {
+  .section-header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+    ". header       ."
+    ". introduction .";
+  }
+}
+
 /* element to fill in the code section, without having a real element */
 .section-header:after {
-  content: "hello";
+  content: " ";
   background: #2E2E2E;
   grid-area: code-spacer;
 }
