@@ -4,7 +4,7 @@ import './code-block.css'
 const html = registerHtml()
 
 const highlightSyntax = require('highlight-syntax')
-const highlightJS = require('highlight-syntax/js')
+const highlightJS = require('../js-syntax-rules.json')
 const highlight = highlightSyntax([highlightJS])
 
 module.exports = (attrs, children) => {
