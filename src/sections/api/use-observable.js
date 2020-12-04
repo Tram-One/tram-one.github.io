@@ -2,7 +2,7 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
 })
@@ -36,7 +36,11 @@ const page = () => {
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="use-observable" header="useObservable" />
+      <api-header level="3" anchor="use-observable" header="useObservable">
+        <code-block background=${attrs.background}>
+          useObservable(value: any): [value: any, setter: Function]
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Hook that stores local component state.

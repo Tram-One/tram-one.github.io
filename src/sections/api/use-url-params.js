@@ -2,7 +2,7 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
   'code-style': require('../../components/code-style'),
@@ -40,7 +40,11 @@ const home = () => {
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="use-url-params" header="useUrlParams"/>
+      <api-header level="3" anchor="use-url-params" header="useUrlParams">
+        <code-block background=${attrs.background}>
+          useUrlParams(pattern?: string): any
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Hook that returns path variables based on the route.

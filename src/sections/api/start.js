@@ -1,9 +1,8 @@
 import { registerHtml } from 'tram-one'
 
-
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
 })
@@ -35,7 +34,11 @@ start(testApp, home)
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="start" header="start" />
+      <api-header level="3" anchor="start" header="start">
+        <code-block background=${attrs.background}>
+          start(selector: string | Node, component: Function): void
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Function to attach a component to an existing element on the page.

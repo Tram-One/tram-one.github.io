@@ -2,7 +2,7 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
   'code-style': require('../../components/code-style'),
@@ -44,7 +44,11 @@ export default () => html\`
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="register-html" header="registerHtml" />
+      <api-header level="3" anchor="register-html" header="registerHtml">
+        <code-block background=${attrs.background}>
+          registerHtml(registry?: any): Function
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Function to generate a tagged template function for XHTML / HTML.

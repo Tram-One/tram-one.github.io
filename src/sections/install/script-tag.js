@@ -8,25 +8,17 @@ const html = registerHtml({
 })
 
 const code = `
-<body>
-  <div class="app"></div>
-  <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js"></script>
-  <script>
-    const { registerHtml, start } = window['tram-one']
-    const html = registerHtml()
-
-    const page = () => {
-      return html\`
-        <main>
-          <h1>Tram-One</h1>
-          Learn more at <a href="tram-one.io">tram-one.io</a>
-        </main>
-      \`
-    }
-
-    start('.app', page)
-  </script>
-</body>
+<html>
+  <head>
+    <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+    <script>
+      const { registerHtml, start } = window['tram-one']
+    </script>
+  </body>
+</html>
 `
 
 module.exports = (attrs) => {

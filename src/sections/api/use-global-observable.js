@@ -1,8 +1,8 @@
-import { registerHtml } from 'tram-one'
+import { registerHtml, useGlobalObservable } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
 })
@@ -37,7 +37,11 @@ export default () => {
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="use-global-observable" header="useGlobalObservable" />
+      <api-header level="3" anchor="use-global-observable" header="useGlobalObservable">
+        <code-block background=${attrs.background}>
+          useGlobalObservable(key: string, value?: any): [value: any, setter: Function]
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Hook that stores global state and makes it accessible in the component and across the app.

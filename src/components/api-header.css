@@ -1,0 +1,25 @@
+
+/* this css matches that in api-container */
+.api-header {
+	display: grid;
+  font-size: 1em;
+  grid-template-columns: auto 1fr 1fr auto;
+  column-gap: 1.5em;
+  grid-template-areas:
+    ". header code code"
+}
+
+.api-header .code-block {
+  margin-top: 0em;
+  padding-top: 2em;
+}
+
+/* mobile */
+@media only screen and (max-width: 700px) {
+  .api-header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+    ".    header ."
+    "code code   code";
+  }
+}

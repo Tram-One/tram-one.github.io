@@ -2,8 +2,7 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
   'code-style': require('../../components/code-style'),
@@ -26,7 +25,11 @@ const home = () => svg\`
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="register-svg" header="regsiterSvg" />
+      <api-header level="3" anchor="register-svg" header="regsiterSvg">
+        <code-block background=${attrs.background}>
+          registerSvg(registry?: any): Function
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Function to generate a tagged template function for SVG.

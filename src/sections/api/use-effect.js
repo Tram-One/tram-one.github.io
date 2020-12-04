@@ -2,7 +2,7 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'section-header': require('../../components/section-header'),
+  'api-header': require('../../components/api-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
 })
@@ -60,7 +60,11 @@ const todoList = () => {
 module.exports = (attrs) => {
   return html`
     <section>
-      <section-header level="3" anchor="use-effect" header="useEffect" />
+      <api-header level="3" anchor="use-effect" header="useEffect">
+        <code-block background=${attrs.background}>
+          useEffect(effect: Function): void
+        </code-block>
+      </api-header>
       <section-container>
         <section-text>
           Hook that triggers component start, update, and cleanup effects.
