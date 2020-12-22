@@ -2,16 +2,12 @@ import { registerHtml } from 'tram-one'
 
 const html = registerHtml({
   'section-container': require('../../components/section-container'),
-  'api-header': require('../../components/api-header'),
+  'section-header': require('../../components/section-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
 })
 
 const useEffect = `
-import { registerHtml, useEffect } from 'tram-one'
-
-const html = registerHtml()
-
 const home = () => {
   useEffect(() => {
     console.log('App Mounted')
@@ -21,17 +17,13 @@ const home = () => {
 `
 
 const useEffectWithObservable = `
-import { registerHtml, useEffect, useObservable } from 'tram-one'
-
-const html = registerHtml()
-
 const counter = () => {
   const [countObject] = useObservable({ value: 0 })
   useEffect(() => {
     console.log(\`Current count: $\{countObject.value\}\`)
   })
   const incrementCount = () => countObject.value++
-	return html\`
+  return html\`
     <button onclick=$\{incrementCount\}>
       Increment Count
     </button>
@@ -39,20 +31,15 @@ const counter = () => {
 }
 `
 
-const useEffectWithAsync = `
-import { registerHtml, useEffect, useObservable } from 'tram-one'
-
-const html = registerHtml()
-
-const todoList = () => {
-  const [todos, setTodos] = useObservable()
-  useEffect(async () => {
-    const todoResponse = await fetch('https://jsonplaceholder.typicode.com/todos/')
-    const parsedTodos = await todoResponse.json()
-    setTodos(parsedTodos)
+const useEffectWithCleanup = `
+const counter = () => {
+  useEffect(() => {
+    const cleanup = () => console.log('component removed/updated')
+    return cleanup
   })
-	return html\`
-    <div>$\{JSON.stringify(todos)\}</div>
+  return html\`
+    <section>
+    </section>
   \`
 }
 `
@@ -60,16 +47,14 @@ const todoList = () => {
 module.exports = (attrs) => {
   return html`
     <section>
-      <api-header level="3" anchor="use-effect" header="useEffect">
-        <code-block>
-          useEffect(effect: Function): void
-        </code-block>
-      </api-header>
+      <section-header level="3" anchor="effects" header="Effects" />
       <section-container>
         <section-text>
-          Hook that triggers component start, update, and cleanup effects.
-          If the return of effect is another function, then that function is called on
-          when the component is removed.
+          Effects are functions that run after elements have been added, updated, or removed.
+          They are inspired by React's useEffect hook.
+          <br/><br/>
+          Effects are defined using the useEffect hook.
+          They take in a single dependency, the effect to trigger.
         </section-text>
         <code-block>
           ${useEffect}
@@ -78,7 +63,7 @@ module.exports = (attrs) => {
       <section-container>
         <section-text>
           If the effect is dependent on a observable object,
-          it will automatically trigger again if a dependent property updates.
+          it will automatically trigger again when that dependent property updates.
         </section-text>
         <code-block>
           ${useEffectWithObservable}
@@ -86,11 +71,14 @@ module.exports = (attrs) => {
       </section-container>
       <section-container>
         <section-text>
+          If the effect returns a function, it will call that function
+          when the component is updated or removed.
+          <br/><br/>
           If the effect does not return a function, the return is ignored,
-          which means async functions are okay!
+          which means you can make the entire effect an async function and the returned promise will be ignored.
         </section-text>
         <code-block>
-          ${useEffectWithAsync}
+          ${useEffectWithCleanup}
         </code-block>
       </section-container>
     </section>

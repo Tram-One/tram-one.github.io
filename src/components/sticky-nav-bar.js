@@ -29,6 +29,7 @@ module.exports = () => {
       <scroll-anchor href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor href="#features">Features</scroll-anchor>
       <scroll-anchor href="#install">Install</scroll-anchor>
+      <scroll-anchor href="#concepts">Concepts</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#api">API</scroll-anchor>
       <nav-link href="https://discord.gg/dpBXAQC">Discord</nav-link>
       <nav-link href="https://github.com/Tram-One">Github</nav-link>

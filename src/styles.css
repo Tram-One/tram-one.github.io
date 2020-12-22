@@ -5,6 +5,26 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+#intro-section {
+	background: #FFF8DD
+}
+
+#features-section {
+	background: #deffdd;
+}
+
+#install-section {
+	background: #D1EBFF;
+}
+
+#concepts-section {
+	background: #ecddff;
+}
+
+#api-section {
+	background: #ffdddd;
+}
+
 .section-page {
 	padding: 2em 0;
 }

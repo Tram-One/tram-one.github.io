@@ -41,7 +41,7 @@ module.exports = (attrs) => {
   return html`
     <section>
       <api-header level="3" anchor="use-url-params" header="useUrlParams">
-        <code-block background=${attrs.background}>
+        <code-block>
           useUrlParams(pattern?: string): any
         </code-block>
       </api-header>
@@ -54,7 +54,7 @@ module.exports = (attrs) => {
           with the paths you expect to see. The hook will return false if the path
           does not match.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${checkUrlPath}
         </code-block>
       </section-container>
@@ -67,7 +67,7 @@ module.exports = (attrs) => {
           It's internal functionality is powered by the package
           <a href="https://www.npmjs.com/package/rlite-router">rlite</a>.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${checkUrlParams}
         </code-block>
       </section-container>

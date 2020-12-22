@@ -11,25 +11,19 @@ const html = registerHtml({
   'use-url-params': require('./use-url-params')
 })
 
-const background = '#DDEAFF'
-
-const apiStyle = `
-  background: ${background};
-`
-
 module.exports = () => {
   return html`
-    <section id="api-section" class="section-page" style=${apiStyle}>
+    <section id="api-section" class="section-page">
       <section-header level="2" anchor="api" header="API">
         Tram-One has a simple interface to help you build your web app.
       </section-header>
-      <start background=${background}/>
-      <register-html background=${background}/>
-      <register-svg background=${background}/>
-      <use-observable background=${background}/>
-      <use-global-observable background=${background}/>
-      <use-effect background=${background}/>
-      <use-url-params background=${background}/>
+      <start/>
+      <register-html/>
+      <register-svg/>
+      <use-observable/>
+      <use-global-observable/>
+      <use-effect/>
+      <use-url-params/>
     </section>
   `
 }

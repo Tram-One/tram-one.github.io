@@ -8,10 +8,8 @@ const highlightJS = require('../js-syntax-rules.json')
 const highlight = highlightSyntax([highlightJS])
 
 module.exports = (attrs, children) => {
-  const backgroundColor = attrs.background ? attrs.background : '#FFF8DD'
   const lineStyle = `
-    color: ${backgroundColor};
-    border-top: solid 0.1em ${backgroundColor};
+    margin-top: 0.1em;
   `
 
   const unformattedCode = children.map(child => child).join('').trim()

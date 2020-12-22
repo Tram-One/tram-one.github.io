@@ -21,6 +21,7 @@ module.exports = (attrs) => {
       <scroll-anchor style=${linkStyle} href="#introduction">Introduction</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#features">Features</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#install">Install</scroll-anchor>
+      <scroll-anchor style=${linkStyle} href="#concepts">Concepts</scroll-anchor>
       <scroll-anchor style=${linkStyle} href="#api">API</scroll-anchor>
       <nav-link style=${externalStyle} href="https://discord.gg/dpBXAQC">Discord</nav-link>
       <nav-link style=${externalStyle} href="https://github.com/Tram-One">Github</nav-link>

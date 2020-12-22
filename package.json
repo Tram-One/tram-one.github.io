@@ -15,7 +15,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "core-js": "^3.3.1",
     "eslint-config-tram-one": "^4.0.0",
-    "highlight-syntax": "^3.0.2",
+    "highlight-syntax": "jrjurman/highlight-syntax",
     "http-server": "^0.12.3",
     "jest": "^24.8.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",

@@ -3,19 +3,22 @@
   https://github.com/chriskempson/tomorrow-theme
 */
 
-.kw0, .operator {
-  color: #eab700;
-}
 .identifier {
   color: #efefef;
 }
-.kw1, .regex, .command-substitution, .template-expr {
-  color: #ffcc66;
+.kw0, .operator, .template-expr {
+  color: #eab700;
 }
-.kw2, .open-square, .close-square, .open-curly, .close-curly,
+.kw1, .regex, .command-substitution {
+  color: #81a2be;
+}
+.kw2 {
+  color: #81a2be;
+}
+.open-square, .close-square, .open-curly, .close-curly,
 .area-comment, .area-comment-continue, .line-comment,
 .open-paren, .close-paren {
-  color: #eab700;
+  color: #b294bb;
 }
 .number, .quote, .single-quote, .double-quote, .char,
 .template-string, .heredoc {

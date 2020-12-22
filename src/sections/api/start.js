@@ -35,7 +35,7 @@ module.exports = (attrs) => {
   return html`
     <section>
       <api-header level="3" anchor="start" header="start">
-        <code-block background=${attrs.background}>
+        <code-block>
           start(selector: string | Node, component: Function): void
         </code-block>
       </api-header>
@@ -47,7 +47,7 @@ module.exports = (attrs) => {
           <br/><br/>
           This should only be called for the initial render / building of the app.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${startElement}
         </code-block>
       </section-container>
@@ -57,7 +57,7 @@ module.exports = (attrs) => {
           Calling directly on a DOM element can be useful for server-side rendering
           and testing!
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${startDom}
         </code-block>
       </section-container>

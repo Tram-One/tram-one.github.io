@@ -26,7 +26,7 @@ module.exports = (attrs) => {
             https://github.com/Tram-One/tram-one-express
           </a>
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           npx tram-one-express app-name
         </code-block>
       </section-container>

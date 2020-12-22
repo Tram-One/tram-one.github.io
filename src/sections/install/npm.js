@@ -20,7 +20,7 @@ module.exports = (attrs) => {
             https://www.npmjs.com/package/tram-one
           </a>
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           npm install --save tram-one
         </code-block>
       </section-container>

@@ -7,21 +7,15 @@ const html = registerHtml({
   'tram-one-express': require('./tram-one-express')
 })
 
-const background = '#FFDFDD'
-
-const apiStyle = `
-  background: ${background};
-`
-
 module.exports = () => {
   return html`
-    <section id="install-section" class="section-page" style=${apiStyle}>
+    <section id="install-section" class="section-page">
       <section-header level="2" anchor="install" header="Install">
         There are multiple ways to get started with Tram-One!
       </section-header>
-      <tram-one-express background=${background} />
-      <npm background=${background} />
-      <script-tag background=${background} />
+      <tram-one-express/>
+      <npm/>
+      <script-tag/>
     </section>
   `
 }

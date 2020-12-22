@@ -28,7 +28,7 @@ start('#app', home)
 
 module.exports = () => {
   return html`
-    <section id="intro-section" class="section-page" style="background: #FFF8DD;">
+    <section id="intro-section" class="section-page">
       <section-header level="2" anchor="introduction" header="Introduction" />
       <section-container>
         <section-text>

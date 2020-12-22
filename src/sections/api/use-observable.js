@@ -37,7 +37,7 @@ module.exports = (attrs) => {
   return html`
     <section>
       <api-header level="3" anchor="use-observable" header="useObservable">
-        <code-block background=${attrs.background}>
+        <code-block>
           useObservable(value: any): [value: any, setter: Function]
         </code-block>
       </api-header>
@@ -52,7 +52,7 @@ module.exports = (attrs) => {
           If the value (or a subfield, if observing an object or array) is updated,
           then only the components that are dependent on that value will update.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${primitiveObservable}
         </code-block>
       </section-container>
@@ -62,7 +62,7 @@ module.exports = (attrs) => {
           and avoid using the setter that is returned. This will be more performant,
           and cause only components that are reactive to the sub-fields to update.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${objectObservable}
         </code-block>
       </section-container>

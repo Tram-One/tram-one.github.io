@@ -39,7 +39,7 @@ module.exports = (attrs) => {
           you to quickly see Tram-One running in your browser. However to build
           larger applications, it's recommended that you use one of the above solutions.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${code}
         </code-block>
       </section-container>

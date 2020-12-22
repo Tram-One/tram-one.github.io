@@ -26,7 +26,7 @@ module.exports = (attrs) => {
   return html`
     <section>
       <api-header level="3" anchor="register-svg" header="regsiterSvg">
-        <code-block background=${attrs.background}>
+        <code-block>
           registerSvg(registry?: any): Function
         </code-block>
       </api-header>
@@ -36,7 +36,7 @@ module.exports = (attrs) => {
           This acts identical to <code-style>registerHtml</code-style>, but
           uses DOM methods for building svg graphics.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${dom}
         </code-block>
       </section-container>

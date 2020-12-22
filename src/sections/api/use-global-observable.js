@@ -38,7 +38,7 @@ module.exports = (attrs) => {
   return html`
     <section>
       <api-header level="3" anchor="use-global-observable" header="useGlobalObservable">
-        <code-block background=${attrs.background}>
+        <code-block>
           useGlobalObservable(key: string, value?: any): [value: any, setter: Function]
         </code-block>
       </api-header>
@@ -49,7 +49,7 @@ module.exports = (attrs) => {
           This in part fills the role of React's Context API, but mimics the interface
           of React's useState or Tram-One's useObservable hook.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${globalObservable}
         </code-block>
       </section-container>
@@ -58,7 +58,7 @@ module.exports = (attrs) => {
           The function takes in a key and a default value.
           The key can be used to access the value anywhere in the app.
         </section-text>
-        <code-block background=${attrs.background}>
+        <code-block>
           ${valueDisplay}
         </code-block>
       </section-container>

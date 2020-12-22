@@ -7,12 +7,6 @@ const html = registerHtml({
   'code-block': require('../../components/code-block'),
 })
 
-const background = '#DDFFDD'
-
-const featuresStyle = `
-  background: ${background};
-`
-
 const templateStringCode = `
 import { registerHtml } from 'tram-one'
 const html = registerHtml()
@@ -58,7 +52,7 @@ const page = () => {
 
 module.exports = () => {
   return html`
-    <section class="section-page" id="features-section" style=${featuresStyle}>
+    <section class="section-page" id="features-section">
       <section-header level="2" anchor="features" header="Features" />
       <section-container>
         <section-text>
@@ -68,7 +62,7 @@ module.exports = () => {
           This means there are no extra compiliation steps required to get your code on the browser.
           It also means that when debugging you can look at the raw javascript, source-maps not required!
         </section-text>
-        <code-block background=${background}>
+        <code-block>
           ${templateStringCode}
         </code-block>
       </section-container>
@@ -82,7 +76,7 @@ module.exports = () => {
           Tram-One includes a set of default hooks, similar to React and Svelte,
           which allow for routing, effects, component state, and global state management.
         </section-text>
-        <code-block background=${background}>
+        <code-block>
           ${stateCode}
         </code-block>
       </section-container>
@@ -93,7 +87,7 @@ module.exports = () => {
           offering custom components in a js template syntax that
           should be familiar and confortable to React developers.
         </section-text>
-        <code-block background=${background}>
+        <code-block>
           ${componentCode}
         </code-block>
       </section-container>
