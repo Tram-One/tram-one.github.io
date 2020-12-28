@@ -1,40 +1,28 @@
-.app-header {
-	font-size: 1.2em;
-	padding-left: 1.5em;
-	padding-top: 1em;
-	display: grid;
-	/* 3.8em -> logoSize */
-  grid-template-columns: minmax(1em, calc(25% - 1em)) 3.8em auto minmax(1em, calc(75% - 1em)) ;
-  grid-template-rows: 2em auto;
+.app-header-banner {
+  margin: 2em auto;
+  display: grid;
+  max-width: 800px;
   grid-template-areas:
-    ". logo title ."
-    ". logo links  .";
+  "logo title"
+  "logo subtitle";
 }
 
-/* mobile */
-@media only screen and (max-width: 830px) {
-  .app-header {
-    grid-template-columns: 4.2em auto auto;
-    grid-template-rows: 3.8em auto;
-    grid-template-areas:
-    " logo  title title"
-    " links links links";
-  }
-}
-
-.app-header-logo {
-  grid-area: logo;
-}
-
-.app-header-title {
-	grid-area: title;
+.app-header-banner-title {
+  font-size: 2em;
   margin: 0;
-  white-space: nowrap;
+  align-self: end;
+  grid-area: title;
 }
 
-/* mobile */
-@media only screen and (max-width: 830px) {
-  .app-header-title {
-    align-self: center;
-  }
+.app-header-banner-subtitle {
+  font-size: 1.3em;
+  margin: 0;
+  font-weight: normal;
+  grid-area: subtitle;
+}
+
+.app-header-banner-logo {
+  grid-area: logo;
+  margin-right: 1.5em;
+  justify-self: end;
 }

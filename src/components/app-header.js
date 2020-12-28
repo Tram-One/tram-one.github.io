@@ -6,15 +6,18 @@ const html = registerHtml({
   'nav-bar': require('./nav-bar'),
 })
 
-const logoSize = '3.8em'
-
 module.exports = (attrs) => {
   return html`
     <header id=${attrs.id} class="app-header">
-      <tram-logo class="app-header-logo" size=${logoSize} />
-      <h1 class="app-header-title">
-        Tram-One
-      </h1>
+      <section class="app-header-banner">
+        <h1 class="app-header-banner-title">
+          Tram-One
+        </h1>
+        <h2 class="app-header-banner-subtitle">
+          Modern View Framework for Vanilla Javascript
+        </h2>
+        <tram-logo class="app-header-banner-logo" size="8em" />
+      </section>
       <nav-bar class="app-header-nav-bar" />
     </header>
   `

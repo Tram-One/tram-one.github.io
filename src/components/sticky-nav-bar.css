@@ -1,16 +1,22 @@
 .sticky-nav-bar {
-	display: flex;
-  flex-wrap: nowrap;
-  margin-bottom: 0.8em;
   position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+	top: 0; /* Position the navbar at the top of the page */
+  z-index: 1; /* Position the navbar in front of other elements on the page */
 	width: 100%;
-	justify-content: center;
 }
 
-.sticky-nav-bar {
+.sticky-nav-bar-links {
+	display: flex;
+  flex-wrap: nowrap;
+  max-width: 800px;
+	justify-content: space-around;
+	margin: 0.1em auto 0.1em auto;
+}
+
+.sticky-nav-bar-section {
+	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
-  z-index: 1;
 }
 
 .sticky-nav-logo {

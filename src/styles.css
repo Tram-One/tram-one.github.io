@@ -14,7 +14,7 @@ body {
 }
 
 #install-section {
-	background: #D1EBFF;
+	background: #ffdddd;
 }
 
 #concepts-section {
@@ -22,11 +22,11 @@ body {
 }
 
 #api-section {
-	background: #ffdddd;
+	background: #D1EBFF;
 }
 
 .section-page {
-	padding: 2em 0;
+	padding: 2.5em 0;
 }
 
 p {
