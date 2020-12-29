@@ -13,12 +13,13 @@ module.exports = (attrs) => {
       <section-header level="3" anchor="tram-one-express" header="Tram-One Express" />
       <section-container>
         <section-text>
-          The fastest and best way to install Tram-One is by using
+          The fastest and easiest way to get started wtih Tram-One is by using
           Tram-One Express, a dedicated generator for building single-page
           apps using Tram-One.
           <br/><br/>
-          It comes with example code, scripts, and tests to help you
-          get started!
+          It comes with example code, build tooling
+          (via <a href="https://parceljs.org/">parcel</a>),
+          and tests to help you get started!
           <br/><br/>
           You can check out the documentation here:
           <br/>

@@ -32,16 +32,17 @@ module.exports = () => {
       <section-header level="2" anchor="introduction" header="Introduction" />
       <section-container>
         <section-text>
-          Tram-One is a light View Framework that comes with all the
-          dependencies you need to start developing on the web.
+          Tram-One is a Modern View Framework that has advance features like hooks, observables,
+          and JSX-like template components, all in plain vanilla javascript.
           <br/><br/>
-          Tram-One is an orchestration of common features, and relies only on
-          plain vanilla javascript, so you don't have to bother learning / parsing /
-          transpiling special templating languages.
+          Tram-One takes inspiration from frameworks like
+          <a href="https://choo.io/">Choo</a>,
+          <a href="https://reactjs.org/">React</a>, and
+          <a href="https://svelte.dev/">Svelte</a>, and provides a rich feature set without additional libraries.
           <br/><br/>
           This site is a one-stop-shop with everything you need to know about
           Tram-One. If you have any questions from this page or about Tram-One,
-          or just want to say hi, <a href='https://discord.gg/dpBXAQC' >join our Discord</a>!
+          or just want to say hi, <a href='https://discord.gg/dpBXAQC'>join our Discord</a>!
         </section-text>
         <code-block>
           ${code}

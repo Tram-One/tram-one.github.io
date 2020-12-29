@@ -58,7 +58,8 @@ module.exports = (attrs) => {
       <section-header level="3" anchor="observables" header="Observables" />
       <section-container>
         <section-text>
-          Observables are how Tram-One keeps track of state. They are inspired heavily by the Svelte framework.
+          Observables are how Tram-One keeps track of state.
+          They are inspired heavily by the <a href="https://svelte.dev/">Svelte</a> framework.
           <br/><br/>
           When you update an observable, only the components (and effects) that are dependent on that state are updated.
         </section-text>

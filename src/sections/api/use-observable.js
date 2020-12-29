@@ -56,16 +56,6 @@ module.exports = (attrs) => {
           ${primitiveObservable}
         </code-block>
       </section-container>
-      <section-container>
-        <section-text>
-          If storing an object or array, you should mutate the subfields directly,
-          and avoid using the setter that is returned. This will be more performant,
-          and cause only components that are reactive to the sub-fields to update.
-        </section-text>
-        <code-block>
-          ${objectObservable}
-        </code-block>
-      </section-container>
     </section>
   `
 }

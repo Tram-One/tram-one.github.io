@@ -39,24 +39,6 @@ const counter = () => {
 }
 `
 
-const useEffectWithAsync = `
-import { registerHtml, useEffect, useObservable } from 'tram-one'
-
-const html = registerHtml()
-
-const todoList = () => {
-  const [todos, setTodos] = useObservable()
-  useEffect(async () => {
-    const todoResponse = await fetch('https://jsonplaceholder.typicode.com/todos/')
-    const parsedTodos = await todoResponse.json()
-    setTodos(parsedTodos)
-  })
-	return html\`
-    <div>$\{JSON.stringify(todos)\}</div>
-  \`
-}
-`
-
 module.exports = (attrs) => {
   return html`
     <section>
@@ -68,29 +50,15 @@ module.exports = (attrs) => {
       <section-container>
         <section-text>
           Hook that triggers component start, update, and cleanup effects.
-          If the return of effect is another function, then that function is called on
-          when the component is removed.
+          <br/><br/>
+          The hook takes in an effect to run when the component is mounted.
+          If any observables are used in the hook, when that data updates, it will trigger the effect again.
+          <br/><br/>
+          If the return of effect is another function, then that function is called
+          when the component is updated or removed.
         </section-text>
         <code-block>
           ${useEffect}
-        </code-block>
-      </section-container>
-      <section-container>
-        <section-text>
-          If the effect is dependent on a observable object,
-          it will automatically trigger again if a dependent property updates.
-        </section-text>
-        <code-block>
-          ${useEffectWithObservable}
-        </code-block>
-      </section-container>
-      <section-container>
-        <section-text>
-          If the effect does not return a function, the return is ignored,
-          which means async functions are okay!
-        </section-text>
-        <code-block>
-          ${useEffectWithAsync}
         </code-block>
       </section-container>
     </section>

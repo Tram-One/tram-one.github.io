@@ -7,22 +7,22 @@ const html = registerHtml({
   'code-block': require('../../components/code-block'),
 })
 
-const templateStringCode = `
-import { registerHtml } from 'tram-one'
-const html = registerHtml()
+const componentCode = `
+const html = registerHtml({
+  'TramHeader': TramHeader
+})
 
-const page = () => {
-  const stars = 20
+const page = (attrs) => {
+  const { color } = attrs
   return html\`
-    <p>
-      There are \${stars} stars
-    </p>
+    <TramHeader color=\${color}>
+      Tram-One Rules!
+    </TramHeader>
   \`
 }
 `
 
 const stateCode = `
-import { registerHtml, useObservable } from 'tram-one'
 const html = registerHtml()
 
 const page = () => {
@@ -36,18 +36,26 @@ const page = () => {
 }
 `
 
-const componentCode = `
-const html = registerHtml({
-  'tram-header': tramHeader
-})
+const apiCode = `
+import { registerHtml, useGlobalObservable, useUrlParams, start } from 'tram-one'
 
-const page = () => {
+const html = registerHtml()
+const app = () => {
+  if (useUrlParams('/error')) return html\`<p>Oh no!</p>\`
+
+  const { user } = useUrlParams('/:user')
+  const [userName, setUserName] = useGlobalObservable('USER_NAME', user)
+  const updateUserName = (event) => setUserName(event.target.value)
+
   return html\`
-    <tram-header color="blue">
-      Tram-One Rules!
-    </tram-header>
+    <main>
+      <h1> Hello \${userName} </h1>
+      <input value=\${userName} onchange=\${updateUserName} />
+    </main>
   \`
 }
+
+start('#app', app)
 `
 
 module.exports = () => {
@@ -56,25 +64,23 @@ module.exports = () => {
       <section-header level="2" anchor="features" header="Features" />
       <section-container>
         <section-text>
-          Tram-One relies only on ES6 Template Strings, which are
-          <a href="https://caniuse.com/template-literals">supported in most major browsers</a>.
+          Tram-One offers JSX-like view components with ES6 Template Strings, which are
+          <a href="https://caniuse.com/template-literals">supported in all modern browsers</a>.
           <br/><br/>
-          This means there are no extra compiliation steps required to get your code on the browser.
-          It also means that when debugging you can look at the raw javascript, source-maps not required!
+          Anyone familiar with React should feel right at home building and composing components and pages.
         </section-text>
         <code-block>
-          ${templateStringCode}
+          ${componentCode}
         </code-block>
       </section-container>
 
       <section-container>
         <section-text>
-          Tram-One takes inspiration from frameworks like
-          <a href="https://choo.io/">Choo</a>,
-          <a href="https://reactjs.org/">React</a>, and
-          <a href="https://svelte.dev/">Svelte</a>.
           Tram-One includes a set of default hooks, similar to React and Svelte,
           which allow for routing, effects, component state, and global state management.
+          <br/><br/>
+          Tram-One's hooks are intelligent, and update components only when required,
+          making apps more performant!
         </section-text>
         <code-block>
           ${stateCode}
@@ -83,12 +89,12 @@ module.exports = () => {
 
       <section-container>
         <section-text>
-          The syntax is based on similar modules that Choo uses,
-          offering custom components in a js template syntax that
-          should be familiar and confortable to React developers.
+          With only a handful of functions, Tram-One's API is small and easy to learn, while being complete enough to make rich web experiences.
+          <br/><br/>
+          The API covers everything you need to build basic web-applications, and provide the building blocks for more complex ones.
         </section-text>
         <code-block>
-          ${componentCode}
+          ${apiCode}
         </code-block>
       </section-container>
 

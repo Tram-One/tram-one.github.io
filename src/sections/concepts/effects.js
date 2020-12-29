@@ -51,7 +51,7 @@ module.exports = (attrs) => {
       <section-container>
         <section-text>
           Effects are functions that run after elements have been added, updated, or removed.
-          They are inspired by React's useEffect hook.
+          They are inspired by <a href="https://reactjs.org/">React's</a> useEffect hook.
           <br/><br/>
           Effects are defined using the useEffect hook.
           They take in a single dependency, the effect to trigger.
@@ -71,8 +71,7 @@ module.exports = (attrs) => {
       </section-container>
       <section-container>
         <section-text>
-          If the effect returns a function, it will call that function
-          when the component is updated or removed.
+          If the effect returns a function, that function will be called when the component is updated or removed.
           <br/><br/>
           If the effect does not return a function, the return is ignored,
           which means you can make the entire effect an async function and the returned promise will be ignored.
