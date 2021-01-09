@@ -11,7 +11,7 @@ module.exports = (attrs) => {
     <header id=${attrs.id} class="app-header">
       <section class="app-header-banner">
         <h1 class="app-header-banner-title">
-          Tram-One
+          Tram-One <span class="app-header-banner-version">v9.0.4</span>
         </h1>
         <h2 class="app-header-banner-subtitle">
           Modern View Framework for Vanilla Javascript
