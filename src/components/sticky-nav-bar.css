@@ -1,4 +1,5 @@
 .sticky-nav-bar {
+	font-size: 0.9em; /* Slightly smaller, to fit on mobile view */
   position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
   z-index: 1; /* Position the navbar in front of other elements on the page */
