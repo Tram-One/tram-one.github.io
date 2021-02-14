@@ -26,8 +26,8 @@ const stateCode = `
 const html = registerHtml()
 
 const page = () => {
-  const [count, updateCount] = useObservable(0)
-  const incrementCount = () => updateCount(count + 1)
+  const counter = useStore({count: 0})
+  const incrementCount = () => {counter.count++}
   return html\`
     <button onclick=\${incrementCount}>
       \${count}
@@ -37,25 +37,25 @@ const page = () => {
 `
 
 const apiCode = `
-import { registerHtml, useGlobalObservable, useUrlParams, start } from 'tram-one'
+import { registerHtml, useGlobalStore, useUrlParams, start } from 'tram-one'
 
 const html = registerHtml()
 const app = () => {
-  if (useUrlParams('/error')) return html\`<p>Oh no!</p>\`
+  if (useUrlParams('/error').matches) return html\`<p>Oh no!</p>\`
 
   const { user } = useUrlParams('/:user')
-  const [userName, setUserName] = useGlobalObservable('USER_NAME', user)
-  const updateUserName = (event) => setUserName(event.target.value)
+  const userObject = useGlobalStore('USER_NAME', {username: ''})
+  const updateUserName = (event) => { userObject.username = event.target.value }
 
   return html\`
     <main>
-      <h1> Hello \${userName} </h1>
-      <input value=\${userName} onchange=\${updateUserName} />
+      <h1> Hello \${userObject.username} </h1>
+      <input value=\${userObject.username} onchange=\${updateUserName} />
     </main>
   \`
 }
 
-start('#app', app)
+start(app, '#app')
 `
 
 module.exports = () => {

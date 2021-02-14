@@ -15,8 +15,8 @@ const url = window.location.hostname
 const html = registerHtml()
 
 const home = () => {
-  if (useUrlParams('/home')) return html\`<h1>Home Page</h1>\`
-  if (useUrlParams('/details')) return html\`<h1>Details Page</h1>\`
+  if (useUrlParams('/home').matches) return html\`<h1>Home Page</h1>\`
+  if (useUrlParams('/details').matches) return html\`<h1>Details Page</h1>\`
   return html\`<h1>No Page</h1>\`
 }
 `
@@ -42,7 +42,7 @@ module.exports = (attrs) => {
     <section>
       <api-header level="3" anchor="use-url-params" header="useUrlParams">
         <code-block>
-          useUrlParams(pattern?: string): any
+          useUrlParams(pattern?: string): Object
         </code-block>
       </api-header>
       <section-container>
@@ -51,8 +51,9 @@ module.exports = (attrs) => {
           Can return path parameters, query params, and more!
           <br/><br/>
           You can test for a path by calling <code-style>useUrlParams</code-style>
-          with the paths you expect to see. The hook will return false if the path
-          does not match.
+          with the paths you expect to see. The hook will return an object with a
+          <code-style>matches</code-style> key that will be true or false,
+          depending on if the patch matches.
         </section-text>
         <code-block>
           ${checkUrlPath}

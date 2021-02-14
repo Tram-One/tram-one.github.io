@@ -10,7 +10,7 @@ const html = registerHtml({
 const code = `
 <html>
   <head>
-    <script src="https://unpkg.com/tram-one/dist/tram-one.umd.js"></script>
+    <script src="https://unpkg.com/tram-one@10"></script>
   </head>
   <body>
     <div class="app"></div>

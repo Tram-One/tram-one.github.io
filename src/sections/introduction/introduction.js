@@ -23,7 +23,7 @@ const home = () => {
   \`
 }
 
-start('#app', home)
+start(home, '#app')
 `
 
 module.exports = () => {

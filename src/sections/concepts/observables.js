@@ -7,19 +7,9 @@ const html = registerHtml({
   'code-block': require('../../components/code-block'),
 })
 
-const primitiveObservable = `
-const page = () => {
-  const [count, setCount] = useObservable(0)
-  const increment = () => setCount(count + 1)
-  return html\`
-    <button onclick=\${increment}>\${count}</button>
-  \`
-}
-`
-
 const objectObservable = `
 const page = () => {
-  const [counter] = useObservable({ count: 0 })
+  const counter = useStore({ count: 0 })
   const increment = () => { counter.count += 1 }
   return html\`
     <button onclick=\${increment}>\${counter.count}</button>
@@ -29,12 +19,12 @@ const page = () => {
 
 const comboObservable = `
 const page = () => {
-  const [username] = useGlobalObservable('username')
-  const [votes, setVotes] = useObservable(0)
-  const increment = () => setVotes(votes + 1)
+  const username = useGlobalStore('username')
+  const votes = useStore({count: 0})
+  const increment = () => setVotes(votes.count++)
   return html\`
     <section>
-      \${username} has \${votes} votes.
+      \${username.name} has \${votes} votes.
     </section>
   \`
 }
@@ -42,11 +32,11 @@ const page = () => {
 
 const globalObservable = `
 const page = () => {
-  const [username, setUsername] = useGlobalObservable('username', 'Unassigned')
-  const onSetName = (event) => setUsername(event.target.value)
+  const username = useGlobalStore('username', {name: 'Unassigned'})
+  const onSetName = (event) => {username.name = event.target.value}
   return html\`
     <section>
-      Username: <input onchange=\${onSetName} value=\${username} />
+      Username: <input onchange=\${onSetName} value=\${username.name} />
     </section>
   \`
 }
@@ -64,24 +54,12 @@ module.exports = (attrs) => {
           When you update an observable, only the components (and effects) that are dependent on that state are updated.
         </section-text>
         <code-block>
-          ${primitiveObservable}
-        </code-block>
-      </section-container>
-      <section-container>
-        <section-text>
-          Observables can be tapped into by using the useObservable and useGlobalObservable hooks.
-          <br/><br/>
-          Like React's useState, they return the value (secretly wrapped in an observable), and a setter function.
-        </section-text>
-        <code-block>
           ${comboObservable}
         </code-block>
       </section-container>
       <section-container>
         <section-text>
-          Global observables allow you to use a key to access the same data regardless of where you are in the app.
-          <br/><br/>
-          This can make sharing data across an entire project much easier, and fulfills the role of React's Context API.
+          Observables can be tapped into by using the useStore and useGlobalStore hooks.
         </section-text>
         <code-block>
           ${globalObservable}
@@ -89,10 +67,9 @@ module.exports = (attrs) => {
       </section-container>
       <section-container>
         <section-text>
-          You can store either primitive data (like numbers, strings, or booleans) or more complex data (like objects and arrays).
+          Global observables allow you to use a key to access the same data regardless of where you are in the app.
           <br/><br/>
-          When using more complex data, mutate the properties directly, rather than calling the setter.
-          Tram-One will then only update the the components that should react to the single property change.
+          This can make sharing data across an entire project much easier, and fulfills the role of React's Context API.
         </section-text>
         <code-block>
           ${objectObservable}

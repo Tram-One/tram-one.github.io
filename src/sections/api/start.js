@@ -16,7 +16,7 @@ const home = () => html\`
   <h1>Tram-One</h1>
 \`
 
-start('#app', home)
+start(home, '#app')
 `
 const startDom = `
 import { start, registerHtml } from 'tram-one'
@@ -27,8 +27,8 @@ const home = () => html\`
   <h1>Tram-One</h1>
 \`
 
-const testApp = document.createElement('main')
-start(testApp, home)
+const testContainer = document.createElement('main')
+start(home, testContainer)
 `
 
 module.exports = (attrs) => {
@@ -36,7 +36,7 @@ module.exports = (attrs) => {
     <section>
       <api-header level="3" anchor="start" header="start">
         <code-block>
-          start(selector: string | Node, component: Function): void
+          start(component: Function, selector: string | Node): void
         </code-block>
       </api-header>
       <section-container>

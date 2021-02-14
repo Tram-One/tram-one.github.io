@@ -18,7 +18,7 @@ const home = () => {
 
 const useEffectWithObservable = `
 const counter = () => {
-  const [countObject] = useObservable({ value: 0 })
+  const countObject = useStore({ value: 0 })
   useEffect(() => {
     console.log(\`Current count: $\{countObject.value\}\`)
   })

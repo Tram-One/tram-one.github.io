@@ -5,6 +5,7 @@ const html = registerHtml({
   'section-header': require('../../components/section-header'),
   'section-text': require('../../components/section-text'),
   'code-block': require('../../components/code-block'),
+  'code-style': require('../../components/code-style')
 })
 
 const customHeader = `
@@ -77,9 +78,9 @@ module.exports = (attrs) => {
       </section-container>
       <section-container>
         <section-text>
-          Components can be included in other custom components when passed into registerHtml.
+          Components can be included in other custom components when passed into <code-style>registerHtml</code-style>.
           <br/><br/>
-          When imported, the key dictates what the tag name will be.
+          When imported, the <code-style>key</code-style> dictates what the tag name will be.
           This can be camel case, hyphenated, or just a lowercase string!
           <br/><br/>
           While still native Javascript, you can build complex and nested components just like you might with React's JSX.
@@ -94,7 +95,7 @@ module.exports = (attrs) => {
           Both are optional parameters that are written just like normal HTML in the template, and come in as parameters in the component.
           <br/><br/>
           Attributes can match the standard html spec
-          (e.g. id, class, onclick), or be custom variables.
+          (e.g. <code-style>id</code-style>, <code-style>class</code-style>, <code-style>onclick</code-style>), or be custom variables.
           <br/><br/>
           Children are just nodes inside the component, and shouldn't
           be manipulated directly, but can be wrapped with other DOM.

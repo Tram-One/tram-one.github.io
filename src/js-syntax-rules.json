@@ -12,7 +12,7 @@
     "Int32Array","Int8Array","Intl","Map","Promise","Proxy","Reflect","Set",
     "Symbol","Uint16Array","Uint32Array","Uint8Array","Uint8ClampedArray",
     "WeakMap","WeakSet", "async", "await"],
-  "kw2":["html","svg","start","registerHtml","registerSvg","useObservable","useGlobalObservable","useEffect","useUrlParams"],
+  "kw2":["html","svg","start","registerHtml","registerSvg","useStore","useGlobalStore","useEffect","useUrlParams"],
   "rules": [
     ["area comment","^/\\*([^*]|\\*(?!/))*\\*/$"],
     ["area comment continue","^/\\*([^*]|\\*(?!/))*\\*?$"],

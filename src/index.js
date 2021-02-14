@@ -1,6 +1,6 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import { registerHtml, start, useEffect, useGlobalObservable, useObservable } from 'tram-one'
+import { registerHtml, start, useEffect, useGlobalStore, useStore } from 'tram-one'
 import './styles.css'
 import './links.css'
 import './highlight-syntax.css'
@@ -21,9 +21,9 @@ const html = registerHtml({
  * the observer controls when the nav should appear, and what color it should be.
  */
 const createScrollObserver = () => {
-  const [stickyNavVisibility, setStickyNavVisibility] = useGlobalObservable('stickyNavVisibility', false)
-  const [stickyNavBarColor, setStickyNavBarColor] = useGlobalObservable('stickyNavColor')
-  const [entryMap] = useObservable([{}, {}, {}, {}])
+  const stickyNavVisibility = useGlobalStore('stickyNavVisibility', {isVisible: false})
+  const stickyNavColor = useGlobalStore('stickyNavColor', {color: undefined})
+  const entryMap = useStore([{}, {}, {}, {}])
 
   const appHeader = document.querySelector('#app-header')
   const introSection = document.querySelector('#intro-section')
@@ -37,7 +37,7 @@ const createScrollObserver = () => {
     const appHeaderEntry = entries.find(isAppHeaderEntry)
     if (appHeaderEntry) {
       const appHeaderIsVisible = appHeaderEntry.isIntersecting
-      setStickyNavVisibility(!appHeaderIsVisible)
+      stickyNavVisibility.isVisible = !appHeaderIsVisible
     }
 
     const isintroductionSectionEntry = (entry) => entry.target.id === 'intro-section'
@@ -67,8 +67,7 @@ const createScrollObserver = () => {
     const isSectionVisible = (entry) => entry.isIntersecting
     const firstEntry = entryMap.find(isSectionVisible)
     // use getComptuedStyle, which can read from the CSS style sheets
-    const stickyNavColor = getComputedStyle(firstEntry.target).backgroundColor
-    setStickyNavBarColor(stickyNavColor)
+    stickyNavColor.color = getComputedStyle(firstEntry.target).backgroundColor
   }
 
   const observerOptions = {
@@ -105,4 +104,4 @@ const page = () => {
   `
 }
 
-start('#app', page)
+start(page, '#app')

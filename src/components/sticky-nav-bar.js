@@ -1,4 +1,4 @@
-import { registerHtml, useGlobalObservable } from 'tram-one'
+import { registerHtml, useGlobalStore } from 'tram-one'
 import './sticky-nav-bar.css'
 
 const html = registerHtml({
@@ -14,12 +14,12 @@ const linkStyle = `
 `
 
 module.exports = () => {
-  const [stickyNavVisibility] = useGlobalObservable('stickyNavVisibility', false)
-  const [stickyNavBarColor] = useGlobalObservable('stickyNavColor')
+  const stickyNavVisibility = useGlobalStore('stickyNavVisibility', {isVisible: false})
+  const stickyNavBarColor = useGlobalStore('stickyNavColor', { color: undefined })
 
   const dynamicStyleProperties = `
-    ${stickyNavVisibility ? '' : 'display: none;'}
-    background: ${stickyNavBarColor}
+    ${stickyNavVisibility.isVisible ? '' : 'display: none;'}
+    background: ${stickyNavBarColor.color}
   `
 
   return html`

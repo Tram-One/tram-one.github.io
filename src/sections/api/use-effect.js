@@ -20,25 +20,6 @@ const home = () => {
 }
 `
 
-const useEffectWithObservable = `
-import { registerHtml, useEffect, useObservable } from 'tram-one'
-
-const html = registerHtml()
-
-const counter = () => {
-  const [countObject] = useObservable({ value: 0 })
-  useEffect(() => {
-    console.log(\`Current count: $\{countObject.value\}\`)
-  })
-  const incrementCount = () => countObject.value++
-	return html\`
-    <button onclick=$\{incrementCount\}>
-      Increment Count
-    </button>
-  \`
-}
-`
-
 module.exports = (attrs) => {
   return html`
     <section>
@@ -52,7 +33,7 @@ module.exports = (attrs) => {
           Hook that triggers component start, update, and cleanup effects.
           <br/><br/>
           The hook takes in an effect to run when the component is mounted.
-          If any observables are used in the hook, when that data updates, it will trigger the effect again.
+          If any stores are used in the hook, when that data updates, it will trigger the effect again.
           <br/><br/>
           If the return of effect is another function, then that function is called
           when the component is updated or removed.

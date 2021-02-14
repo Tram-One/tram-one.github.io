@@ -5,8 +5,8 @@ const html = registerHtml({
   'start': require('./start'),
   'register-html': require('./register-html'),
   'register-svg': require('./register-svg'),
-  'use-observable': require('./use-observable'),
-  'use-global-observable': require('./use-global-observable'),
+  'use-store': require('./use-store'),
+  'use-global-store': require('./use-global-store'),
   'use-effect': require('./use-effect'),
   'use-url-params': require('./use-url-params')
 })
@@ -20,8 +20,8 @@ module.exports = () => {
       <start/>
       <register-html/>
       <register-svg/>
-      <use-observable/>
-      <use-global-observable/>
+      <use-store/>
+      <use-global-store/>
       <use-effect/>
       <use-url-params/>
     </section>
