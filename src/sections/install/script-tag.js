@@ -10,12 +10,22 @@ const html = registerHtml({
 const code = `
 <html>
   <head>
-    <script src="https://unpkg.com/tram-one@10"></script>
+    <script src="https://unpkg.com/tram-one@10/dist/tram-one.umd.js"></script>
   </head>
   <body>
     <div class="app"></div>
     <script>
       const { registerHtml, start } = window['tram-one']
+			const html = registerHtml()
+
+			const home = () => {
+				return html\`
+					<h1>Tram-One Rules</h1>
+				\`
+			}
+
+			start(home, '.app')
+
     </script>
   </body>
 </html>

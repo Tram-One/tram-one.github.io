@@ -1,6 +1,7 @@
 {
   "name": "tram-one.github.io",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
