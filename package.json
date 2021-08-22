@@ -6,7 +6,7 @@
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
     "prepublish:site": "npm run build",
-    "publish:site": "surge dist --domain https://tram-one.io",
+    "publish:site": "gh-pages -d dist -b master",
     "dist-test": "http-server dist",
     "test": "jest --watch",
     "lint": "xo"
@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "core-js": "^3.3.1",
     "eslint-config-tram-one": "^4.0.0",
+    "gh-pages": "^3.2.0",
     "highlight-syntax": "jrjurman/highlight-syntax",
     "http-server": "^0.12.3",
     "jest": "^24.8.0",
