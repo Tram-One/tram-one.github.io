@@ -1,15 +1,15 @@
 .sticky-nav-bar {
 	font-size: 0.9em; /* Slightly smaller, to fit on mobile view */
-  position: fixed; /* Set the navbar to fixed position */
+	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
-  z-index: 1; /* Position the navbar in front of other elements on the page */
+	z-index: 1; /* Position the navbar in front of other elements on the page */
 	width: 100%;
 }
 
 .sticky-nav-bar-links {
 	display: flex;
-  flex-wrap: nowrap;
-  max-width: 800px;
+	flex-wrap: nowrap;
+	max-width: 800px;
 	justify-content: space-around;
 	margin: 0.1em auto 0.1em auto;
 }
@@ -27,15 +27,15 @@
 
 /* mobile */
 @media only screen and (max-width: 700px) {
-  .sticky-nav-logo {
+	.sticky-nav-logo {
 		/* hide tram-one logo */
 		display: none;
 	}
 }
 
 .tram-one-link {
-  font-weight: bold;
-  color: #000;
+	font-weight: bold;
+	color: #000;
 	opacity: 1;
 }
 

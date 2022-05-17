@@ -1,32 +1,31 @@
-
 /* this css matches that in section-container and api-header */
 .section-header {
 	display: grid;
-  font-size: 1em;
-  grid-template-columns: minmax(auto, 15%) 35% 50% 0px;
-  column-gap: 1.5em;
-  grid-template-areas:
-    ". header        code-spacer code-spacer"
-    ". introduction  code-spacer code-spacer";
+	font-size: 1em;
+	grid-template-columns: minmax(auto, 15%) 35% 50% 0px;
+	column-gap: 1.5em;
+	grid-template-areas:
+		'. header        code-spacer code-spacer'
+		'. introduction  code-spacer code-spacer';
 }
 
 /* mobile */
 @media only screen and (max-width: 700px) {
-  .section-header {
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-    ". header       ."
-    ". introduction .";
-  }
+	.section-header {
+		grid-template-columns: auto 1fr auto;
+		grid-template-areas:
+			'. header       .'
+			'. introduction .';
+	}
 }
 
 /* element to fill in the code section, without having a real element */
 .section-header:after {
-  content: " ";
-  background: #2E2E2E;
-  grid-area: code-spacer;
+	content: ' ';
+	background: #2e2e2e;
+	grid-area: code-spacer;
 }
 
 .section-introduction {
-  grid-area: introduction;
+	grid-area: introduction;
 }

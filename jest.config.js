@@ -8,6 +8,6 @@ module.exports = {
 	// enable css processing
 	transform: {
 		'^.+\\.js$': 'babel-jest',
-		'\\.(s?css|less)$': 'jest-transform-css'
-	}
-}
+		'\\.(s?css|less)$': 'jest-transform-css',
+	},
+};

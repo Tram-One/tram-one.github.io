@@ -1,33 +1,33 @@
 .app-header-banner {
-  margin: 2em auto;
-  display: grid;
-  max-width: 800px;
-  grid-template-areas:
-  "logo title"
-  "logo subtitle";
+	margin: 2em auto;
+	display: grid;
+	max-width: 800px;
+	grid-template-areas:
+		'logo title'
+		'logo subtitle';
 }
 
 .app-header-banner-title {
-  font-size: 2em;
-  margin: 0;
-  align-self: end;
-  grid-area: title;
+	font-size: 2em;
+	margin: 0;
+	align-self: end;
+	grid-area: title;
 }
 
 .app-header-banner-version {
-  font-size: 0.95em;
-  opacity: 0.5;
+	font-size: 0.95em;
+	opacity: 0.5;
 }
 
 .app-header-banner-subtitle {
-  font-size: 1.3em;
-  margin: 0;
-  font-weight: normal;
-  grid-area: subtitle;
+	font-size: 1.3em;
+	margin: 0;
+	font-weight: normal;
+	grid-area: subtitle;
 }
 
 .app-header-banner-logo {
-  grid-area: logo;
-  margin-right: 1.5em;
-  justify-self: end;
+	grid-area: logo;
+	margin-right: 1.5em;
+	justify-self: end;
 }

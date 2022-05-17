@@ -1,12 +1,12 @@
 body {
 	margin: 0;
-	background: #FFF8DD;
-	color: #2E2E2E;
+	background: #fff8dd;
+	color: #2e2e2e;
 	font-family: 'Poppins', sans-serif;
 }
 
 #intro-section {
-	background: #FFF8DD
+	background: #fff8dd;
 }
 
 #features-section {
@@ -22,7 +22,7 @@ body {
 }
 
 #api-section {
-	background: #D1EBFF;
+	background: #d1ebff;
 }
 
 .section-page {
@@ -30,5 +30,5 @@ body {
 }
 
 p {
-  margin-block: 0;
+	margin-block: 0;
 }

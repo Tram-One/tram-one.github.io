@@ -1,17 +1,17 @@
 .anchor-clip {
 	color: inherit;
-  outline: none;
-  text-decoration: none;
-  padding-top: 2.3em;
-  margin-top: -2.3em;
+	outline: none;
+	text-decoration: none;
+	padding-top: 2em;
+	margin-top: -2em;
 }
 
 .header-paperclip {
 	width: 0.7em;
-  padding-right: 0.3em;
+	padding-right: 0.3em;
 }
 
 .anchor-header {
-  opacity: inherit;
-  margin-bottom: 0;
+	opacity: inherit;
+	margin-bottom: 0;
 }
