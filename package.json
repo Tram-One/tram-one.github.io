@@ -4,11 +4,10 @@
 	"private": true,
 	"scripts": {
 		"start": "parcel index.html --open",
-		"build": "parcel build index.html",
+		"build": "parcel build index.html && cp CNAME dist/",
 		"prepublish:site": "npm run build",
 		"publish:site": "gh-pages -d dist -b master",
-		"dist-test": "http-server dist",
-		"test": "jest --watch"
+		"dist-test": "http-server dist"
 	},
 	"dependencies": {
 		"@testing-library/dom": "^6.11.0",
