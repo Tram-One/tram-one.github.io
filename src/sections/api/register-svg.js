@@ -25,8 +25,8 @@ const home = () => svg\`
 module.exports = (attrs) => {
 	return html`
 		<section>
-			<api-header level="3" anchor="register-svg" header="regsiterSvg">
-				<code-block> registerSvg(registry?: any): Function </code-block>
+			<api-header level="3" anchor="register-svg" header="registerSvg">
+				<code-block> registerSvg(registry?: {[tag: string]: TramOneComponent}): DOMTaggedTemplateFunction </code-block>
 			</api-header>
 			<section-container>
 				<section-text>

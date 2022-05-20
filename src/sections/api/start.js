@@ -35,7 +35,7 @@ module.exports = (attrs) => {
 	return html`
 		<section>
 			<api-header level="3" anchor="start" header="start">
-				<code-block> start(component: Function, selector: string | Node): void </code-block>
+				<code-block> start(component: TramOneComponent, target: selector | HTMLElement): void </code-block>
 			</api-header>
 			<section-container>
 				<section-text>
@@ -47,10 +47,7 @@ module.exports = (attrs) => {
 				<code-block> ${startElement} </code-block>
 			</section-container>
 			<section-container>
-				<section-text>
-					You can call this with a CSS selector, or directly on a DOM element. Calling directly on a DOM element can be
-					useful for server-side rendering and testing!
-				</section-text>
+				<section-text> You can call this with a CSS selector, or directly on a HTML Element. </section-text>
 				<code-block> ${startDom} </code-block>
 			</section-container>
 		</section>

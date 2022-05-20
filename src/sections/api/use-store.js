@@ -20,11 +20,15 @@ const page = () => {
 }
 `;
 
+const useStoreTypeDef = `
+useStore<Store extends any[] | Object}>(defaultValue: Store): Store
+`;
+
 module.exports = () => {
 	return html`
 		<section>
 			<api-header level="3" anchor="use-store" header="useStore">
-				<code-block> useStore(defaultValue: Object|Array): Object|Array </code-block>
+				<code-block> ${useStoreTypeDef} </code-block>
 			</api-header>
 			<section-container>
 				<section-text>

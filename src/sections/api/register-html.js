@@ -45,7 +45,7 @@ module.exports = (attrs) => {
 	return html`
 		<section>
 			<api-header level="3" anchor="register-html" header="registerHtml">
-				<code-block> registerHtml(registry?: any): Function </code-block>
+				<code-block> registerHtml(registry?: {[tag: string]: TramOneComponent}): DOMTaggedTemplateFunction </code-block>
 			</api-header>
 			<section-container>
 				<section-text>

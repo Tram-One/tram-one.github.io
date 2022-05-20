@@ -24,7 +24,7 @@ module.exports = (attrs) => {
 	return html`
 		<section>
 			<api-header level="3" anchor="use-effect" header="useEffect">
-				<code-block> useEffect(effect: Function): void </code-block>
+				<code-block> useEffect(effect: Effect): void </code-block>
 			</api-header>
 			<section-container>
 				<section-text>

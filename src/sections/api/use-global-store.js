@@ -20,11 +20,15 @@ const page = () => {
 }
 `;
 
+const useGlobalStoreTypeDef = `
+useGlobalStore<Store extends any[] | Object}>(key: string, defaultValue: Store): Store
+`;
+
 module.exports = (attrs) => {
 	return html`
 		<section>
 			<api-header level="3" anchor="use-global-store" header="useGlobalStore">
-				<code-block> useGlobalStore(key: string, defaultValue?: Object|Array): Object|Array </code-block>
+				<code-block> ${useGlobalStoreTypeDef} </code-block>
 			</api-header>
 			<section-container>
 				<section-text>

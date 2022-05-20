@@ -41,7 +41,7 @@ module.exports = (attrs) => {
 	return html`
 		<section>
 			<api-header level="3" anchor="use-url-params" header="useUrlParams">
-				<code-block> useUrlParams(pattern?: string): Object </code-block>
+				<code-block> useUrlParams(pattern?: string): UrlMatchResults </code-block>
 			</api-header>
 			<section-container>
 				<section-text>
