@@ -16,17 +16,6 @@ define`
 				margin-top: 1em;
 			}
 
-			@media (max-width: 750px) {
-				header {
-					text-align: center;
-					grid-template-areas:
-						"graphic"
-						"title"
-						"description"
-						"resource";
-				}
-			}
-
 			#graphic {
 				grid-area: graphic;
 				padding-left: 2em;
@@ -42,6 +31,24 @@ define`
 			}
 			#resource {
 				grid-area: resource;
+			}
+
+			@media (max-width: 750px) {
+				header {
+					text-align: center;
+					grid-template-areas:
+						"graphic"
+						"title"
+						"description"
+						"resource";
+				}
+				#graphic {
+					padding-left: 0;
+				}
+				#title {
+					font-size: 2.5em;
+					margin-top: 0.5em;
+				}
 			}
 		</style>
 		<header>
