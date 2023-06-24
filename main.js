@@ -78,16 +78,6 @@ define`
 					grid-template-columns: 1fr;
 				}
 			}
-
-			::slotted(app-block) {
-				border-radius: 2em;
-				margin: 1em;
-				padding: 1em;
-
-				box-shadow:
-					0 0 0 4px #CCC,
-					0 0 0 8px #888;
-			}
 		</style>
 		<section>
 			<slot>
@@ -98,8 +88,14 @@ define`
 define`
 	<app-block>
 		<style>
-			section {
+			:host {
+				border-radius: 2em;
+				margin: 1em;
+				padding: 1em;
 
+				box-shadow:
+					0 0 0 4px #CCC,
+					0 0 0 8px #888;
 			}
 
 			h2 {
