@@ -3,41 +3,10 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"start": "parcel index.html --open",
-		"build": "parcel build index.html && cp CNAME dist/",
-		"prepublish:site": "npm run build",
-		"publish:site": "gh-pages -d dist -b master",
-		"dist-test": "http-server dist"
+		"start": "npx serve ."
 	},
-	"dependencies": {
-		"@testing-library/dom": "^6.11.0",
-		"@testing-library/jest-dom": "^4.2.4",
-		"@tram-one/tram-logo": "^4.1.0",
-		"core-js": "^3.3.1",
-		"eslint-config-tram-one": "^4.0.0",
-		"gh-pages": "^3.2.0",
-		"highlight-syntax": "jrjurman/highlight-syntax",
-		"http-server": "^0.12.3",
-		"jest": "^24.8.0",
-		"jest-environment-jsdom-fourteen": "^1.0.1",
-		"jest-transform-css": "^2.0.0",
-		"parcel-bundler": "^1.6.1",
-		"parcel-plugin-nuke-dist": "^1.0.0",
-		"prettier": "^2.6.2",
-		"regenerator-runtime": "^0.13.3",
-		"sass": "^1.20.1",
-		"tram-blueprints": "^1.0.0",
-		"tram-one": "^12.0.2"
-	},
+	"dependencies": {},
 	"keywords": [
 		"tram-one"
-	],
-	"babel": {
-		"presets": [
-			"@babel/preset-env"
-		]
-	},
-	"devDependencies": {
-		"@babel/core": "^7.12.3"
-	}
+	]
 }
