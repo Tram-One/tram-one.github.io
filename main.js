@@ -10,7 +10,7 @@ define`
 					"description 	graphic"
 					"resource 		graphic";
 
-				width: 80%;
+				width: 85%;
 				margin: auto;
 				margin-bottom: 1em;
 				margin-top: 1em;
